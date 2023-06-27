@@ -25,7 +25,7 @@
     "href": "teaching.html",
     "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Classroom Experience\n\n\nOld Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23\n\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)\n\n\n\n\n\nNon-Classroom Experience\nClaremont Graduate University - Two Day Programming Workshop (January ’19)\n\nIntroductory Web Scraping in R\n\nWest Virginia University - Empirical Workshop (July ’19 - July ’22)\n\nIntroduction to R Programming (’19 - ’21)\nRegression in R (’20, ’21)\nStrings, Loops, and If (’21)\nPlotting and Maps (’21, ’22)\nIntroductory (’20 - ’22) & Advanced (’19 - ’22) Web Crawling & Scraping in R"
+    "text": "Classroom Experience\n\n\nOld Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)\n\n\n\n\n\nNon-Classroom Experience\nClaremont Graduate University - Two Day Programming Workshop (January ’19)\n\nIntroductory Web Scraping in R\n\nWest Virginia University - Empirical Workshop (July ’19 - July ’22)\n\nIntroduction to R Programming (’19 - ’21)\nRegression in R (’20, ’21)\nStrings, Loops, and If (’21)\nPlotting and Maps (’21, ’22)\nIntroductory (’20 - ’22) & Advanced (’19 - ’22) Web Crawling & Scraping in R"
   },
   {
     "objectID": "research.html#working-papers",
@@ -124,5 +124,12 @@
     "title": "In the Media",
     "section": "NBER Economics of Transportation in the 21st Century",
     "text": "NBER Economics of Transportation in the 21st Century\nWVU economists fueled to pave the way for enhanced traffic safety, road quality\nThe U.S. Needs to Fix Existing Roads, Not Build New Ones"
+  },
+  {
+    "objectID": "econ311.html",
+    "href": "econ311.html",
+    "title": "Econ 311",
+    "section": "",
+    "text": "Module 1: Foundations of Data\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\n\n\nHW 1\n\nModule 2: One Y Variable\n\nsomething\nsomething\n\nModule 3: One X Variable\nModule 4: Many X Variables\nModule 5: Special Topics in R"
   }
 ]
