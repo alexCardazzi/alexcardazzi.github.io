@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex Cardazzi">
-<meta name="description" content="This is a homework document, blah blah.">
 
 <title>Homework 1 - Solutions</title>
 <style>
@@ -2625,11 +2624,6 @@ vertical-align: -.125em;
 <p class="subtitle lead">Due YYYY-MM-DD</p>
 </div>
 
-<div>
-  <div class="description">
-    <p>This is a homework document, blah blah.</p>
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -2969,12 +2963,12 @@ Plot
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p><a href="https://www.erikthered.com/tutor/historical-average-SAT-scores.pdf">This <code>.pdf</code> file</a> contains SAT scores over time for men and women. Unfortunately, when I copied it into a <code>.csv</code>, the formatting got messed up.</p>
 <ol type="a">
-<li>Recreate the data in <code>sat2.csv</code> from Canvas as a <code>data.frame</code>. Rename the year and total math columns (the first one).</li>
+<li>Recreate the data in <a href="https://alexcardazzi.github.io/econ311/data/sat2.csv"><code>sat2.csv</code></a> as a <code>data.frame</code>. Rename the year and total math columns (the first one).</li>
 </ol>
 <div class="cell" data-layout-align="center">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sat2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;../data/sat2.csv&quot;</span>)</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sat2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://alexcardazzi.github.io/econ311/data/sat2.csv&quot;</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sat2); <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <details>
