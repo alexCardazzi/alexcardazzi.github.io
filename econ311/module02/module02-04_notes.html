@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alex Cardazzi">
 
-<title>Homework 1</title>
+<title>One Y Variable: Functions and Loops</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -3102,8 +3136,8 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
-<p class="subtitle lead">Due YYYY-MM-DD</p>
+<div class="quarto-title-block"><div><h1 class="title">One Y Variable: Functions and Loops</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Module 2.4</p>
 </div>
 
 
@@ -3132,219 +3166,526 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 </header>
 
 <p>All materials can be found at <a href="https://alexcardazzi.github.io/econ311.html" target="_blank">alexcardazzi.github.io</a>.</p>
-<!-- ## Basics -->
-<!-- ::: {.content-hidden} -->
-<!-- *Here is some explanation only view-able on the key-version.* -->
-<!-- ::: -->
-<!-- a. Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!--     Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!-- ::: {.content-hidden} -->
-<!-- *This math is only visible on the key-version.* -->
-<!-- $$Y = \alpha + \beta X + \epsilon$$ -->
-<!-- ::: -->
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>What “type” of dataset (e.g. cross section, panel, etc.) are each of the following? Write your answer in bullet point form:</p>
-<ol type="a">
-<li>Dataset 1.a:</li>
-<li>Dataset 1.b:</li>
-<li>Dataset 1.c:</li>
-</ol>
+<section id="functions" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="functions">Functions</h2>
+<p>At this portion of the module, we’re going to learn more about R. First, we’re going to learn how to write our own functions. R is <em>open source</em>, meaning that people can write software for others (or themselves) to use. For example, <code>modelsummary</code> was written (and a lot of the data we’ll use are provided) by <a href="https://arelbundock.com/">Vincent Arel-Bundock</a>.</p>
+<div class="fragment fade-in">
+<p>Let’s write our first function, which we’ll call <code>plus2</code>. The goal of <code>plus2</code> is to add 2 to any number we provide.</p>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.1</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">295.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">293.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">223.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">225.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">239.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">234.1</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plus2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plus2</span>(<span class="dv">10</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plus2</span>(<span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plus2</span>(<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12
+[1] 102
+[1] 1002</code></pre>
+</div>
+</details>
 </div>
 </div>
+<p><code>plus2</code> accepts a single <em>argument</em> (<code>x</code>), and returns a value of <code>x + 2</code>. We can also define a function that accepts two different arguments. We’ll call this function <code>plusY</code> and it will accept an <code>x</code> and a <code>y</code>, and we’ll add both together.</p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.2</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2006</td>
-<td style="text-align: right;">245.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2007</td>
-<td style="text-align: right;">229.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">245.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: right;">280.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">260.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2011</td>
-<td style="text-align: right;">236.3</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plusY <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> y</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># R is even smart enough to use vectors:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12
+[1] 20
+[1] 11 12 13</code></pre>
+</div>
+</details>
 </div>
 </div>
+<p><span class="fragment fade-in">What happens if your only give <code>plusY()</code> a single argument?</span></p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.3</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2001</td>
-<td style="text-align: right;">299.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">243.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">212.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2014</td>
-<td style="text-align: right;">259.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">221.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2021</td>
-<td style="text-align: right;">271.0</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<pre><code>Error in plusY(10): argument &quot;y&quot; is missing, with no default</code></pre>
 </div>
 </div>
+</div>
+<p>This generates an error. There are a few ways we can fix this. First, we can set default values for any argument in our function. For example, the default for <code>na.rm</code> in <code>mean()</code> is set to <code>FALSE</code>. Below, I am editting <code>plusY()</code> so <code>y</code>’s default is zero.</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plusY <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">0</span>){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> y</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12
+[1] 10</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Of course, we can set both defaults to zero. Then, we can technically call <code>plusY()</code> with no inputs, and it will return 0.</span></p>
+<p>What if it doesn’t make sense to set a default? Or, maybe you want to make sure the two arguments “make sense”. For example:</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="st">&quot;alex&quot;</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<pre><code>Error in x + y: non-numeric argument to binary operator</code></pre>
+</div>
+</div>
+</div>
+<p><span class="fragment fade-in">We need a way to “check” the values of the arguments. This is an instance where you would use R’s function <code>if()</code>. This will allow for your program to “make decisions” based on pre-programmed logic.</span></p>
+<p>Let’s use <code>if()</code> in our <code>plusY()</code> function:</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plusY <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">0</span>){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.numeric</span>(x) <span class="sc">&amp;</span> <span class="fu">is.numeric</span>(y)){</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if both are numeric, continue to the sum:</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">+</span> y</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> { <span class="co"># note: if() does not NEED an else.</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># otherwise, print the issue:</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Either x or y are non-numeric.&quot;</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plusY</span>(<span class="st">&quot;alex&quot;</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12
+[1] &quot;Either x or y are non-numeric.&quot;</code></pre>
+</div>
+</details>
+</div>
+<p>Let’s practice by making a function called <code>summy2()</code>. We want the function to calculate the sample size, the mean, standard deviation, minimum, and maximum. We also want functionality like <code>na.rm</code>, except we want it to always be true. In addition, the function should return the number of observations it had to drop because of missingness. Our “practice” vector will be <code>c(6, NA, 8, 2, NA, NA, 9, 5, 1, 4)</code>.</p>
+<p><span class="fragment fade-in">Our first step should be to figure out which observations are missing. We can do this with <code>is.na()</code>. This will return a Boolean vector equal telling which elements are missing.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>Now that we know which are missing, we can calculate how many are missing and then remove them.</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>n_missing <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(y))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># subset y to only the non-NA observations</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   then save over y</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> y[<span class="sc">!</span><span class="fu">is.na</span>(y)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<p><span class="fragment">Now we can focus on returning the statistics we’re interested in.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;Sample Size&quot;</span> <span class="ot">=</span> <span class="fu">length</span>(y),</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;NA Obs.&quot;</span> <span class="ot">=</span> n_missing,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(y),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;St. Dev.&quot;</span> <span class="ot">=</span> <span class="fu">sd</span>(y),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Min.&quot;</span> <span class="ot">=</span> <span class="fu">min</span>(y),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Max.&quot;</span> <span class="ot">=</span> <span class="fu">max</span>(y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sample Size     NA Obs.        Mean    St. Dev.        Min.        Max. 
+    7.00000     3.00000     5.00000     2.94392     1.00000     9.00000 </code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>Let’s put all of this into a function.</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>summary2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  n_missing <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;Sample Size&quot;</span> <span class="ot">=</span> <span class="fu">length</span>(x),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;NA Obs.&quot;</span> <span class="ot">=</span> n_missing,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="fu">mean</span>(x),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;St. Dev.&quot;</span> <span class="ot">=</span> <span class="fu">sd</span>(x),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Min.&quot;</span> <span class="ot">=</span> <span class="fu">min</span>(x),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Max.&quot;</span> <span class="ot">=</span> <span class="fu">max</span>(x))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary2</span>(<span class="at">x =</span> y)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co"># generate 10,000 random draws from c(1:9, NA)</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="cn">NA</span>), <span class="dv">10000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary2</span>(<span class="at">x =</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sample Size     NA Obs.        Mean    St. Dev.        Min.        Max. 
+    7.00000     3.00000     5.00000     2.94392     1.00000     9.00000 
+Sample Size     NA Obs.        Mean    St. Dev.        Min.        Max. 
+8992.000000 1008.000000    4.980761    2.595344    1.000000    9.000000 </code></pre>
+</div>
+</details>
+</div>
+<!-- HW idea: the n-1 adjustment on sd is a sample thing.  What if we have the population data? Write a function that allows for a population argument that does not use the n-1 correction but rather just n. -->
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>At this point, both R and RStudio should be downloaded on your personal machine. Let’s set up a file system for this course and make sure you can connect to it via “working directories”.</p>
-<ol type="a">
-<li>Name your main folder <code>econ311</code>.</li>
-<li>Inside this folder, make several sub-folders: <code>homework</code>, <code>exams</code>, <code>project</code>, and <code>scrap</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>Inside your homework folder, create yet another sub-folder called <code>homework1</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-<li>Open RStudio and in the <strong>open script</strong> (should be <code>Untitled1</code>), use <code>setwd()</code> to set your working directory to your <code>econ311</code> folder.</li>
-<li><strong>In the console</strong>, execute the following code: <code>list.dirs(recursive = T)</code></li>
-<li>Take a screenshot of what you see.</li>
+<section id="loops" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="loops">Loops</h2>
+<p>Next, we will introduce how to write <em>loops</em> in R.</p>
+<p><span class="fragment fade-in">Suppose we are interested in executing the same code over and over. As an example, suppose I wanted to write code to print every student name and grade. Of course, I could write the following:</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, <span class="st">&quot;Alex&quot;</span>, <span class="st">&quot;... Grade:&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, <span class="st">&quot;Brooke&quot;</span>, <span class="st">&quot;... Grade:&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, <span class="st">&quot;Carlos&quot;</span>, <span class="st">&quot;... Grade:&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, <span class="st">&quot;Dasia&quot;</span>, <span class="st">&quot;... Grade:&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, <span class="st">&quot;Enzo&quot;</span>, <span class="st">&quot;... Grade:&quot;</span>, <span class="st">&quot;C&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name: Alex ... Grade: B 
+Name: Brooke ... Grade: A 
+Name: Carlos ... Grade: A 
+Name: Dasia ... Grade: B 
+Name: Enzo ... Grade: C</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>This code works, but there are some problems. First, writing this so many times makes it prone to typos, even if just copying and pasting. Second, <strong>almost anything</strong> that is repetitive or has an identifiable pattern is easier for computers than humans. What if there were 100 names instead of 5? What if 10,000? This is where loops come in.</p>
+<p><span class="fragment fade-in">Our first step is going to be creating vectors of names and grades. Ideally, you’d have these data in a spreadsheet/csv and could easily read it in using <code>read.csv()</code>.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>namez <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Alex&quot;</span>, <span class="st">&quot;Brooke&quot;</span>, <span class="st">&quot;Carlos&quot;</span>, <span class="st">&quot;Dasia&quot;</span>, <span class="st">&quot;Enzo&quot;</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>gradez <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<p>Second, we’re going to write our loop. The loop needs two things:</p>
+<ol type="1">
+<li>an <em>iterator</em>. Usually, people use <code>i</code> but it can be anything, of course.</li>
+<li>loop <em>bounds</em>. This is the only thing that will change during each repetition. Since we have 5 names and grades, we’re going to loop over 1 through 5. We’ll use <code>1:5</code>, or <code>1:length(namez)</code>.</li>
 </ol>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for(iterator in bounds)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># everything between { and } will be looped</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(namez)){</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="fragment fade-in">
+<p>The iterator and bounds in <code>for</code> loops are similar to the iterator and bounds in <span class="math inline">\(\sum_{i = 1}^n\)</span></p>
+</div>
+<p>Let’s just fill the loop with something simple to illustrate what the loop does.</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(namez)){</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>) <span class="co"># just printing i</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 
+2 
+3 
+4 
+5 </code></pre>
+</div>
+</details>
+</div>
+<p>Remember, we can do: <code>namez[1]</code> to get the first element, <code>namez[2]</code> to get the second element, and <code>namez[length(namez)]</code> to get the last element. We can put this into our loop as well!</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(namez)){</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(namez[i], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alex 
+Brooke 
+Carlos 
+Dasia 
+Enzo </code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>Finally, we can put this all together and generate our initial output.</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(namez)){</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, namez[i], <span class="st">&quot;... Grade:&quot;</span>, gradez[i], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name: Alex ... Grade: B 
+Name: Brooke ... Grade: A 
+Name: Carlos ... Grade: A 
+Name: Dasia ... Grade: B 
+Name: Enzo ... Grade: C </code></pre>
+</div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Now, consider if we had many more names and grades. We could have thousands of names and grades and our little for loop would remain the same.</span></p>
+<p>We can also use non-numeric iterators/bounds:</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(name <span class="cf">in</span> namez){</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(name, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alex 
+Brooke 
+Carlos 
+Dasia 
+Enzo </code></pre>
+</div>
+</details>
+</div>
+<div class="fragment fade-in">
+<p>We can also use loops to “create” data. Here, we’re going to code up the <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">Fibonacci Sequence</a>.</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a small vector:</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  v[i] <span class="ot">&lt;-</span> v[i<span class="dv">-2</span>] <span class="sc">+</span> v[i<span class="dv">-1</span>]</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>0 1 1 2 3 5 8 13 21 34</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>We can build “logic” into our loops with if statements, too. For example:</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(namez)){</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(gradez[i] <span class="sc">==</span> <span class="st">&quot;A&quot;</span>){</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, namez[i], <span class="st">&quot;... crushin&#39; it!&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(gradez[i] <span class="sc">==</span> <span class="st">&quot;B&quot;</span>){</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, namez[i], <span class="st">&quot;... you&#39;re doing a good job!&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Name:&quot;</span>, namez[i], <span class="st">&quot;... keep studying!&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name: Alex ... you&#39;re doing a good job! 
+Name: Brooke ... crushin&#39; it! 
+Name: Carlos ... crushin&#39; it! 
+Name: Dasia ... you&#39;re doing a good job! 
+Name: Enzo ... keep studying! </code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>If you remember, in Module 1, we colored points based on certain characteristics. In Module 1, we set all colors as the same value, and then changed the color based on certain values. See below.</p>
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>colorz <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;black&quot;</span>, <span class="fu">length</span>(v))</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>colorz[v <span class="sc">&gt;</span> <span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="st">&quot;tomato&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="fragment fade-in">
+<p>Now, we can use loops to achieve a similar outcome. You can run the code snippets above and below to see for yourself that the results are the same.</p>
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>colorz2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;black&quot;</span>, <span class="fu">length</span>(v))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(v)){</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(v[i] <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    colorz2[i] <span class="ot">&lt;-</span> <span class="st">&quot;tomato&quot;</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Or, we can test this by using: <code>mean(colorz == colorz2)</code>: 1. A value of 1 means that 100% of the resulting Boolean values are <code>TRUE</code>.</p>
+</div>
 </section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Copy and paste the following vector into R: <code>vec &lt;- sample(1:100, 10, FALSE)</code></p>
-<ol type="a">
-<li>Print <code>vec</code> to the console.</li>
-<li>Print the first 5 elements of <code>vec</code>.</li>
-<li>Print the last 3 elements of <code>vec</code>.</li>
-<li>Print the 3rd and 8th elements of <code>vec</code>.</li>
-<li>Print the elements of <code>vec</code> that are larger than 50.</li>
-<li>Print the elements of <code>vec</code> that are odd.</li>
-</ol>
-</section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Read in <a href="https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv">Elderton and Pearson’s (1910) data on drinking and wages</a> using <code>read.csv()</code> and save it as <code>DrinksWages</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<ol type="a">
-<li>Print the column names of <code>DrinksWages</code>.</li>
-<li>What type of measurement (Nominal, Ordinal, Interval, or Ratio) is <code>sober</code>? Explain why.</li>
-<li>What portion of wages are larger than 30?</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>total</code> that is the sum of <code>sober</code> and <code>drinks</code>.</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>x</code> that is <code>drinks</code> divided by <code>x</code>. What is an interpretation of <code>x</code>?</li>
-<li>Plot <code>x</code> on the <span class="math inline">\(X\)</span>-axis and wages on the <span class="math inline">\(Y\)</span>-axis. Make each <code>class</code> a different color. Use <code>pch = 19</code>. Label your axes appropriately.</li>
-</ol>
-</section>
-<section id="question-5" class="level2">
-<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p><a href="https://www.erikthered.com/tutor/historical-average-SAT-scores.pdf">This <code>.pdf</code> file</a> contains SAT scores over time for men and women. Unfortunately, when I copied it into a <code>.csv</code>, the formatting got messed up.</p>
-<ol type="a">
-<li><p>Recreate the data in <a href="https://alexcardazzi.github.io/econ311/data/sat2.csv"><code>sat2.csv</code></a> as a <code>data.frame</code>. Rename the year and total math columns (the first one).</p></li>
-<li><p>Make a plot where year is on the x-axis and total math is on the y-axis. Make sure to convert the total math variable to numeric. Be sure to label the axes. Color the plot where all years after 1999 are a different color than pre-2000. Be an <em>artist</em>.</p></li>
-<li><p>Remove the rows where total math is missing. Also, remove the columns between year and total math, and everything after total math.</p></li>
-</ol>
+<section id="ifelse" class="level2">
+<h2 class="anchored" data-anchor-id="ifelse"><code>ifelse()</code></h2>
+<p>While both of these solutions “work”, there is something better.</p>
+<p>First, in general, loops are relatively slow in R. This will likely not matter when dealing with small samples, but you’ll notice reduced performance as your data grow larger.</p>
+<p>Second, “lazy” programming is good programming! We should be writing as little as possible<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to minimize mistakes, bugs, etc.</p>
+<p>Introducing: <code>ifelse()</code>. This function takes three arguments:</p>
+<ul>
+<li><code>test</code>: an object which can be coerced to logical mode. In other words, some logical vector like <code>v &gt; 5</code></li>
+<li><code>yes</code>: return values for true elements of <code>test</code>. In other words, what should be output when <code>v &gt; 5</code> is <code>TRUE</code>?</li>
+<li><code>no</code>: return values for false elements of <code>test</code>. In other words, what should be output when <code>v &gt; 5</code> is <code>FALSE</code>?</li>
+</ul>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>colorz3 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(v <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>colorz3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;black&quot;  &quot;black&quot;  &quot;tomato&quot; &quot;black&quot;  &quot;tomato&quot; &quot;black&quot;  &quot;black&quot;  &quot;tomato&quot;</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>You can think of <code>ifelse()</code> as creating a <code>for</code> loop with <code>if()</code> statements inside of it. In fact, we can even nest <code>ifelse</code> statements. For example, consider these data on <a href="https://vincentarelbundock.github.io/Rdatasets/doc/pscl/iraqVote.html">U.S. Senate vote on the use of force against Iraq in 2002</a>. For each observation, we want to assign a some value (here, I chose to assign some text) by party and by vote.</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>votez <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://vincentarelbundock.github.io/Rdatasets/csv/pscl/iraqVote.csv&quot;</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>votez<span class="sc">$</span>vote_and_party <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(votez<span class="sc">$</span>y <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">ifelse</span>(votez<span class="sc">$</span>rep <span class="sc">==</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">&quot;Vote Yes and Republican&quot;</span>,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">&quot;Vote Yes and Democrat&quot;</span>),</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">ifelse</span>(votez<span class="sc">$</span>rep <span class="sc">==</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">&quot;Vote No and Republican&quot;</span>,</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">&quot;Vote No and Democrat&quot;</span>))</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(votez<span class="sc">$</span>vote_and_party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Vote No and Democrat  Vote No and Republican   Vote Yes and Democrat 
+                     22                       1                      29 
+Vote Yes and Republican 
+                     48 </code></pre>
+</div>
+</details>
+</div>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>You may create other folders as well, but this is a good start for now.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is probably a good location to save this file (your answers)!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Note: you can use either the hyperlink’s URL <em>or</em> you can click on the hyperlink, download the file, and read it in via file path. If you read it via file path, you should move the file so it is in your <code>homework1</code> folder.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html">The data documentation</a> might be important for understanding what each variable means.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Except for code comments! Always comment your code.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->

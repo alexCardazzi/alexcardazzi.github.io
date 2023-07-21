@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alex Cardazzi">
 
-<title>Homework 1</title>
+<title>One Y Variable: Dispersion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -3102,8 +3136,8 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
-<p class="subtitle lead">Due YYYY-MM-DD</p>
+<div class="quarto-title-block"><div><h1 class="title">One Y Variable: Dispersion</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Module 2.2</p>
 </div>
 
 
@@ -3132,219 +3166,256 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 </header>
 
 <p>All materials can be found at <a href="https://alexcardazzi.github.io/econ311.html" target="_blank">alexcardazzi.github.io</a>.</p>
-<!-- ## Basics -->
-<!-- ::: {.content-hidden} -->
-<!-- *Here is some explanation only view-able on the key-version.* -->
-<!-- ::: -->
-<!-- a. Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!--     Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!-- ::: {.content-hidden} -->
-<!-- *This math is only visible on the key-version.* -->
-<!-- $$Y = \alpha + \beta X + \epsilon$$ -->
-<!-- ::: -->
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>What “type” of dataset (e.g. cross section, panel, etc.) are each of the following? Write your answer in bullet point form:</p>
-<ol type="a">
-<li>Dataset 1.a:</li>
-<li>Dataset 1.b:</li>
-<li>Dataset 1.c:</li>
-</ol>
+<section id="dispersion" class="level2">
+<h2 class="anchored" data-anchor-id="dispersion">Dispersion</h2>
+<p>The middle of some data is an important summary point. However, a second important measure is: <span class="fragment fade-in">how much does the data vary? Are the observations in the data close to the mean, or are they far?</span><span class="fragment fade-in">A measure like this would start to address the issue with outliers, but also provide additional information that could be helpful.</span></p>
+<p><span class="fragment fade-in">This idea is called <em>dispersion</em>. A common measure of dispersion is <em>variance</em> or <em>standard deviation</em>.</span></p>
+</section>
+<section id="building-an-equation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="building-an-equation">Building an Equation</h2>
+<p>Let’s try to build an equation for dispersion that we can use. Remember: we are interested in quantifying how far away observations are from the mean (<span class="math inline">\(\mu\)</span> or <span class="math inline">\(\bar{y}\)</span>).</p>
+<p><span class="fragment fade-in">Since we cannot observe <span class="math inline">\(\mu\)</span> (because it is a population parameter), we have to use <span class="math inline">\(\bar{y}\)</span> as our measure of the mean. So, to calculate distance from the mean, we can simply use subtraction.</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[y_i - \bar{y}\]</span></p>
+</div>
+<p><span class="fragment fade-in">Note: I am using a subscript <span class="math inline">\(i\)</span> to denote the <span class="math inline">\(i\)</span>th observation. In other words, if there are <span class="math inline">\(n\)</span> observations, we will calculate:</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[y_1 - \bar{y}, \ y_2 - \bar{y}, \ ..., \ y_i - \bar{y}, \ ..., \ y_n - \bar{y}\]</span></p>
+</div>
+<p>If we have the distance of each observation from the mean, why don’t we try taking the mean of this? This would give us, in words, an <strong>average distance from the mean</strong>. In math:</p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\frac{1}{n} \sum_{i=1}^{n} (y_i - \bar{y})\]</span></p>
+</div>
+<p><span class="fragment fade-in">To test our measure, let’s use some example data from the notes on Central Tendency. Suppose we have two sets of data: one from UNC Geography Majors in 1985 and 1986 (Michael Jordan’s graduating class). If our measure makes sense, we should expect the 1985 mean to be less than the 1986 mean, but the dispersion to be lower as well. Here are the two datasets:</span></p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.1</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">295.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">293.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">223.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">225.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">239.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">234.1</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>salaries85 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">32000</span>, <span class="dv">33000</span>, <span class="dv">36000</span>, <span class="dv">33000</span>, <span class="dv">32000</span>, <span class="dv">35000</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>salaries86 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">31000</span>, <span class="dv">34000</span>, <span class="dv">32000</span>, <span class="dv">34000</span>, <span class="dv">33000</span>, <span class="dv">20000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
+<p>Let’s calculate the two sample means and save them.</p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.2</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2006</td>
-<td style="text-align: right;">245.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2007</td>
-<td style="text-align: right;">229.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">245.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: right;">280.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">260.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2011</td>
-<td style="text-align: right;">236.3</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mean85 <span class="ot">&lt;-</span> <span class="fu">mean</span>(salaries85)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mean86 <span class="ot">&lt;-</span> <span class="fu">mean</span>(salaries86)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average Salary in 1985:&quot;</span>, mean85, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average Salary in 1986:&quot;</span>, mean86)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Average Salary in 1985: 33500 
+Average Salary in 1986: 3360667</code></pre>
 </div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Now, we need to code up our formula for dispersion and test it with both sets of data.</span></p>
+<div class="fragment fade-in">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>(salaries85 <span class="sc">-</span> mean85)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries85)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>numerator <span class="sc">/</span> denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</details>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>(salaries86 <span class="sc">-</span> mean86)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries86)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>numerator <span class="sc">/</span> denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.3</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2001</td>
-<td style="text-align: right;">299.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">243.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">212.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2014</td>
-<td style="text-align: right;">259.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">221.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2021</td>
-<td style="text-align: right;">271.0</td>
-</tr>
-</tbody>
-</table>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</details>
 </div>
 </div>
-</section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>At this point, both R and RStudio should be downloaded on your personal machine. Let’s set up a file system for this course and make sure you can connect to it via “working directories”.</p>
-<ol type="a">
-<li>Name your main folder <code>econ311</code>.</li>
-<li>Inside this folder, make several sub-folders: <code>homework</code>, <code>exams</code>, <code>project</code>, and <code>scrap</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>Inside your homework folder, create yet another sub-folder called <code>homework1</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-<li>Open RStudio and in the <strong>open script</strong> (should be <code>Untitled1</code>), use <code>setwd()</code> to set your working directory to your <code>econ311</code> folder.</li>
-<li><strong>In the console</strong>, execute the following code: <code>list.dirs(recursive = T)</code></li>
-<li>Take a screenshot of what you see.</li>
-</ol>
-</section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Copy and paste the following vector into R: <code>vec &lt;- sample(1:100, 10, FALSE)</code></p>
-<ol type="a">
-<li>Print <code>vec</code> to the console.</li>
-<li>Print the first 5 elements of <code>vec</code>.</li>
-<li>Print the last 3 elements of <code>vec</code>.</li>
-<li>Print the 3rd and 8th elements of <code>vec</code>.</li>
-<li>Print the elements of <code>vec</code> that are larger than 50.</li>
-<li>Print the elements of <code>vec</code> that are odd.</li>
-</ol>
-</section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Read in <a href="https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv">Elderton and Pearson’s (1910) data on drinking and wages</a> using <code>read.csv()</code> and save it as <code>DrinksWages</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<ol type="a">
-<li>Print the column names of <code>DrinksWages</code>.</li>
-<li>What type of measurement (Nominal, Ordinal, Interval, or Ratio) is <code>sober</code>? Explain why.</li>
-<li>What portion of wages are larger than 30?</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>total</code> that is the sum of <code>sober</code> and <code>drinks</code>.</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>x</code> that is <code>drinks</code> divided by <code>x</code>. What is an interpretation of <code>x</code>?</li>
-<li>Plot <code>x</code> on the <span class="math inline">\(X\)</span>-axis and wages on the <span class="math inline">\(Y\)</span>-axis. Make each <code>class</code> a different color. Use <code>pch = 19</code>. Label your axes appropriately.</li>
-</ol>
-</section>
-<section id="question-5" class="level2">
-<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p><a href="https://www.erikthered.com/tutor/historical-average-SAT-scores.pdf">This <code>.pdf</code> file</a> contains SAT scores over time for men and women. Unfortunately, when I copied it into a <code>.csv</code>, the formatting got messed up.</p>
-<ol type="a">
-<li><p>Recreate the data in <a href="https://alexcardazzi.github.io/econ311/data/sat2.csv"><code>sat2.csv</code></a> as a <code>data.frame</code>. Rename the year and total math columns (the first one).</p></li>
-<li><p>Make a plot where year is on the x-axis and total math is on the y-axis. Make sure to convert the total math variable to numeric. Be sure to label the axes. Color the plot where all years after 1999 are a different color than pre-2000. Be an <em>artist</em>.</p></li>
-<li><p>Remove the rows where total math is missing. Also, remove the columns between year and total math, and everything after total math.</p></li>
-</ol>
+</div>
+</div>
+<p>Not only are the two numbers the same, but they’re zero! There is either a mistake in the math or in the code. Hint: the mistake is not in the code. Rather, let’s generate more output as we go this time.</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the differences</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> salaries85 <span class="sc">-</span> mean85</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Numbers to Add:&quot;</span>, numerator)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Sum of Numbers to Add:&quot;</span>, <span class="fu">sum</span>(numerator))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Numbers to Add: -1500 -500 2500 -500 -1500 1500Sum of Numbers to Add: 0</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Since some of the values are above the mean and others are below, the sum of the positive and negative numbers nets out to zero. Let’s see if this is true in the algebra.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></span></p>
+<p><span class="math display">\[\begin{aligned}\sum_{i=1}^{n} (y_i - \bar{y}) &amp;= (y_1 - \bar{y}) + (y_2 - \bar{y}) + ... + (y_n - \bar{y}) \\
+&amp;=(y_1 + ... + y_n) - (\bar{y} + ... + \bar{y})\\
+&amp;= \sum{y_i} - (n \times \bar{y})\\
+&amp;= \sum{y_i} - (n \times \frac{1}{n}\sum{y_i}) \\
+&amp;= \sum{y_i} - (n \times \frac{1}{n}\sum{y_i})\\
+&amp;= \sum{y_i} - (\sum{y_i}) \\
+&amp;= 0\end{aligned}\]</span></p>
+<p>The conclusion to both the math and the code is that, no matter what, <span class="math inline">\(\sum_{i=1}^n(y_i - \bar{y}) = 0\)</span>.</p>
+<p><span class="fragment fade-in">So, it seems like we need another equation. What if we tried to transform <span class="math inline">\(y_i - \bar{y}\)</span> so that it was always a positive number?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We can use a square term! So, instead of <span class="math inline">\(y_i - \bar{y}\)</span>, we can use <span class="math inline">\((y_i - \bar{y})^2\)</span>. Then, our formula would look like:</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\frac{1}{n} \sum_{i=1}^{n} (y_i - \bar{y})^2\]</span></p>
+</div>
+<p>Let’s try to build this equation in R and test it on our data.</p>
+<div class="fragment fade-in">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>((salaries85 <span class="sc">-</span> mean85)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries85)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>numerator <span class="sc">/</span> denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2250000</code></pre>
+</div>
+</details>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>((salaries86 <span class="sc">-</span> mean86)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries86)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>numerator <span class="sc">/</span> denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.537348e+13</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<p><span class="fragment fade-in">These numbers are huge! These are not interpretable as is, and it’s because we squared each distance. In words, this is <strong>the average squared distance from the mean</strong>. This is what statisticians call <strong>variance</strong>.</span></p>
+<p>To get a more interpretable number, we have to “undo” the squared term. We can use the square root function to do this. Taking the square root of variance gives <strong>standard deviation</strong>.</p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \bar{y})^2}\]</span></p>
+</div>
+<p><span class="fragment fade-in">And in R:</span></p>
+<div class="fragment fade-in">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>((salaries85 <span class="sc">-</span> mean85)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries85)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(numerator <span class="sc">/</span> denominator)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1500</code></pre>
+</div>
+</details>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add up the differences</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>((salaries86 <span class="sc">-</span> mean86)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries86)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(numerator <span class="sc">/</span> denominator)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7441336</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<p>The interpretation of this number is …</p>
+<p>Of course, R has built in functions for variance (<code>var()</code>) and standard deviation (<code>sd()</code>). There is a slight difference in what we coded and what R will output. This is because the denominator R uses is <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>. The reason for this is beyond the scope of this course. However, for comparison:</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>((salaries85 <span class="sc">-</span> mean85)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries85)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;St. Dev. (with n):&quot;</span>, <span class="fu">sqrt</span>(numerator <span class="sc">/</span> denominator), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;St. Dev. (with n-1):&quot;</span>, <span class="fu">sqrt</span>(numerator <span class="sc">/</span> (denominator<span class="dv">-1</span>)), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;St. Dev. (R Default):&quot;</span>, <span class="fu">sd</span>(salaries85))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>St. Dev. (with n): 1500 
+St. Dev. (with n-1): 1643.168 
+St. Dev. (R Default): 1643.168</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>As a final note, population variance is usually denoted by the Greek letter <em>sigma</em> (squared), or <span class="math inline">\(\sigma^2\)</span>. Sample variance is denoted by <span class="math inline">\(s^2\)</span>. Therefore, population and sample standard deviations are <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(s\)</span>.</p>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>You may create other folders as well, but this is a good start for now.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is probably a good location to save this file (your answers)!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Note: you can use either the hyperlink’s URL <em>or</em> you can click on the hyperlink, download the file, and read it in via file path. If you read it via file path, you should move the file so it is in your <code>homework1</code> folder.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html">The data documentation</a> might be important for understanding what each variable means.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Note: I am dropping the <span class="math inline">\(\frac{1}{n}\)</span> because the issue is clearly in the numerator, not the division.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note: You might think of absolute values. This is a good thought, and I am hoping you arrived at this. Unfortunately, absolute value is a weird function that doesn’t have nice properties. We won’t get into it here, but I thought I should note it.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->

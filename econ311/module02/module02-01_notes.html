@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alex Cardazzi">
 
-<title>Homework 1</title>
+<title>One Y Variable: Central Tendency</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -3102,8 +3136,8 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
-<p class="subtitle lead">Due YYYY-MM-DD</p>
+<div class="quarto-title-block"><div><h1 class="title">One Y Variable: Central Tendency</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Module 2.1</p>
 </div>
 
 
@@ -3132,219 +3166,260 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 </header>
 
 <p>All materials can be found at <a href="https://alexcardazzi.github.io/econ311.html" target="_blank">alexcardazzi.github.io</a>.</p>
-<!-- ## Basics -->
-<!-- ::: {.content-hidden} -->
-<!-- *Here is some explanation only view-able on the key-version.* -->
-<!-- ::: -->
-<!-- a. Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!--     Blah blah blah -->
-<!-- a. Blah blah blah -->
-<!-- ::: {.content-hidden} -->
-<!-- *This math is only visible on the key-version.* -->
-<!-- $$Y = \alpha + \beta X + \epsilon$$ -->
-<!-- ::: -->
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>What “type” of dataset (e.g. cross section, panel, etc.) are each of the following? Write your answer in bullet point form:</p>
-<ol type="a">
-<li>Dataset 1.a:</li>
-<li>Dataset 1.b:</li>
-<li>Dataset 1.c:</li>
+<section id="module-2-learning-objectives" class="level1">
+<h1>Module 2 Learning Objectives</h1>
+<ol type="1">
+<li>… (CLO X)</li>
+<li>… (CLO Y)</li>
 </ol>
+<section id="central-tendency" class="level2">
+<h2 class="anchored" data-anchor-id="central-tendency">Central Tendency</h2>
+<p>Now that we have read our data into R, we need ways to summarize it to communicate it. An intuitive way to summarize data is to report the <em>central tendency</em>, or middle. We care about the middle because, generally speaking, it’s what is common / what can be expected / what is typical / is convenient.</p>
+<p><span class="fragment fade-in">As an example, think about GPA. This number summarizes your past outcomes in the classes you’ve taken.</span></p>
+<p><span class="fragment fade-in">So, how do we calculate central tendency?</span></p>
+<p>There are three main ways we calculate central tendency:</p>
+<div class="fragment fade-in">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mean
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This is the average value. Formally: <span class="math inline">\(\frac{1}{n} (y_1 + y_2 + ... + y_n) = \frac{1}{n}\sum_{i=1}^{n} y_i\)</span>. In R: <code>mean()</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Median
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This is the middle value. To find the median, you need to put your data in numerical order and select the middle number. In R: <code>median()</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mode
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This is the most frequently occurring number. To find the mode, count the number of times each value appears and select the most popular value. There is not a pre-built function to calculate the mode in R.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="an-aside-missing-data" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="an-aside-missing-data">An Aside: Missing Data</h2>
+<p>In the real world, data are hardly ever “clean”. Clean data are data that are ready for analysis right away.</p>
+<p><span class="fragment fade-in">As an example, suppose I collect income data from people in different parts of the world. In the US, someone making fifty thousand dollars would report “$50,000.00”. In Italy, someone making the same amount would submit “€50.000,00”. A “clean” version of this would be <code>50000</code>.</span></p>
+<p><span class="fragment fade-in">In addition to formatting quirks, sometimes data is literally missing. This could be due to someone forgetting to enter their income, not wanting to disclose their income, or them not having an income to report. Whatever the reason, we need to come up with a way to handle this.</span></p>
+<p>In R, missing data is represented by <code>NA</code>. <code>NA</code> values are helpful because it allows us to differentiate between “real” data and missing data. However, <code>NA</code> values require special attention.</p>
+<p><span class="fragment fade-in">Let’s consider the example of <code>mean()</code>. If you compute the mean of a vector, say <code>y &lt;- c(4, 9, 2, 5)</code>, you could use <code>mean(y)</code>. This would give an answer of 5.</span> <span class="fragment fade-in fade-in">What if one of those values were missing?</span></p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.1</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">295.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">293.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">223.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">225.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">239.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">234.1</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="cn">NA</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</details>
 </div>
 </div>
+<p><span class="fragment fade-in">It generates an <code>NA</code> because R isn’t sure how what to do with the missing value since it could be anything.</span></p>
+<p>To avoid generating <code>NA</code>s when using <code>mean()</code> (or even other functions, too), you need to tell R what to do with the missing data. <code>mean()</code> has an argument <code>na.rm</code> which accepts a boolean value. If this is equal to <code>TRUE</code>, the <code>NA</code> value will be ignored. If it is set to <code>FALSE</code>, the missing value will be considered (and thus the output will be <code>NA</code>).</p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.2</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2006</td>
-<td style="text-align: right;">245.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2007</td>
-<td style="text-align: right;">229.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">245.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: right;">280.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">260.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2011</td>
-<td style="text-align: right;">236.3</td>
-</tr>
-</tbody>
-</table>
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</details>
 </div>
 </div>
+</section>
+<section id="back-to-central-tendency" class="level2">
+<h2 class="anchored" data-anchor-id="back-to-central-tendency">Back to Central Tendency</h2>
+<p>Every population has a <em>true</em> mean, median, mode, etc. However, as we’ve already discussed, we cannot always observe the entire population for various reasons.</p>
+<p><span class="fragment fade-in">Population parameters are usually denoted by Greek letters. For example, the population mean is denoted as <em>mu</em>, or <span class="math inline">\(\mu\)</span>.</span> <span class="fragment fade-in">The sample mean is denoted by <em>y bar</em>, or <span class="math inline">\(\bar{y}\)</span></span></p>
+<p>Each of the above measures have their own strengths and weaknesses. Usually, people care the most about the mean, and less about the median and mode.</p>
+<p><span class="fragment fade-in">An important strength of the mean is that it has a concise mathematical formula. An important weakness, however, is that the mean is susceptible to influence from outliers.</span></p>
+<p>Consider <a href="https://www.tigerdroppings.com/rant/o-t-lounge/1986-avg-salary-for-unc-geography-major/101667372/">this example of how the mean can be influenced by extreme values</a>.</p>
+<p><span class="fragment fade-in">The average salary of geography majors who graduated from the University of North Carolina Chapel Hill in 1985, 1986, and 1987 were</span> <span class="fragment fade-in">$33,000</span><span class="fragment fade-in">, $3,600,000</span><span class="fragment fade-in">, and $33,500, respectively.</span></p>
+<p><span class="fragment fade-in">Michael Jordan, the famous NBA star, graduated from UNC in 1986, and his salary was so high that it dragged up the mean by <em>a lot</em>.</span></p>
+<div class="fragment fade-in">
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Dataset 1.3</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">State</th>
-<th style="text-align: right;">Year</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">2001</td>
-<td style="text-align: right;">299.3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: right;">243.1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2010</td>
-<td style="text-align: right;">212.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2014</td>
-<td style="text-align: right;">259.4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">221.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2021</td>
-<td style="text-align: right;">271.0</td>
-</tr>
-</tbody>
-</table>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is made up data to highlight the issue</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># $10,000,000 is an outlier from the &quot;true&quot; central tendency of ~$33,000</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>salaries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">31000</span>, <span class="dv">34000</span>, <span class="dv">32000</span>, <span class="dv">34000</span>, <span class="dv">33000</span>, <span class="dv">20000000</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(salaries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3360667</code></pre>
+</div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Depending on the information you’d like to convey, choose your measure of central tendency carefully!</span></p>
+<p>Of course, R has <code>mean</code>, but let’s code our own version for practice (fun?).</p>
+<p>First, we need to add up everything in the vector.</p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>(salaries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Second, we need to find the number of observations we’re working with.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If this was in a data.frame, you would use: nrow(name_of_data.frame)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">length</span>(salaries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<p><span class="fragment fade-in">Finally, we need to divide the two.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>numerator <span class="sc">/</span> denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3360667</code></pre>
+</div>
+</details>
 </div>
 </div>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>At this point, both R and RStudio should be downloaded on your personal machine. Let’s set up a file system for this course and make sure you can connect to it via “working directories”.</p>
-<ol type="a">
-<li>Name your main folder <code>econ311</code>.</li>
-<li>Inside this folder, make several sub-folders: <code>homework</code>, <code>exams</code>, <code>project</code>, and <code>scrap</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>Inside your homework folder, create yet another sub-folder called <code>homework1</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-<li>Open RStudio and in the <strong>open script</strong> (should be <code>Untitled1</code>), use <code>setwd()</code> to set your working directory to your <code>econ311</code> folder.</li>
-<li><strong>In the console</strong>, execute the following code: <code>list.dirs(recursive = T)</code></li>
-<li>Take a screenshot of what you see.</li>
-</ol>
+<section id="weighted-average" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="weighted-average">Weighted Average</h2>
+<p>Another way to calculate the mean of a variable is via weighted average. Suppose you have the following data:</p>
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the same as typing: c(20, 20, ..., 20, 4, 4, 10, 10, ..., 10)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y_value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">20</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="dv">4</span>, <span class="dv">2</span>), <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">12</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 20 20 20 20 20 20  4  4 10 10 10 10 10 10 10 10 10 10 10 10</code></pre>
+</div>
+</details>
+</div>
+<p><span class="fragment fade-in">To calculate the mean of this, we can simply use <code>mean()</code>, which will do the algorithm we have already discussed (adding everything up and dividing by the total number of observations). However, a “quicker” way to do this would be to use weighted average. The formula for weighted average is as follows:</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\frac{\sum_{i = 1}^g w_i \times y_i}{\sum_{i = 1}^g w_i}\text{, where }g\text{ is the number of unique values of }y_i\]</span></p>
+</div>
+<p>Given this formula, the number of unique values is 3. To examine this in R, you can use a combination of <code>unique()</code> and <code>length()</code>: <code>length(unique(y_value)):</code> 3</p>
+<p><span class="fragment fade-in">Then, <span class="math inline">\(w_i\)</span> is the “weight” for each <span class="math inline">\(y_i\)</span>. Of course, I have explicitly set the <span class="math inline">\(w_i\)</span>’s to be 6, 2, and 12. However, we can find the number of occurrences of each <span class="math inline">\(y_i\)</span> by using <code>table()</code>: <code>table(y_value):</code> 2, 12, 6. Notice how this is a different ordering that 6, 2, 12. This is because R will <em>order</em> the values in <code>table()</code>.</span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(y_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>y_value
+ 4 10 20 
+ 2 12  6 </code></pre>
+</div>
+</details>
+</div>
+</div>
+<p>How can we code up the weighted average formula in R?</p>
+<p><span class="fragment fade-in">Unfortunately, we cannot simply multiply the output of <code>table()</code> and <code>unique()</code>. We need to order the output of <code>unique()</code> first. We can use the <code>sort()</code> function for this task.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Then, we can code like before.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></span></p>
+<div class="fragment fade-in">
+<div class="cell" data-layout-align="center">
+<details open>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>unique_values <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(y_value))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>unique_weights <span class="ot">&lt;-</span> <span class="fu">table</span>(y_value)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>numerator <span class="ot">&lt;-</span> <span class="fu">sum</span>(unique_values <span class="sc">*</span> unique_weights)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>denominator <span class="ot">&lt;-</span> <span class="fu">sum</span>(unique_weights)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mean:&quot;</span>, <span class="fu">mean</span>(y_value), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Weighted Mean:&quot;</span>, numerator <span class="sc">/</span> denominator)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<details>
+<summary>
+Output
+</summary>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean: 12.4 
+Weighted Mean: 12.4</code></pre>
+</div>
+</details>
+</div>
+</div>
 </section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Copy and paste the following vector into R: <code>vec &lt;- sample(1:100, 10, FALSE)</code></p>
-<ol type="a">
-<li>Print <code>vec</code> to the console.</li>
-<li>Print the first 5 elements of <code>vec</code>.</li>
-<li>Print the last 3 elements of <code>vec</code>.</li>
-<li>Print the 3rd and 8th elements of <code>vec</code>.</li>
-<li>Print the elements of <code>vec</code> that are larger than 50.</li>
-<li>Print the elements of <code>vec</code> that are odd.</li>
-</ol>
-</section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Read in <a href="https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv">Elderton and Pearson’s (1910) data on drinking and wages</a> using <code>read.csv()</code> and save it as <code>DrinksWages</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<ol type="a">
-<li>Print the column names of <code>DrinksWages</code>.</li>
-<li>What type of measurement (Nominal, Ordinal, Interval, or Ratio) is <code>sober</code>? Explain why.</li>
-<li>What portion of wages are larger than 30?</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>total</code> that is the sum of <code>sober</code> and <code>drinks</code>.</li>
-<li>Create a new variable inside <code>DrinksWages</code> called <code>x</code> that is <code>drinks</code> divided by <code>x</code>. What is an interpretation of <code>x</code>?</li>
-<li>Plot <code>x</code> on the <span class="math inline">\(X\)</span>-axis and wages on the <span class="math inline">\(Y\)</span>-axis. Make each <code>class</code> a different color. Use <code>pch = 19</code>. Label your axes appropriately.</li>
-</ol>
-</section>
-<section id="question-5" class="level2">
-<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
-<p><a href="https://www.erikthered.com/tutor/historical-average-SAT-scores.pdf">This <code>.pdf</code> file</a> contains SAT scores over time for men and women. Unfortunately, when I copied it into a <code>.csv</code>, the formatting got messed up.</p>
-<ol type="a">
-<li><p>Recreate the data in <a href="https://alexcardazzi.github.io/econ311/data/sat2.csv"><code>sat2.csv</code></a> as a <code>data.frame</code>. Rename the year and total math columns (the first one).</p></li>
-<li><p>Make a plot where year is on the x-axis and total math is on the y-axis. Make sure to convert the total math variable to numeric. Be sure to label the axes. Color the plot where all years after 1999 are a different color than pre-2000. Be an <em>artist</em>.</p></li>
-<li><p>Remove the rows where total math is missing. Also, remove the columns between year and total math, and everything after total math.</p></li>
-</ol>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>You may create other folders as well, but this is a good start for now.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is probably a good location to save this file (your answers)!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Note: you can use either the hyperlink’s URL <em>or</em> you can click on the hyperlink, download the file, and read it in via file path. If you read it via file path, you should move the file so it is in your <code>homework1</code> folder.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html">The data documentation</a> might be important for understanding what each variable means.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>There is another function (<code>order()</code>) that returns the <em>position</em> of the elements if you were to sort them. To get our desired effect, we’d need to use: <code>unique(y_value)[order(unique(y_value))]</code>. Ultimately, this is probably more work than necessary in this case. However, this becomes helpful when ordering data frames.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This idea of weighted mean might seem overly complicated. However, I promise we’ll revisit it later in the module.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
