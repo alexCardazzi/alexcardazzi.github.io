@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Assistant Professor | Old Dominion University | acardazz@odu.edu\n\n\n\n\n\n\n\n\nApplied microeconomist with research interests including transportation, urban, and sports economics.\n\n\nAssistant Professor of Economics at Old Dominion University\n\n\nPh.D. Economics - West Virginia University (2017-2021)\n\n\nB.S. Mathematics - Ramapo College (2013-2017)"
+    "text": "Assistant Professor | Old Dominion University | acardazz@odu.edu\n\n\n\n\n\n\nApplied microeconomist with research interests including transportation, urban, and sports economics.\n\n\nAssistant Professor of Economics at Old Dominion University\n\n\nPh.D. Economics - West Virginia University (2017-2021)\n\n\nB.S. Mathematics - Ramapo College (2013-2017)"
   },
   {
     "objectID": "about.html",
@@ -23,7 +23,7 @@
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
-    "title": "Alexander Cardazzi",
+    "title": "Classroom Experience",
     "section": "",
     "text": "Classroom Experience\nOld Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)\n\n\n\nNon-Classroom Experience\nClaremont Graduate University - Two Day Programming Workshop (January ’19)\n\nIntroductory Web Scraping in R\n\nWest Virginia University - Empirical Workshop (July ’19 - July ’22)\n\nIntroduction to R Programming (’19 - ’21)\nRegression in R (’20, ’21)\nStrings, Loops, and If (’21)\nPlotting and Maps (’21, ’22)\nIntroductory (’20 - ’22) & Advanced (’19 - ’22) Web Crawling & Scraping in R"
   },
@@ -130,7 +130,7 @@
     "href": "econ311.html",
     "title": "Econ 311",
     "section": "",
-    "text": "Module 0: Course Introduction\n\n\nSyllabus\nModule 0.1: Introduction\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1 (file)\n\n\n\n\nModule 2: One Y Variable\n\n\n\n\nModule 3: One X Variable\n\n\n\n\nModule 4: Many X Variables\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\nResources, Data, Misc."
+    "text": "Module 0: Course Introduction\n\n\nSyllabus\nModule 0.1: Introduction\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1 (file)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2 (file)\n\n\n\n\nModule 3: One X Variable\n\n\n\n\nModule 4: Many X Variables\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\nResources, Data, Misc."
   },
   {
     "objectID": "software.html",
