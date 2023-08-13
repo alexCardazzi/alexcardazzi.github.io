@@ -152,5 +152,19 @@
     "title": "Alexander Cardazzi",
     "section": "",
     "text": "Local Projections Difference in Differences\n\n\n\n\n\nR implementation of Dube et al. (2023).\nInstall by devtools::install_github(\"alexCardazzi/lpdid\"), and load by library(lpdid). The package vignette can be found here\nVersion 0.1.0, written with Zach Porreca."
+  },
+  {
+    "objectID": "using_r.html#wvu-empirical-workshop-22",
+    "href": "using_r.html#wvu-empirical-workshop-22",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Web Crawling & Scraping in R | Homework Solutions\nPlots & Maps"
+  },
+  {
+    "objectID": "media.html#professional-sporting-events-increase-seasonal-influenza-mortality-in-us-cities",
+    "href": "media.html#professional-sporting-events-increase-seasonal-influenza-mortality-in-us-cities",
+    "title": "In the Media",
+    "section": "",
+    "text": "As Pro Sports Ponder Reopening, Flu Study Suggests Danger of COVID Spread\nU.S. cities with pro sports see more flu deaths"
   }
 ]
