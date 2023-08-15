@@ -27,6 +27,7 @@ knitr::opts_chunk$set(out.width = '90%')
 knitr::opts_chunk$set(results = 'hold')
 knitr::opts_chunk$set(fig.show = 'hold')
 knitr::opts_chunk$set(dev='svg')
+knitr::opts_chunk$set(error = TRUE)
 par(mar = c(4.1, 4.1, 1.1, 4.1))
 
 hooks = knitr::knit_hooks$get()
