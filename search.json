@@ -200,7 +200,7 @@
     "href": "nba_awards.html",
     "title": "NBA Awards",
     "section": "",
-    "text": "In the NBA, players are awarded MVP, DPOY, etc. by a voting system run by sports writers (formally, voting was done by players). For the MVP in particular, writers vote for first through fifth places. 10 points are assigned for a first place vote, 8 points for a second place vote, and so on.\nFollowing the 2015-16 NBA season, Stephen Curry became the first ever unanimous MVP of the league. The most amount of points a player could have gotten that year was 1310 since there were 131 voting media members. The second place finisher, Kawhi Leonard, scored 634 points via some combination of second through fifth place votes. Kawhi’s point total was 48.4% of the total possible points.\nIf we use our imagination, we can think of Kawhi’s season amounting to 48.4% of an MVP season, or 0.484 MVPs. If we sum all of Kawhi’s MVP percentages over his career, he would net an expected 1.16 MVPs.\nI collected data from the 1955-1956 through the 2022-2023 NBA & ABA seasons. For each major NBA/ABA award, we can figure out each player’s expected total. This should not be taken too seriously, but rather be seen as a fun exploration."
+    "text": "In the NBA, players are awarded MVP, DPOY, etc. by a voting system run by sports writers (formerly, voting was done by players). For the MVP in particular, writers vote for first through fifth places. 10 points are assigned for a first place vote, 8 points for a second place vote, and so on.\nFollowing the 2015-16 NBA season, Stephen Curry became the first ever unanimous MVP of the league. The most amount of points a player could have gotten that year was 1310 since there were 131 voting media members. The second place finisher, Kawhi Leonard, scored 634 points via some combination of second through fifth place votes. Kawhi’s point total was 48.4% of the total possible points.\nIf we use our imagination, we can think of Kawhi’s season amounting to 48.4% of an MVP season, or 0.484 MVPs. If we sum all of Kawhi’s MVP percentages over his career, he would net an expected 1.16 MVPs.\nI collected data from the 1955-1956 through the 2022-2023 NBA & ABA seasons. For each major NBA/ABA award, we can figure out each player’s expected total. This should not be taken too seriously, but rather be seen as a fun exploration."
   },
   {
     "objectID": "nba_awards.html#mvp",
@@ -263,13 +263,13 @@
     "href": "nba_awards.html#all-nba-first-teams",
     "title": "NBA Awards",
     "section": "All-NBA First Teams",
-    "text": "All-NBA First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. Interpret this table carefully."
+    "text": "All-NBA First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. In addition, this is for first team only. Interpret this table carefully."
   },
   {
     "objectID": "nba_awards.html#all-defensive-first-teams",
     "href": "nba_awards.html#all-defensive-first-teams",
     "title": "NBA Awards",
     "section": "All-Defensive First Teams",
-    "text": "All-Defensive First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. Interpret this table carefully."
+    "text": "All-Defensive First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. In addition, this is for first team only. Interpret this table carefully."
   }
 ]
