@@ -130,7 +130,7 @@
     "href": "econ311.html",
     "title": "Econ 311",
     "section": "",
-    "text": "Module 0: Course Introduction\n\n\nSyllabus (file)\nHomework Template (file)\nFinal Project(file)\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1 (file)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2 (file)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3 (file)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4 (file)\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\n\n\n\n\nResources, Data, Misc.\n\n\nFAQ / Common Mistakes (file)\nCourse Data (file)"
+    "text": "Module 0: Course Introduction\n\n\nSyllabus (file) \nHomework Template (Windows | Mac OS)\nFinal Project(file)\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1 (file)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2 (file)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3 (file)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4 (file)\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\n\n\n\n\nResources, Data, Misc.\n\n\nFAQ / Common Mistakes (file)\nCourse Data (file)"
   },
   {
     "objectID": "software.html",
@@ -271,5 +271,33 @@
     "title": "NBA Awards",
     "section": "All-Defensive First Teams",
     "text": "All-Defensive First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. In addition, this is for first team only. Interpret this table carefully."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html",
+    "href": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html",
+    "title": "Assignment Template",
+    "section": "",
+    "text": "When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\nCode\n1 + 1\n\n\n\nOutput\n\n\n[1] 2\n\n\n\n\nMake\nLists\nLike\nThis\n\n\n\nCode\ncat(\"More code\")\n\n\n\nOutput\n\n\nMore code\n\n\n\n\nAnd type code between like above."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-1",
+    "href": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-1",
+    "title": "Assignment Template",
+    "section": "",
+    "text": "When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\nCode\n1 + 1\n\n\n\nOutput\n\n\n[1] 2\n\n\n\n\nMake\nLists\nLike\nThis\n\n\n\nCode\ncat(\"More code\")\n\n\n\nOutput\n\n\nMore code\n\n\n\n\nAnd type code between like above."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-2",
+    "href": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-2",
+    "title": "Assignment Template",
+    "section": "Question 2",
+    "text": "Question 2\nHere is some text. Blah blah blah.\nHere is how you use italics, and here is how you can bold words/phrases.\nBullet points can be dashes\n\nLike\nThis"
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-3",
+    "href": "alexcardazzi.github.io/econ311/module00/hw00_macOS.html#question-3",
+    "title": "Assignment Template",
+    "section": "Question 3",
+    "text": "Question 3\nFinally, you can type math using “Latex”. You will not have to write many equations, but it might make your life a bit easier if you know how to write simple things like \\(\\beta\\), \\(\\beta_{0}\\), \\(\\widehat{\\beta}\\), \\(\\times\\), \\(\\implies\\), \\(\\sum\\), \\(\\epsilon\\), \\(\\alpha\\), \\(x^{2}\\), \\(\\text{Words}_{i}\\times \\beta\\). Most latex you’ll end up writing will almost certainly be using things like this. Use two dollar signs to place equations on their own lines like:\n\\[Y = \\alpha + \\beta X + \\epsilon\\]\nYou can use code font like this, and you can execute R code “inline” like this: hello world! or 4."
   }
 ]
