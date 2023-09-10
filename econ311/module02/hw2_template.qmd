@@ -1,0 +1,183 @@
+---
+title: "Homework 2"
+subtitle: "Due 2023-09-29"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+## Question `r Q <- Q+1; Q`
+
+Write a function that calculates a z-score.  Your function should accept two arguments: `y` and `data`.  You will need to use `data` to estimate the distribution's parameters, and `y` is what you will convert into a z-score.  Make sure to check if each argument is empty, and if either is, return an error to the user.
+
+```{r}
+# Write your code here.
+```
+
+## Question `r Q <- Q+1; Q`
+
+Write a function that accepts one argument, `n`.  The output of the function should be a pyramid of stars (`*`).  For example, if `n=4`:
+
+```{r}
+# Write your function here
+
+
+# Test your function here
+```
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use the state-year cigarette panel data from the previous module ([data](https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Cigar.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/Ecdat/Cigar.html)) for this question.  The beautiful disaster below is a time series of the per-capita cigarette pack sales by state.  Recreate this plot.
+
+```{r}
+# Recreate the plot here
+```
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+The Central Limit Theorem applies when sampling the population *with* replacement.  For example, if you are sampling sates in the US, this means that you could sample the same state multiple times.  Using the same data and parameters as in the module notes:^[For example, use [School Expenditures and Test Scores for the 50 States](https://vincentarelbundock.github.io/Rdatasets/csv/stevedata/Guber99.csv) ([documentation](https://vincentarelbundock.github.io/Rdatasets/doc/stevedata/Guber99.html)), `tsalary`, a sample of 10 and 10,000 iterations.]
+
+`r q <- q+1; letters[q]`. Create a summary statistics table for both the "with replacement" and "without replacement" distributions. **Hint**: you might need to turn the two vectors into a single `data.frame`.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Using `density()`, plot the two distributions on the same set of axes.  Make sure to include a legend, label your axes, etc.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Comment on the differences between the two distributions.
+
+*Write your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For the following question, use [data on the heights and weights of the 2022-23 NBA and WNBA all-stars](https://alexcardazzi.github.io/econ311/data/bball_allstars.csv).
+
+`r q <- q+1; letters[q]`. Read data into R.  Call the dataset `bball`.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Remove any columns with missing data.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Print the row of the youngest player.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Create summary statistics tables for the NBA and WNBA.  Include age, height, and weight.  Comment on the differences.
+
+```{r results='hold'}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Plot the distribution of heights for the NBA and WNBA.  These should be on the same axes. Make the two distributions different colors, include a legend, label your axes, etc.
+
+```{r fig.alt="Distribution plot of NBA and WNBA heights."}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Which player(s) is taller relative to their respective league: the tallest NBA player(s) or the tallest WNBA player(s)? *Note*: do not manually type the player names / heights, use code to select the player's info. *Hint*: use your z-score formula from a previous question.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Create and print a 95\% confidence interval for NBA heights.
+
+```{r results='hold'}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. I have a hypothesis that older players are heavier than younger players.^[Define "young" 25 or younger.] Use `t.test()` to preform a hypothesis test comparing weights of young and old players.  Interpret the p-value *in words*. What is the conclusion of the test?
+
+```{r}
+# Write your code here.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

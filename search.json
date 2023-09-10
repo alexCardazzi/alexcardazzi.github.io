@@ -130,7 +130,7 @@
     "href": "econ311.html",
     "title": "Econ 311",
     "section": "",
-    "text": "Module 0: Course Introduction\n\n\nSyllabus (file) \nHomework Template (Windows | Mac OS)\nFinal Project(file)\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1 (file)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2 (file)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3 (file)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4 (file)\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\n\n\n\n\nResources, Data, Misc.\n\n\nFAQ / Common Mistakes (file)\nCourse Data (file)"
+    "text": "Module 0: Course Introduction\n\n\nSyllabus (file) \nHomework Template (Windows | Mac OS)\nFinal Project(file)\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2(file | template)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3(file | template)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4(file | template)\n\n\n\n\nModule 5: Special Topics in R\n\n\n\n\n\n\n\n\nResources, Data, Misc.\n\n\nFAQ / Common Mistakes (file)\nCourse Data (file)"
   },
   {
     "objectID": "software.html",
@@ -299,5 +299,82 @@
     "title": "Assignment Template",
     "section": "Question 3",
     "text": "Question 3\nFinally, you can type math using “Latex”. You will not have to write many equations, but it might make your life a bit easier if you know how to write simple things like \\(\\beta\\), \\(\\beta_{0}\\), \\(\\widehat{\\beta}\\), \\(\\times\\), \\(\\implies\\), \\(\\sum\\), \\(\\epsilon\\), \\(\\alpha\\), \\(x^{2}\\), \\(\\text{Words}_{i}\\times \\beta\\). Most latex you’ll end up writing will almost certainly be using things like this. Use two dollar signs to place equations on their own lines like:\n\\[Y = \\alpha + \\beta X + \\epsilon\\]\nYou can use code font like this, and you can execute R code “inline” like this: hello world! or 4."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module04/hw4_template.html",
+    "href": "alexcardazzi.github.io/econ311/module04/hw4_template.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "For this question, you will have to put together two sets of data. First, you will use college/university statistics from 1995’s issue of US News and World Report (data, documentation). Second, you will use earnings data of students from a variety of colleges/universities from College Scorecard (data, documentation).\n\nRead in the US News and World Report data. Save it as a data frame called usnwr.\n\n\n\nCode\n# Write your code here.\n\n\n\nRead in the College Scorecard data into a data frame called scorecard.\n\n\n\nCode\n# Write your code here.\n\n\n\nThe College Scorecard data represents outcomes for students who a) received federal financial aid and b) began as undergraduates at the institution ten years prior. Therefore, College Scorecard data from year \\(Y\\) can be matched to US News and World Report data from \\(Y-10\\). Unfortunately, the earliest year of Scorecard data is from 2007 while the US News and World Report data is from 1995. For simplification purposes, merge earnings_med from the 2007 Scorecard data into the 1995 US News and World Report Data. It might be easiest to eliminate all non-2007 data from scorecard before merging.\n\n\n\nCode\n# Write your code here.\n\n\n\nGenerate a summary statistics table for median student earnings, whether the school is private, the acceptance rate, size of the student body, student/faculty ratio, and instructional expenditure per student. Note: you might need to modify/create some of these variables.\n\n\n\nCode\n# Write your code here.\n\n\n\nEstimate a regression where median student earnings (log) are explained by whether the school is private, the acceptance rate, size of the student body (log), student/faculty ratio, and instructional expenditure per student (log). Display the coefficient estimates (using summary() is fine).\n\n\n\nCode\n# Write your code here.\n\n\n\nInterpret the coefficients. Can you interpret these results causally? Why or why not?\n\nWrite your response here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module04/hw4_template.html#question-1",
+    "href": "alexcardazzi.github.io/econ311/module04/hw4_template.html#question-1",
+    "title": "Homework 4",
+    "section": "",
+    "text": "For this question, you will have to put together two sets of data. First, you will use college/university statistics from 1995’s issue of US News and World Report (data, documentation). Second, you will use earnings data of students from a variety of colleges/universities from College Scorecard (data, documentation).\n\nRead in the US News and World Report data. Save it as a data frame called usnwr.\n\n\n\nCode\n# Write your code here.\n\n\n\nRead in the College Scorecard data into a data frame called scorecard.\n\n\n\nCode\n# Write your code here.\n\n\n\nThe College Scorecard data represents outcomes for students who a) received federal financial aid and b) began as undergraduates at the institution ten years prior. Therefore, College Scorecard data from year \\(Y\\) can be matched to US News and World Report data from \\(Y-10\\). Unfortunately, the earliest year of Scorecard data is from 2007 while the US News and World Report data is from 1995. For simplification purposes, merge earnings_med from the 2007 Scorecard data into the 1995 US News and World Report Data. It might be easiest to eliminate all non-2007 data from scorecard before merging.\n\n\n\nCode\n# Write your code here.\n\n\n\nGenerate a summary statistics table for median student earnings, whether the school is private, the acceptance rate, size of the student body, student/faculty ratio, and instructional expenditure per student. Note: you might need to modify/create some of these variables.\n\n\n\nCode\n# Write your code here.\n\n\n\nEstimate a regression where median student earnings (log) are explained by whether the school is private, the acceptance rate, size of the student body (log), student/faculty ratio, and instructional expenditure per student (log). Display the coefficient estimates (using summary() is fine).\n\n\n\nCode\n# Write your code here.\n\n\n\nInterpret the coefficients. Can you interpret these results causally? Why or why not?\n\nWrite your response here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module04/hw4_template.html#question-2",
+    "href": "alexcardazzi.github.io/econ311/module04/hw4_template.html#question-2",
+    "title": "Homework 4",
+    "section": "Question 2",
+    "text": "Question 2\nIn the early 2000s, two economists ran an experiment where they sent fictitious resumes in response to job ads in Chicago and Boston. The authors varied the qualities of the fictitious resumes as well as the names on the resumes. Some resumes were given stereotypically white-sounding names (Emily, Brendan) and others African-American-sounding names (Lakisha, Jamal).1\nIn this part of the homework, we are going to investigate whether employers engage in racial discrimination when sifting through resumes using data collected by the researchers (data; documentation).2\n\nRead the data into a data frame called resume.\n\n\n\nCode\n# Write your code here.\n\n\n\nCreate the following binary variables:\n\nA variable called chicago that is equal to one if city is equal to “chicago” and zero otherwise.\nA variable called female that is equal to one if gender is equal to “female” and zero otherwise.\nA variable called black that is equal to one if ethnicity is equal to “afam” and zero otherwise.\nA variable called callback equal to one if call is equal to “yes” and zero otherwise.\n\n\n\n\nCode\n# Write your code here.\n\n\n\nEstimate and display the coefficients (using summary() is fine) of the following regression:\n\n\\[\\begin{aligned}\\text{Callback}_i = \\ &\\beta_0 + \\beta_1 \\text{Jobs}_i + \\beta_2 \\text{Experience}_i + \\beta_3 \\text{Female}_i \\\\&+ \\beta_4 \\text{Chicago}_i + \\beta_5 \\text{Black}_i+ \\epsilon_i\\end{aligned}\\]\n\n\nCode\n# Write your code here.\n\n\n\nInterpret each coefficient in words.\n\nWrite your response here.\n\nCan we interpret these results causally? Why or why not?\n\nWrite your response here.\n\nEstimate and display the coefficients (using summary() is fine) of the following regression:\n\n\\[\\begin{aligned}\\text{Callback}_i = \\ &\\beta_0 + \\beta_1 \\text{Jobs}_i + \\beta_2 \\text{Experience}_i + \\beta_3 \\text{Female}_i \\\\&+ \\beta_4 \\text{Chicago}_i + \\beta_5 \\text{Black}_i + \\beta_6 (\\text{Chicago}_i \\times \\text{Black}_i)+ \\epsilon_i\\end{aligned}\\]\n\n\nCode\n# Write your code here.\n\n\n\nInterpret the estimates for \\(\\beta_4\\), \\(\\beta_5\\), and \\(\\beta_6\\) from the previous regression.\n\nWrite your response here.\n\nRe-estimate the regression once using data only from Chicago, and another using data only from Boston. Report the coefficients using modelsummary. Discuss any coefficients that result in different conclusions for the two cities.\n\n\n\nCode\n# Write your code here.\n\n\nWrite your response here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module04/hw4_template.html#footnotes",
+    "href": "alexcardazzi.github.io/econ311/module04/hw4_template.html#footnotes",
+    "title": "Homework 4",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe process of determining which names are stereotypically black/white is described in detail in the published draft.↩︎\nIntrigued students may read a non-technical summary of the paper here. In addition, similar research on ban-the-box finds that these policies increase racial discrimination.↩︎"
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Write a function that calculates a z-score. Your function should accept two arguments: y and data. You will need to use data to estimate the distribution’s parameters, and y is what you will convert into a z-score. Make sure to check if each argument is empty, and if either is, return an error to the user.\n\n\nCode\n# Write your code here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-1",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-1",
+    "title": "Homework 2",
+    "section": "",
+    "text": "Write a function that calculates a z-score. Your function should accept two arguments: y and data. You will need to use data to estimate the distribution’s parameters, and y is what you will convert into a z-score. Make sure to check if each argument is empty, and if either is, return an error to the user.\n\n\nCode\n# Write your code here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-2",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-2",
+    "title": "Homework 2",
+    "section": "Question 2",
+    "text": "Question 2\nWrite a function that accepts one argument, n. The output of the function should be a pyramid of stars (*). For example, if n=4:\n\n\nCode\n# Write your function here\n\n\n# Test your function here"
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-3",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-3",
+    "title": "Homework 2",
+    "section": "Question 3",
+    "text": "Question 3\nUse the state-year cigarette panel data from the previous module (data; documentation) for this question. The beautiful disaster below is a time series of the per-capita cigarette pack sales by state. Recreate this plot.\n\n\nCode\n# Recreate the plot here"
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-4",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-4",
+    "title": "Homework 2",
+    "section": "Question 4",
+    "text": "Question 4\nThe Central Limit Theorem applies when sampling the population with replacement. For example, if you are sampling sates in the US, this means that you could sample the same state multiple times. Using the same data and parameters as in the module notes:1\n\nCreate a summary statistics table for both the “with replacement” and “without replacement” distributions. Hint: you might need to turn the two vectors into a single data.frame.\n\n\n\nCode\n# Write your code here.\n\n\n\nUsing density(), plot the two distributions on the same set of axes. Make sure to include a legend, label your axes, etc.\n\n\n\nCode\n# Write your code here.\n\n\n\nComment on the differences between the two distributions.\n\nWrite your answer here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-5",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#question-5",
+    "title": "Homework 2",
+    "section": "Question 5",
+    "text": "Question 5\nFor the following question, use data on the heights and weights of the 2022-23 NBA and WNBA all-stars.\n\nRead data into R. Call the dataset bball.\n\n\n\nCode\n# Write your code here.\n\n\n\nRemove any columns with missing data.\n\n\n\nCode\n# Write your code here.\n\n\n\nPrint the row of the youngest player.\n\n\n\nCode\n# Write your code here.\n\n\n\nCreate summary statistics tables for the NBA and WNBA. Include age, height, and weight. Comment on the differences.\n\n\n\nCode\n# Write your code here.\n\n\n\nPlot the distribution of heights for the NBA and WNBA. These should be on the same axes. Make the two distributions different colors, include a legend, label your axes, etc.\n\n\n\nCode\n# Write your code here.\n\n\n\nWhich player(s) is taller relative to their respective league: the tallest NBA player(s) or the tallest WNBA player(s)? Note: do not manually type the player names / heights, use code to select the player’s info. Hint: use your z-score formula from a previous question.\n\n\n\nCode\n# Write your code here.\n\n\n\nCreate and print a 95% confidence interval for NBA heights.\n\n\n\nCode\n# Write your code here.\n\n\n\nI have a hypothesis that older players are heavier than younger players.2 Use t.test() to preform a hypothesis test comparing weights of young and old players. Interpret the p-value in words. What is the conclusion of the test?\n\n\n\nCode\n# Write your code here."
+  },
+  {
+    "objectID": "alexcardazzi.github.io/econ311/module02/hw2_template.html#footnotes",
+    "href": "alexcardazzi.github.io/econ311/module02/hw2_template.html#footnotes",
+    "title": "Homework 2",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFor example, use School Expenditures and Test Scores for the 50 States (documentation), tsalary, a sample of 10 and 10,000 iterations.↩︎\nDefine “young” 25 or younger.↩︎"
   }
 ]
