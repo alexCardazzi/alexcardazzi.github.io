@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexander Cardazzi -</title>
+<title>Alexander Cardazzi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,11 +36,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -65,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -74,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./using_r.html">Using R</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Alexander Cardazzi</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -86,21 +90,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./cardazzi_headshot.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/espresso.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main tools-wide">
-    <a href="mailto:acardazz@odu.edu" rel="" title="University Email" class="quarto-navigation-tool px-1" aria-label="University Email"><i class="bi bi-envelope-fill"></i></a>
-    <a href="mailto:alex.cardazzi@gmail.com" rel="" title="Personal Email" class="quarto-navigation-tool px-1" aria-label="Personal Email"><i class="bi bi-envelope"></i></a>
-    <a href="https://twitter.com/ACardazzi" rel="" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+      <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -108,111 +104,64 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cardazzi_cv.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CV</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./media.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">In the Media</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using_r.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Using R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Me</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#wvu-empirical-workshop-22" id="toc-wvu-empirical-workshop-22" class="nav-link active" data-scroll-target="#wvu-empirical-workshop-22">WVU Empirical Workshop ’22</a></li>
-  <li><a href="#wvu-empirical-workshop-21" id="toc-wvu-empirical-workshop-21" class="nav-link" data-scroll-target="#wvu-empirical-workshop-21">WVU Empirical Workshop ’21</a></li>
-  <li><a href="#wvu-empirical-workshop-20" id="toc-wvu-empirical-workshop-20" class="nav-link" data-scroll-target="#wvu-empirical-workshop-20">WVU Empirical Workshop ’20</a></li>
-  <li><a href="#shiny-apps" id="toc-shiny-apps" class="nav-link" data-scroll-target="#shiny-apps">Shiny Apps</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Alexander Cardazzi</h1>
+</div>
 
 
-<section id="wvu-empirical-workshop-22" class="level2">
-<h2 class="anchored" data-anchor-id="wvu-empirical-workshop-22">WVU Empirical Workshop ’22</h2>
-<p><a href="./using-r/ew_wvu_2022/web_stuff.html" target="_blank" rel="noreferrer noopener">Web Crawling &amp; Scraping in R</a> | <a href="./using-r/ew_wvu_2021/HW3_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2021/Plots_and_Maps.html" target="_blank" rel="noreferrer noopener">Plots &amp; Maps</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5OuY-jd9qm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-</section>
-<section id="wvu-empirical-workshop-21" class="level2">
-<h2 class="anchored" data-anchor-id="wvu-empirical-workshop-21">WVU Empirical Workshop ’21</h2>
-<p><a href="./using-r/ew_wvu_2021/Intro_to_R.html" target="_blank" rel="noreferrer noopener">Introduction to R</a> | <a href="./using-r/ew_wvu_2021/HW1_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2021/Regressions_in_R.html" target="_blank" rel="noreferrer noopener">Regressions in R</a> | <a href="./using-r/ew_wvu_2021/modelsummary_example.html" target="_blank" rel="noreferrer noopener"><code>modelsummary</code> Example</a></p>
-<p><a href="./using-r/ew_wvu_2021/Strings_Loops_If.html" target="_blank" rel="noreferrer noopener">Strings, Loops and If</a> | <a href="./using-r/ew_wvu_2021/HW2_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2021/Crawling_and_Scraping.html" target="_blank" rel="noreferrer noopener">Web Crawling &amp; Scraping in R</a> | <a href="./using-r/ew_wvu_2021/HW3_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2021/Plots_and_Maps.html" target="_blank" rel="noreferrer noopener">Plots &amp; Maps</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLprSLo6Kdv2Em9itp98Dejz85sRTLXA7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</section>
-<section id="wvu-empirical-workshop-20" class="level2">
-<h2 class="anchored" data-anchor-id="wvu-empirical-workshop-20">WVU Empirical Workshop ’20</h2>
-<p><a href="./using-r/ew_wvu_2020/Intro_to_R.html" target="_blank" rel="noreferrer noopener">Introduction to R</a> | <a href="./using-r/ew_wvu_2020/HW1_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2020/Regressions_in_R.html" target="_blank" rel="noreferrer noopener">Regressions in R</a> | <a href="./using-r/ew_wvu_2020/HW2_Solutions.html" target="_blank" rel="noreferrer noopener">Homework Solutions</a></p>
-<p><a href="./using-r/ew_wvu_2020/Crawling_and_Scraping.html" target="_blank" rel="noreferrer noopener">Web Crawling &amp; Scraping in R</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cbcISjisOKs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</section>
-<section id="shiny-apps" class="level2">
-<h2 class="anchored" data-anchor-id="shiny-apps">Shiny Apps</h2>
-<p><a href="https://alex-cardazzi.shinyapps.io/supply_demand_experiment/" target="_blank" rel="noreferrer noopener">Supply &amp; Demand Simulation</a></p>
-<p><a href="https://alex-cardazzi.shinyapps.io/reg_ex/" target="_blank" rel="noreferrer noopener">OLS Example</a></p>
-<p><a href="https://alex-cardazzi.shinyapps.io/dice_game/" target="_blank" rel="noreferrer noopener">Dice Game</a> (inspired by <a href="https://gamewright.com/product/Qwixx" target="_blank" rel="noreferrer noopener">Quix</a>)</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Assistant Professor | Old Dominion University | <a href="mailto:acardazz@odu.edu" target="_blank" rel="noreferrer noopener">acardazz@odu.edu</a></p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img src=".\images/cardazzi_headshot.jpg" class="r-stretch img-fluid"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:70%;">
+<!-- <br/> -->
+<!-- <br/> -->
+<!-- <center> -->
+<p><a href="https://twitter.com/ACardazzi" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-twitter fa-2xl" aria-label="twitter"></i></a> &nbsp; <a href="https://scholar.google.com/citations?user=NUkcCngAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer noopener"><i class="ai  ai-google-scholar ai-2xl" title="" style="color:"></i></a> &nbsp; <a href="https://orcid.org/0000-0001-7990-7171" target="_blank" rel="noreferrer noopener"><i class="ai  ai-orcid ai-2xl" title="" style="color:"></i></a> &nbsp; <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3506522" target="_blank" rel="noreferrer noopener"><i class="ai  ai-ssrn ai-2xl" title="" style="color:"></i></a> &nbsp; <a href="mailto:alex.cardazzi@gmail.com" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-envelope fa-2xl" aria-label="envelope"></i></a> &nbsp; <!-- [](https://www.odu.edu/directory/alexander-cardazzi){target="_blank" rel="noreferrer noopener"} --> <!-- </center> --></p>
+<details>
+<summary>
+Background, Employment, and Education
+</summary>
+<ul>
+<li>
+Applied microeconomist with research interests including urban, transportation, and sports economics.
+</li>
+<li>
+Assistant Professor of Economics at Old Dominion University
+</li>
+<li>
+Ph.D.&nbsp;Economics - West Virginia University (2017-2021)
+</li>
+</ul>
+</details>
+</div>
+</div>
+<!-- ![](alex_paint.jpg){.r-stretch} -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -324,7 +273,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -564,17 +513,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">© Copyright 2023, Alexander Cardazzi</div>
-  </div>
-</footer>
 
 
 
