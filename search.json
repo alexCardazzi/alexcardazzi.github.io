@@ -9,9 +9,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Twitter: Some Economics Talk, Mostly Basketball Talk\n\n\nCurrent University Email: Some Basketball Talk, Mostly Economics Talk\n\n\n\nCheck out my twitter threads about the NBA!\n\n\n\nHover over images below for a surprise…"
+    "text": "This page is very much non-serious and dedicated to things I enjoy such as basketball, music, comedy/movies, and cats. Below are also some (now old) pictures of me next to different bridges on different coasts.\n\n\n\n\n \n\n\n\n\n\n\n  \n\n\n\n\n\n\nI’m a fan of the New York Knicks, but enjoy thinking/talking about the NBA in general. Toying around with NBA data is a hobby of mine that sometimes results in research papers. I also enjoy playing basketball, but my game has not aged gracefully.\nCheck out some of my NBA twitter threads here. Also, check out these NBA award voting aggregates.\n\n\n\n\n\n\nBelow are my Spotify Wrapped playlists from the past years. Most of these songs are pretty good, but others were part of a phase or two…"
   },
   {
     "objectID": "research.html",
@@ -23,9 +23,9 @@
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
-    "title": "Classroom Experience",
+    "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Classroom Experience\nOld Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)\n\n\n\nNon-Classroom Experience\nClaremont Graduate University - Two Day Programming Workshop (January ’19)\n\nIntroductory Web Scraping in R\n\nWest Virginia University - Empirical Workshop (July ’19 - July ’22)\n\nIntroduction to R Programming (’19 - ’21)\nRegression in R (’20, ’21)\nStrings, Loops, and If (’21)\nPlotting and Maps (’21, ’22)\nIntroductory (’20 - ’22) & Advanced (’19 - ’22) Web Crawling & Scraping in R"
+    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
   },
   {
     "objectID": "research.html#working-papers",
@@ -114,14 +114,14 @@
   {
     "objectID": "media.html",
     "href": "media.html",
-    "title": "In the Media",
+    "title": "Alexander Cardazzi",
     "section": "",
     "text": "As Pro Sports Ponder Reopening, Flu Study Suggests Danger of COVID Spread\nU.S. cities with pro sports see more flu deaths"
   },
   {
     "objectID": "media.html#nber-economics-of-transportation-in-the-21st-century",
     "href": "media.html#nber-economics-of-transportation-in-the-21st-century",
-    "title": "In the Media",
+    "title": "Alexander Cardazzi",
     "section": "NBER Economics of Transportation in the 21st Century",
     "text": "NBER Economics of Transportation in the 21st Century\nWVU economists fueled to pave the way for enhanced traffic safety, road quality\nThe U.S. Needs to Fix Existing Roads, Not Build New Ones"
   },
@@ -163,7 +163,7 @@
   {
     "objectID": "media.html#professional-sporting-events-increase-seasonal-influenza-mortality-in-us-cities",
     "href": "media.html#professional-sporting-events-increase-seasonal-influenza-mortality-in-us-cities",
-    "title": "In the Media",
+    "title": "Alexander Cardazzi",
     "section": "",
     "text": "As Pro Sports Ponder Reopening, Flu Study Suggests Danger of COVID Spread\nU.S. cities with pro sports see more flu deaths"
   },
@@ -198,7 +198,7 @@
   {
     "objectID": "nba_awards.html",
     "href": "nba_awards.html",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "",
     "text": "In the NBA, players are awarded MVP, DPOY, etc. by a voting system run by sports writers (formerly, voting was done by players). For the MVP in particular, writers vote for first through fifth places. 10 points are assigned for a first place vote, 8 points for a second place vote, and so on.\nFollowing the 2015-16 NBA season, Stephen Curry became the first ever unanimous MVP of the league. The most amount of points a player could have gotten that year was 1310 since there were 131 voting media members. The second place finisher, Kawhi Leonard, scored 634 points via some combination of second through fifth place votes. Kawhi’s point total was 48.4% of the total possible points.\nIf we use our imagination, we can think of Kawhi’s season amounting to 48.4% of an MVP season, or 0.484 MVPs. If we sum all of Kawhi’s MVP percentages over his career, he would net an expected 1.16 MVPs.\nI collected data from the 1955-1956 through the 2022-2023 NBA & ABA seasons. For each major NBA/ABA award, we can figure out each player’s expected total. This should not be taken too seriously, but rather be seen as a fun exploration."
   },
@@ -219,21 +219,21 @@
   {
     "objectID": "nba_awards.html#most-valuable-player",
     "href": "nba_awards.html#most-valuable-player",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "Most Valuable Player",
     "text": "Most Valuable Player\n\n\nView Table\n\n\n\n\n\n\n\n\nSome interesting notes:\n\nThe player with the most expected MVPs is LeBron James followed closely by Michael Jordan.\nThe player with the highest expected number of expected wins without actually winning one is Jerry West.\nThe player with the lowest number of expected wins while having a real win is Bill Walton."
   },
   {
     "objectID": "nba_awards.html#defensive-player-of-the-year",
     "href": "nba_awards.html#defensive-player-of-the-year",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "Defensive Player of the Year",
     "text": "Defensive Player of the Year\n\n\nView Table\n\n\n\n\n\n\n\n\nSome interesting notes:\n\nThe player with the most expected DPOY is Rudy Gobert followed closely by Ben Wallace.\nThe player with the highest expected number of expected wins without actually winning one is Bruce Bowen. Bowen and Tim Duncan are the only players with an expected wins above one.\nThe player with the lowest number of expected wins while having a real win is Marc Gasol."
   },
   {
     "objectID": "nba_awards.html#coach-of-the-year",
     "href": "nba_awards.html#coach-of-the-year",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "Coach of the Year",
     "text": "Coach of the Year\n\n\nView Table"
   },
@@ -247,28 +247,28 @@
   {
     "objectID": "nba_awards.html#most-improved-player",
     "href": "nba_awards.html#most-improved-player",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "Most Improved Player",
     "text": "Most Improved Player\n\n\nView Table"
   },
   {
     "objectID": "nba_awards.html#sixth-man-of-the-year",
     "href": "nba_awards.html#sixth-man-of-the-year",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "Sixth Man of the Year",
     "text": "Sixth Man of the Year\n\n\nView Table"
   },
   {
     "objectID": "nba_awards.html#all-nba-first-teams",
     "href": "nba_awards.html#all-nba-first-teams",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "All-NBA First Teams",
     "text": "All-NBA First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. In addition, this is for first team only. Interpret this table carefully."
   },
   {
     "objectID": "nba_awards.html#all-defensive-first-teams",
     "href": "nba_awards.html#all-defensive-first-teams",
-    "title": "NBA Awards",
+    "title": "Alexander Cardazzi",
     "section": "All-Defensive First Teams",
     "text": "All-Defensive First Teams\n\n\nView Table\n\n\n\n\n\n\n\n\nNote: Certain older players contain missing data. In addition, this is for first team only. Interpret this table carefully."
   },
@@ -383,5 +383,54 @@
     "title": "Alexander Cardazzi",
     "section": "",
     "text": "Assistant Professor | Old Dominion University | acardazz@odu.edu\n\n\n\n\n\n\n\n\n\n                \n\n\nBackground, Employment, and Education\n\n\n\nApplied microeconomist with research interests including urban, transportation, and sports economics.\n\n\nAssistant Professor of Economics at Old Dominion University\n\n\nPh.D. Economics - West Virginia University (2017-2021)"
+  },
+  {
+    "objectID": "index.html#alexander-cardazzi",
+    "href": "index.html#alexander-cardazzi",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Assistant Professor | Old Dominion University | acardazz@odu.edu\n\n\n\n\nBackground, Employment, and Education\n\n\n\nApplied microeconomist interested in urban and sports economics.\n\n\nAssistant Professor of Economics at Old Dominion University\n\n\nPh.D. Economics - West Virginia University (2017-2021)"
+  },
+  {
+    "objectID": "teaching.html#classroom-experience",
+    "href": "teaching.html#classroom-experience",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
+  },
+  {
+    "objectID": "teaching.html#non-classroom-experience",
+    "href": "teaching.html#non-classroom-experience",
+    "title": "Alexander Cardazzi",
+    "section": "Non-Classroom Experience",
+    "text": "Non-Classroom Experience\nClaremont Graduate University - Two Day Programming Workshop (January ’19)\n\nIntroductory Web Scraping in R\n\nWest Virginia University - Empirical Workshop (July ’19 - July ’22)\n\nIntroduction to R Programming (’19 - ’21)\nRegression in R (’20, ’21)\nStrings, Loops, and If (’21)\nPlotting and Maps (’21, ’22)\nIntroductory (’20 - ’22) & Advanced (’19 - ’22) Web Crawling & Scraping in R"
+  },
+  {
+    "objectID": "nba_awards.html#nba-awards",
+    "href": "nba_awards.html#nba-awards",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "In the NBA, players are awarded MVP, DPOY, etc. by a voting system run by sports writers (formerly, voting was done by players). For the MVP in particular, writers vote for first through fifth places. 10 points are assigned for a first place vote, 8 points for a second place vote, and so on.\nFollowing the 2015-16 NBA season, Stephen Curry became the first ever unanimous MVP of the league. The most amount of points a player could have gotten that year was 1310 since there were 131 voting media members. The second place finisher, Kawhi Leonard, scored 634 points via some combination of second through fifth place votes. Kawhi’s point total was 48.4% of the total possible points.\nIf we use our imagination, we can think of Kawhi’s season amounting to 48.4% of an MVP season, or 0.484 MVPs. If we sum all of Kawhi’s MVP percentages over his career, he would net an expected 1.16 MVPs.\nI collected data from the 1955-1956 through the 2022-2023 NBA & ABA seasons. For each major NBA/ABA award, we can figure out each player’s expected total. This should not be taken too seriously, but rather be seen as a fun exploration."
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "This page is very much non-serious and dedicated to things I enjoy such as basketball, music, comedy/movies, and cats. Below are also some (now old) pictures of me next to different bridges on different coasts.\n\n\n\n\n \n\n\n\n\n\n\n  \n\n\n\n\n\n\nI’m a fan of the New York Knicks, but enjoy thinking/talking about the NBA in general. Toying around with NBA data is a hobby of mine that sometimes results in research papers. I also enjoy playing basketball, but my game has not aged gracefully.\nCheck out some of my NBA twitter threads here. Also, check out these NBA award voting aggregates.\n\n\n\n\n\n\nBelow are my Spotify Wrapped playlists from the past years. Most of these songs are pretty good, but others were part of a phase or two…"
+  },
+  {
+    "objectID": "about.html#spotify",
+    "href": "about.html#spotify",
+    "title": "Alexander Cardazzi",
+    "section": "Spotify",
+    "text": "Spotify\n\nBelow are my Spotify Wrapped playlists from the past years. Most of these songs are pretty good, but others were part of a phase or two…"
+  },
+  {
+    "objectID": "about.html#basketball",
+    "href": "about.html#basketball",
+    "title": "Alexander Cardazzi",
+    "section": "Basketball",
+    "text": "Basketball\nI’m a fan of the New York Knicks, but enjoy thinking/talking about the NBA in general. Toying around with NBA data is a hobby of mine that sometimes results in research papers. I also enjoy playing basketball, but my game has not aged gracefully.\nCheck out some of my NBA twitter threads here. Also, check out these NBA award voting aggregates."
   }
 ]
