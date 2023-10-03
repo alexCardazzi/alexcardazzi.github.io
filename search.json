@@ -25,7 +25,7 @@
     "href": "teaching.html",
     "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
+    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\nResearch Methods in Economics - S ’24\nEconometrics III (MA, PhD) - S ’24\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
   },
   {
     "objectID": "research.html#working-papers",
@@ -128,9 +128,9 @@
   {
     "objectID": "econ311.html",
     "href": "econ311.html",
-    "title": "Econ 311",
+    "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Module 0: Course Introduction\n\n\nSyllabus (file)  \nFinal Project(file)\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2(file | template)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3(file | template)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4(file | template)\n\n\n\n\nModule 5: Special Topics in R\n\n\nModule 5.1: fixest(slides | notes)\nModule 5.2: Text as Data (slides | notes)\nHomework 5(file | template)\n\n\n\n\nResources, Data, Misc.\n\n\n\nCourse Data (link)"
+    "text": "Economics, Causality, and Analytics\n\n\nModule 0: Course Introduction & Videos\n\n\nSyllabus (file)  \nFinal Project(file)\nCourse Data (link)\n\n\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2(file | template)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3(file | template)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4(file | template)\n\n\n\n\nModule 5: Special Topics in R\n\n\nModule 5.1: fixest(slides | notes)\nModule 5.2: Text as Data (slides | notes)\nHomework 5(file | template)"
   },
   {
     "objectID": "software.html",
@@ -396,7 +396,7 @@
     "href": "teaching.html#classroom-experience",
     "title": "Alexander Cardazzi",
     "section": "",
-    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
+    "text": "Old Dominion University\n\nIntermediate Microeconomics - F ’22\nTime Series (MA, PhD) - F ’22\nTransportation Economics - S ’23, F ’23\nEconomics, Causality, and Analytics - F ’23\nResearch Methods in Economics - S ’24\nEconometrics III (MA, PhD) - S ’24\n\nWest Virginia University\n\nIntermediate Microeconomics - Summer ’19\nBusiness Statistics - F ’19, ’21; S ’20, ’22\nIntroductory Econometrics - F ’20, ’21 (MA)"
   },
   {
     "objectID": "teaching.html#non-classroom-experience",
@@ -432,5 +432,40 @@
     "title": "Alexander Cardazzi",
     "section": "Basketball",
     "text": "Basketball\nI’m a fan of the New York Knicks, but enjoy thinking/talking about the NBA in general. Toying around with NBA data is a hobby of mine that sometimes results in research papers. I also enjoy playing basketball, but my game has not aged gracefully.\nCheck out some of my NBA twitter threads here. Also, check out these NBA award voting aggregates."
+  },
+  {
+    "objectID": "econ400.html",
+    "href": "econ400.html",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Research Methods in Economics\n\n\nModule 0: Course Introduction\n\n\nSyllabus (file)\nFinal Project(file)\nTextbook: The Effect\nTextbook: The Mixtape\n\n\n\n\nModule 1: Linear Regression\n\n\nModule 1.1: abc (slides | notes)\nModule 1.2: ijk(slides | notes)\nModule 1.3: xyz(slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: Causality\n\n\n\n\nModule 3: Difference-in-Differences\n\n\n\n\nModule 4: Matching\n\n\n\n\nModule 5: Synthetic Control\n\n\n\n\nModule 6: Instrumental Variables\n\n\n\n\nModule 7: Regression Discontinuity\n\n\n\n\nResources, Data, Misc.\n\n\n\nCourse Data (link)"
+  },
+  {
+    "objectID": "econ400.html#econ-400",
+    "href": "econ400.html#econ-400",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Research Methods in Economics\n\n\nModule 0: Course Introduction\n\n\nSyllabus (file)\nFinal Project(file)\nTextbook: The Effect\nTextbook: The Mixtape\n\n\n\n\nModule 1: Linear Regression\n\n\nModule 1.1: abc (slides | notes)\nModule 1.2: ijk(slides | notes)\nModule 1.3: xyz(slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: Causality\n\n\n\n\nModule 3: Difference-in-Differences\n\n\n\n\nModule 4: Matching\n\n\n\n\nModule 5: Synthetic Control\n\n\n\n\nModule 6: Instrumental Variables\n\n\n\n\nModule 7: Regression Discontinuity\n\n\n\n\nResources, Data, Misc.\n\n\n\nCourse Data (link)"
+  },
+  {
+    "objectID": "econ311.html#econ-311",
+    "href": "econ311.html#econ-311",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Economics, Causality, and Analytics\n\n\nModule 0: Course Introduction & Videos\n\n\nSyllabus (file)  \nFinal Project(file)\nCourse Data (link)\n\n\n\n\n\n\n\nModule 1: Foundations of Data\n\n\nModule 1.1: Types of Data (slides | notes)\nModule 1.2: Downloading R (slides | notes)\nModule 1.3: Using R (slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: One Y Variable\n\n\nModule 2.1: Central Tendency (slides | notes)\nModule 2.2: Dispersion (slides | notes)\nModule 2.3: Distributions (slides | notes)\nModule 2.4: Functions and Loops (slides | notes)\nModule 2.5: Hypothesis Testing (slides | notes)\nHomework 2(file | template)\n\n\n\n\nModule 3: One X Variable\n\n\nModule 3.1: Correlation (slides | notes)\nModule 3.2: Linear Regression (slides | notes)\nModule 3.3: OLS in R (slides | notes)\nHomework 3(file | template)\n\n\n\n\nModule 4: Many X Variables\n\n\nModule 4.1: Multiple Regression (slides | notes)\nModule 4.2: Binary Variables and Interactions (slides | notes)\nHomework 4(file | template)\n\n\n\n\nModule 5: Special Topics in R\n\n\nModule 5.1: fixest(slides | notes)\nModule 5.2: Text as Data (slides | notes)\nHomework 5(file | template)"
+  },
+  {
+    "objectID": "econ708.html",
+    "href": "econ708.html",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Research Methods in Economics\n\n\nModule 0: Course Introduction\n\n\nSyllabus (file)\nFinal Project(file)\nTextbook: The Effect: An Introduction to Research Design and Causality\nTextbook: \n\n\n\n\nModule 1: Linear Regression\n\n\nModule 1.1: abc (slides | notes)\nModule 1.2: ijk(slides | notes)\nModule 1.3: xyz(slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: Causality\n\n\n\n\nModule 3: Difference-in-Differences\n\n\n\n\nModule 4: Matching\n\n\n\n\nModule 5: Synthetic Control\n\n\n\n\nModule 6: Instrumental Variables\n\n\n\n\nModule 7: Regression Discontinuity\n\n\n\n\nResources, Data, Misc.\n\n\n\nCourse Data (link)"
+  },
+  {
+    "objectID": "econ708.html#econ-708",
+    "href": "econ708.html#econ-708",
+    "title": "Alexander Cardazzi",
+    "section": "",
+    "text": "Research Methods in Economics\n\n\nModule 0: Course Introduction\n\n\nSyllabus (file)\nFinal Project(file)\nTextbook: The Effect: An Introduction to Research Design and Causality\nTextbook: \n\n\n\n\nModule 1: Linear Regression\n\n\nModule 1.1: abc (slides | notes)\nModule 1.2: ijk(slides | notes)\nModule 1.3: xyz(slides | notes)\nHomework 1(file | template)\n\n\n\n\nModule 2: Causality\n\n\n\n\nModule 3: Difference-in-Differences\n\n\n\n\nModule 4: Matching\n\n\n\n\nModule 5: Synthetic Control\n\n\n\n\nModule 6: Instrumental Variables\n\n\n\n\nModule 7: Regression Discontinuity\n\n\n\n\nResources, Data, Misc.\n\n\n\nCourse Data (link)"
   }
 ]
