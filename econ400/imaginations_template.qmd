@@ -1,6 +1,6 @@
 ---
 title: "Imagination Exercise"
-subtitle: "Due YYYY-MM-DD"
+subtitle: "Module Topic Here"
 author: "Your Name Here"
 institute: "Old Dominion University"
 format: 
