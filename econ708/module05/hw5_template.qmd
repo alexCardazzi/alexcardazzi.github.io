@@ -1,0 +1,224 @@
+---
+title: "Homework 5"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+
+
+Synthetic Control represents a powerful tool for the evaluation of economic policies.  In The Mixtape, Scott Cunningham writes:
+
+> The estimator has been so influential that Athey and Imbens (2017a) said it was "arguably the most important innovation in the policy evaluation literature in the last 15 years" (p.3).
+
+This homework is based on a paper "Marijuana Medicalization and Motor Vehicle Fatalities: A Synthetic Control Group Approach" by Bartos, Newark and McCleary (**BNM**) published in the *Journal of Experimental Criminology* ([link](https://doi.org/10.1007/s11292-018-9345-3)) that analyzes the impact of the legalization of marijuana for medicinal purposes in California in 1996 on fatal motor vehicle crashes.  The key issue in this analysis, like all causal inference examples covered in class, revolves around the comparison of the actual outcomes in California after the legalization of marijuana to the unobservable conterfactual potential outcome that would have occurred in California if medical marijuana had not been legalized. Outcomes in other states likely represent poor proxies for California counterfactual outcomes due to the state's size, geography, population, etc. For example, neither Montana nor Utah is very similar to California.  Last module, we accounted for this via PSM/IPW, but with only one treated unit, this becomes impossible.  Instead, you will construct a "synthetic" California based on a weighted average of outcomes in all other states that did not legalize marijuana (the donor pool).
+
+Before beginning, be sure to read through BNM (posted on Canvas).
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Summarize the main research question in BNM and why synthetic control is appropriate for this. In your answer, be sure to identify the outcome variable.  (**1 Point**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Discuss the assumptions underlying the analysis in BNM.  Include a discussion of possible threats to validity of the results in terms of a causal interpretation. (**1 Point**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Provide a discussion about how, if at all, backdoors, colliders, etc. fit into the framework of synthetic control. (**Bonus: 2 Points**)
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For the following questions, use the following [data](https://alexcardazzi.github.io/econ708/data/fars_synth.csv).
+
+`r q <- q+1; letters[q]`. Read the data into an object called `fars`. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. Describe, with words, the data in `fars`. Include discussion about where the data come from and why you think they are (in)appropriate to answer the research question. *Hint*: you may consult the paper for some of this information. (**1 Point**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Generate summary statistics for California vs the rest of the states. *Hint*: check out [this resource](https://modelsummary.com/articles/datasummary.html#nesting-with). (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. Plot a time series of annual traffic fatalities in California and the average annual traffic fatalities in the other non-MML states to replicate Figure 1 in DNW. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+
+
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Recreate the synthetic control from BNM. There might be some issues that make this non-trivial.  First, in the paper, the authors plot raw fatality counts.  However, in their publically available code, they estimate a synthetic where the outcome is the fatality *rate*. This tweak will quantitatively change your results, but not qualitatively.  The authors also do not explain the covariates they used in creating their synthetic.  Again, from their code, I was able to find out that they chose to use the following:
+
+- Fatality Rate from 1975 to 1996
+- $\Delta$ Fatality Rate from 1976 to 1996
+
+`r q <- q+1; letters[q]`. Estimate the main synthetic California (the 2007 sample) and replicate Figure 2. *Hint*: be sure to exclude states from the estimation! (**2 Points**)
+
+```{r, cache=TRUE}
+# Your code here
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Display a table of the states with the top 5 largest assigned weights. Compare these weights to the weights in Appendix 2, Table 3. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Replicate Figure 3. (**2 Points**)
+
+```{r, cache = TRUE}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. Display and discuss the differences in the outcomes and make-ups of both synthetic controls.  Which synthetic do you prefer?  Use quantitative evidence to back up your claims. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Run (and plot) placebo tests for both synthetics displayed above. (**2 Points**)
+
+```{r, cache=TRUE}
+# Estimate SCs here
+```
+
+
+
+```{r}
+# Plot here
+```
+
+
+`r q <- q+1; letters[q]`. Replicate Table 2.  What can you conclude from your output? (**2 Points**)
+
+```{r, fold.output = F}
+# Your code here
+```
+
+*Your answer here.*
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. BNM only use levels and changes of their outcome as predictors in their analysis.  Using the 2007 sample, how do the results change if you add in the fraction of the population that is between 15 and 19 as a predictor and shrink the optimization window? Plot the outcomes for the real and the synthetic. (**2 Points**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Compare this new synthetic to the original 2007-sample and 2015-sample synthetics. (**1 Point**)
+
+```{r, fold.output = FALSE}
+# Your code here
+```
+
+*Your answer here.*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+Do you believe the result in BNM to be credibly causal?  Are the signs and magnitudes plausible? (**1 Point**)
+
+*Your answer here.*
+
+

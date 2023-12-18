@@ -1,0 +1,199 @@
+---
+title: "Homework 2"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+Besides New Hampshire and Virginia^[Virginia allows individuals to opt out of insurance, but they then must pay a \$500 uninsured fee.], car insurance is mandated in every state.  The point of this policy is to protect citizens from the often large financial burden resulting from a car crash.  However, forcing individuals to purchase insurance may generate negative outcomes through unintended consequences.  The often cited reason for this is **moral hazard**.  In other words, if individuals are shielded from the negative consequences of dangerous behavior, they may be more likely to engage in such behavior.  Think of this from the opposite point of view: if you knew your vehicle would blow up if you got into a fender bender, you'd probably drive much more safely (or not at all) than you do now.
+
+In this homework, we are going to explore the question: **how does auto insurance affect traffic safety?**
+
+There are many ways to think through this problem, but let's start with the following factors that might be related to auto insurance and traffic safety:
+
+- **Auto Insurance (AI)**: whether an individual has auto insurance (*treatment*).
+- **Risky Driving Behavior (RDB)**: an individual's behavior, such as reckless driving, texting and driving, etc.
+- **Vehicle Safety Features (VSF)**: the number of advanced vehicle safety features.
+- **Traffic Enforcement (TE)**: the degree to which traffic law enforcement pays attention to the routes the individual travels.
+- **Age (A)**: the individual's age.
+- **Crash Risk (CR)**: the probability of being involved in an accident (*outcome*).
+
+Now, consider the following relationships between the variables:
+
+- We will test both the direct and total effect of auto insurance on crash risk.
+- Auto insurance, through moral hazard, effects the risky driving behavior of individuals.
+- Risky driving behavior will effect the probability of a crash.
+- Driver age will effect crash risk due to age alone (*i.e.* inexperience) and due to different levels of risky driving behavior.
+- Traffic enforcement will influence risky driving behavior.
+- Traffic enforcement will influence crash risks by itself by pulling over *other* reckless drivers.
+- Vehicle safety features (due to moral hazard) will influence risky driving behavior.
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Using `dagitty`, Construct and plot a DAG to depict the relationships between these variables.  Be sure to indicate which variable is the outcome and which is the treatment. (**4 Points**)
+
+```{r, warning=FALSE, message=FALSE, fig.height=2, fig.width=4, fig.show='hold'}
+# Write your code here
+```
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Simulated data for this setting can be found [here](https://alexcardazzi.github.io/econ708/data/autoinsurance_sim.csv).
+
+`r q <- q+1; letters[q]`. Read the data into an object called `safety` in R. (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. Create summary statistics using functions from the `modelsummary` package. (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use functions from `dagitty` to evaluate and explore your DAG.  This will help inform your empirical specification and identification strategy.  You may use code, words, or both to answer these questions.
+
+`r q <- q+1; letters[q]`. List each of the paths in the DAG and tell which are "open". (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. For each path, discuss why it is open or closed.  Be sure to use terms like "confounder", "collider", "mediator", etc. (**2 Points**)
+
+*Write your response here.*
+
+
+`r q <- q+1; letters[q]`. What does it mean, and why is it significant, for a path to be open/closed? (**1 Point**)
+
+*Write your response here.*
+
+
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *total* causal effect of auto insurance on crash risk? (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+*Write your response here.*
+
+
+
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *direct* causal effect of auto insurance on crash risk?  You may use `dagitty` to help you, **but you must provide explanations for `dagitty`'s output**. (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+*Write your response here.*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Using `safety`, estimate the (direct and total) causal effects of auto insurance on crash risk.
+
+`r q <- q+1; letters[q]`. Estimate the models below. (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. Display the coefficient estimates in a table generated via functions in `modelsummary`. (**1 Point**)
+
+```{r}
+# Write your code here
+```
+
+
+`r q <- q+1; letters[q]`. Interpret each coefficient, besides the intercept/constant, in each model. (**2 Points**)
+
+*Write your response here.*
+
+## Question `r Q <- Q+1; Q`
+
+Consider this question using data in real life.  What difficulties might you have in estimating these models in reality? (**2 Points**)
+
+*Write your response here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Think of two additional variables and/or edges that may belong in this DAG. Make an argument for why they belong in the DAG. (**2 Points**)
+
+*Write your response here.*
+

@@ -1,0 +1,102 @@
+---
+title: "Imagination Exercise"
+subtitle: "Module Topic Here"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+```
+
+### Application Description
+
+Describe the application you imagine using the particular method we're studying.  Be sure to include a testable hypothesis and/or an answerable, specific research question.
+
+Write down a regression model (or series of models) that corresponds to your setting and question, and identify the causal parameter of interest.  Describe any backdoors that pose a threat to your identification strategy and how you might address them. (**4 Points**)
+
+*Write your answer here.*
+
+### Data Description
+
+Describe the ideal data set for identifying the causal effect of interest described in the application above.  You don’t need to constrain yourself to known, existing variables and data sets, although identifying actual data is OK.  You can also assume you have unlimited ability/resources to measure variables if you want.  Identify the dependent variable in your regression model and the explanatory variables. (**4 Points**)
+
+*Write your answer here.*
+
+### Causal Inference Method Description
+
+Discuss why the method we're studying is suited to the application and data described above.  What assumptions must hold for the method to deliver plausibly causal estimates? (**4 Points**)
+
+Bonus: Draw the DAG for this application. (**+2 Points**)
+
+*Write your answer here.*
+
+### Expected Results
+
+What is the expected sign of the causal parameter of interest?  Explain what this parameter means in words, in terms of this specific application.  Explain why (or why not) you think that the estimated relationship reflects causality, and not just correlation. (**4 Points**)
+
+*Write your answer here.*
+
+### What Will Be Learned?
+
+What will you learn from this empirical analysis?  Why is this causal relationship important in the context of your application?  How can this evidence be used to inform policy, business decisions, or your own behavior? (**4 Points**)
+
+*Write your answer here.*
+
+### In Class Presentation
+
+Give a short presentation of your imagination exercise to the class.  Be sure to be engaged in the exercises presented by your classmates. (**5 Points**)
+
+Next, prepare a presentation of a published (or working) paper using the causal inference method we are studying. (**15 Points**)  I will provide a presentation template should one be desired.  Be sure to cover the following:
+
+- Research Setting
+- Research Question
+- Literature
+- Data
+- Estimation
+- Results
+- Implications
+- Strengths / Weaknesses

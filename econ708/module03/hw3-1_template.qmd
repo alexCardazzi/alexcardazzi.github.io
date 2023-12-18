@@ -1,0 +1,183 @@
+---
+title: "Homework 3-1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+This homework focuses on a recent paper exploiting a long ago change ([Copyrights and Creativity: Evidence from
+Italian Opera in the Napoleonic Age](https://doi.org/10.1086/710534) by Giorcelli and Moser, *Journal of Political Economy*, 2020).  During the Napoleonic Wars in Italy, copyright laws applying to musical compositions changed in parts of Italy conquered by Napoleon.  Copyright laws allow popular artists like song writers to monetize their work.  Without them, other artists can perform their songs without compensating them. You should read through the paper before completing this Homework.^[The PDF will be made available on Canvas.]
+
+**Important Note**: The data analyzed can be downloaded from the journal web site and come directly from this paper.  However, the results you generate may not exactly match those reported in the paper.
+
+### Question `r Q <- Q+1; Q`
+
+Summarize the main research question in the paper, the application analyzed, and why DiD is appropriate for this research question. (**2 Point**)
+
+*Write your answer here.*
+
+### Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use the supplied data from [Giorcelli and Moser (2020)](https://doi.org/10.1086/710534) to answer the following.
+
+`r q <- q+1; letters[q]`. Read in [`operas_1781_1820.csv`](https://alexcardazzi.github.io/econ708/data/operas_1781-1820.csv) and name it `italy`. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Using the `unique()` function, print the `state` identifiers that are in the treatment group. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Calculate the number of observations in each of the following groups: treatment group pre-treatment, treatment group post-treatment, control group pre-treatment, control group post-treatment. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Report the yearly average of new operas premiered for each state. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+### Question `r Q <- Q+1; Q`
+
+Describe the important components of DiD.
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Discuss the general assumptions underlying the causal inference method used in the empirical analysis. (**1 Point**)
+
+*Write your answer here.*
+
+`r q <- q+1; letters[q]`. How do the authors address these assumptions in the paper (if at all)? (**1 Point**)
+
+*Write your answer here.*
+
+`r q <- q+1; letters[q]`. Discuss threats to a causal interpretation of the results. (**1 Point**)
+
+*Write your answer here.*
+
+### Question `r Q <- Q+1; Q`
+
+Replicate the content in Figure 2 using `italy`. *Note*: the lines in this graph might not replicate perfectly, but do your best. (**2 Points**)
+
+```{r, fig.show='hold'}
+# Write your code here.
+```
+
+### Question `r Q <- Q+1; Q`
+
+Replicate the main result reported in the paper.  Make sure that you follow the guidelines for replicable research in your code. (**3 points**)
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate a 2x2 DiD model of the form:
+
+$$Y_{st} = \beta_0 + \beta_1 \text{Treat}_s + \beta_2 \text{Post}_t + \delta (\text{Treat}_s \times \text{Post}_t) + \epsilon_{st}$$
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Replicate the results in Columns (1) and (2) on Table 3 in the paper.  Do not worry about replicating the standard errors.  Are the results the same as the paper?  Are the results the same across both columns?^[You only need to replicate the first two columns.]
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Create a table using `modelsummary` containing coefficients from the three models.
+
+```{r, results='hold'}
+# Write your code here.
+```
+
+### Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Discuss your results:
+
+`r q <- q+1; letters[q]`. What is the interpretation of the causal parameter of interest? Place the causal effect in the context of the setting. (**1 Point**)
+
+*Write your answer here.*
+
+`r q <- q+1; letters[q]`. How large is the treatment effect as a percentage of the pre-treatment average of the treatment group? (**1 Point**)
+
+*Write your answer here.*
+
+### Question `r Q <- Q+1; Q`
+
+Replicate the Event Study in Figure 3 of the paper. (**2 points**)
+
+```{r}
+# Write your code here.
+```
+
+### Question `r Q <- Q+1; Q`
+
+Do you believe the result to be credible in terms of causality and magnitude? Why or why not? (**2 Points**)
+
+*Write your answer here.*
