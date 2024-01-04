@@ -1,0 +1,85 @@
+---
+title: "Article's Title"
+substitle: "Article's Subtitle"
+author: "Author's Name"
+institute: "Journal's Name"
+
+logo: "https://i.giphy.com/McyIrNRCporPtHk7NG.webp"
+footer: "Your Name"
+format:
+  revealjs:
+    theme: serif # more themes: https://quarto.org/docs/presentations/revealjs/themes.html
+
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+    
+    scrollable: true
+    incremental: true 
+    slide-number: c/t
+    show-slide-number: all
+    menu: true
+    preload-iframes: true
+    view-distance: 10
+    mobile-view-distance: 10
+    preview-links: true
+---
+
+## Introduction
+
+Introduce the paper on this slide.
+
+1. Provide motivation with a hook or puzzle.
+1. What is the research setting?
+
+## Research Question
+
+What is the main research question?
+
+- You can even summarise it using cute callout blocks ([resource](https://quarto.org/docs/authoring/callouts.html)).
+- Make it dramatic by [including]{.fragment} [fragments.]{.fragment}
+
+## Literature {.smaller}
+
+What is the most important or relevant literature on this topic?
+
+::: {.nonincremental}
+- Smith (2012) finds ...
+- Johnson *et al.* (2014) uncovers ...
+:::
+
+. . .
+
+Sometimes, you might want to flip literature and research question. Be creative.
+
+## Data
+
+Discuss the data here.
+
+## Data {.smaller}
+
+Maybe you could present a summary statistics table here.
+
+![Summary Statistics](https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/sneha-summary-statistics-01-1612177729.png)
+
+## Estimation
+
+What model are they estimating?
+
+What causal inference strategy are they using?
+
+What are they assuming?
+
+## Results
+
+Display and discuss their results here.
+
+- Do you believe these results? Why or why not?
+
+## Implications
+
+What can we learn from this research?
+
+Can we inform policy decisions?
+
+Discuss strengths and weaknesses.
