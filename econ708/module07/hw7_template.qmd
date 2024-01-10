@@ -1,0 +1,200 @@
+---
+title: "Homework 7"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+In major American sport leagues, incoming rookie talent is allocated to teams via draft. In general, the worst teams are given the earliest picks to promote competitive balance within the league. Eligible players are chosen in descending order with respect to their expected upsides. Of course, it then follows that each player is given a contract worth their expected marginal benefit.  There is rarely a consensus ordering of draftee skill/compensation among teams in any given draft, but over many year, we should expect a monotonically decreasing function of skill/compensation with respect to draft pick number (especially towards the top of the draft).
+
+Most drafts are organized into rounds where each team gets one pick.  This provides an odd environment where players are "ranked" by both their pick and round number.  In a 2016 Journal of Sports Economics paper, Quinn Keefer investigates the financial implications of being drafted in different rounds of the NFL draft.  This paper, titled *Rank-Based Groupings and Decision Making: A Regression Discontinuity Analysis of the NFL Draft Rounds and Rookie Compensation*, makes use of a regression discontinuity design where pick number acts as a running variable and round number acts as the treatment.
+
+In this homework, you will both replicate and extend Keefer (2016).  The PDF will be made available on Canvas.
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For this homework, we will examine NFL draft pick compensation from 2002 to 2017 for players drafted in the 1st through 3rd rounds. These data be obtained via [this link](https://alexcardazzi.github.io/econ708/data/nfl_draft_data.csv).  A description of the variables are as follows:
+
+- `nfldraftyear`: The year the player was drafted.
+- `team2`: The team that drafted the player.
+- `draft_round`: The round a player was drafted.
+- `draft_pkoverall`: The overall pick number, within a specific draft year, of the player.
+- `real_capvalue`: Player's cap value, or compensation, in 2017 dollars.
+- `position`: Position played on the field.
+- `age`: Age of player at the time of being drafted.
+- `g`: Number of games played in the player's first season.
+- `gs`: Number of games started in the player's first season.
+- `cpi`: Consumer Price Index used to deflate each player's cap value to `real_capvalue`.
+
+`r q <- q+1; letters[q]`. Read the data into R and name it `nfl`. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Create a vector called `keefer` to indicate observations in Keefer's dataset. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+
+`r q <- q+1; letters[q]`. Using functions from `modelsummary`, generate summary statistics for the NFL data. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Replicate Table 1 from Keefer (2016). (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Keefer (2016) uses regression discontinuity to estimate the effects of being drafted in different rounds.  In the following, discuss the author's choice of modeling technique.
+
+Describe the empirical strategy used in Keefer's paper.  Discuss the assumptions underlying the analysis and any threats to validity. (**2 Points**)
+
+`r q <- q+1; letters[q]`.  Does Keefer (2016) use a sharp or fuzzy RDD? Explain the decision. (**1 Point**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`.  Discuss the assumptions, whether explicit or implicit, of the empirical strategy.  What are the threats to validity? (**1 Point**)
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For this question, you will provide visualizations of the data.  See the following.
+
+`r q <- q+1; letters[q]`. Generate two figures *side-by-side*. The first figure should show the average compensation by draft pick for the first and second round picks in Keefer's data.  In short, you should be able to replicate Figure 1 in Keefer (2016). For the second figure, repeat the previous using the other half of the dataset.  In each figure, draw vertical lines at 32.5 to signify breaks between draft rounds. (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Teams might be willing to pay players more if they anticipate their utilization being higher throughout their rookie season. Recreate the previous two figures with number of games started, a measure of utilization, as the outcome instead of compensation. Discuss the generated figures. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+In the following parts, you will be asked to estimate the discontinuity in different ways.
+
+`r q <- q+1; letters[q]`. Replicate Columns (1) and (2) from Table 3 in the paper. You can omit the coefficients for pick number controls from your table. (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+
+
+`r q <- q+1; letters[q]`. Notice how Keefer (2016) uses a cubic function to fit the data from the entire dataset.  Repeat the analysis from Column (2) with a simple linear approximation and a bandwidth.  Recreate the previous table with this regression as an additional column.  Discuss how you decided on the bandwidth. What do you think about these results compared to the previous results? (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Re-estimate the regression in Column (2) with `log(real_capvalue)` as the outcome. First, do this using Keefer's sample, and then again with the newer sample.  Interpret the treatment effects, and compare the results. (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Redo the above using `rdrobust`. *Hint*: Learn how to include controls and fixed effects via [Stack Overflow](https://stackoverflow.com/a/66345157). Compare these results to the parametric results above. (**2 Points**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Provide a discussion of the credibility of these estimates. What do you think about Keefer's explanation of potential mechanisms? Do you believe them? (**2 Points**)
+
+*Your answer here.*
