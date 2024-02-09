@@ -54,9 +54,7 @@ knitr::knit_hooks$set(
 
 ### Application Description
 
-Describe the application you imagine using the particular method we're studying.  Be sure to include a testable hypothesis and/or an answerable, specific research question.
-
-Write down a regression model (or series of models) that corresponds to your setting and question, and identify the causal parameter of interest.  Describe any backdoors that pose a threat to your identification strategy and how you might address them. (**4 Points**)
+Describe the application you imagine using the particular method we're studying.  Be sure to include a testable hypothesis and/or an answerable, specific research question. Describe any backdoors that pose a threat to your identification strategy and how you might address them. (**4 Points**)
 
 *Write your answer here.*
 
@@ -69,8 +67,6 @@ Describe the ideal data set for identifying the causal effect of interest descri
 ### Causal Inference Method Description
 
 Discuss why the method we're studying is suited to the application and data described above.  What assumptions must hold for the method to deliver plausibly causal estimates? (**4 Points**)
-
-Bonus: Draw the DAG for this application. (**+2 Points**)
 
 *Write your answer here.*
 
@@ -88,4 +84,4 @@ What will you learn from this empirical analysis?  Why is this causal relationsh
 
 ### Video Abstract (online students only)
 
-Submit a short (e.g. 3-5 minutes) video pitch of your imagination exercise.  Be sure to cover all of the above topics including (but not limited to) institutional knowledge/background, specific research question, general and specific threats to your identifcation strategy, necessary assumptions, data, etc. (**6 Points**) In addition, provide comments to two other students via the discussion board. (**4 Points**)
+Submit a short (e.g. 3-5 minutes) video pitch of your imagination exercise.  Be sure to cover all of the above topics including (but not limited to) institutional knowledge/background, specific research question, general and specific threats to your identifcation strategy, necessary assumptions, data, etc. (**6 Points**) In addition, provide comments to two other students via the discussion board. Comments may be made up to a week after the due date of the assignment. (**4 Points**)
