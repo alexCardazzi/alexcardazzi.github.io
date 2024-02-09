@@ -23,6 +23,7 @@ format:
     view-distance: 10
     mobile-view-distance: 10
     preview-links: true
+embed-resources: true
 ---
 
 ## Introduction
