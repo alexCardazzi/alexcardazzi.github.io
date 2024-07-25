@@ -1,0 +1,207 @@
+---
+title: "Homework 2.2"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. How are hypothesis testing and confidence intervals related? (**4 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Suppose I calculate a p-value of 0.08.  What is there an 8\% probability of? (**4 Points**)
+
+*Your answer here...*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For the following question, use [data on the heights and weights of the 2022-23 NBA and WNBA all-stars](https://alexcardazzi.github.io/econ311/data/bball_allstars.csv).
+
+`r q <- q+1; letters[q]`. Read data into R.  Call the dataset `bball`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Remove any columns with missing data. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Print the row of the youngest player. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Create two summary statistics tables -- one for the NBA players, and one for the WNBA players. Include only variables for age, height, and weight. Comment on the differences. (**4 Points**)
+
+```{r results='hold'}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Which player(s) is taller relative to their respective league: the tallest NBA player(s) or the tallest WNBA player(s)? *Hint*: use Z-Scores! It might even be helpful to write a function to calculate Z-Scores to minimize the total amount of code you need to write. (**4 Points**)
+
+::: {.aside}
+Do not manually type the player names / heights, use code to select the player's info. 
+:::
+
+```{r results='hold'}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Create and print a 95\% confidence interval for WNBA heights. (**4 Points**)
+
+```{r results='hold'}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. What percentage of WNBA observations fall inside this confidence interval? Is there a percentage of observations we should *expect* to fall inside this interval? (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. I have a hypothesis that older players are heavier than younger players.^[Define "young" as 25 or younger.] Use `t.test()` to preform a hypothesis test comparing weights of young and old players. What is the conclusion of the test? Interpret the test's p-value *in words*. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Navigate to the following website: [https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/time-series/](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/time-series/) On this website, you should see the following options:
+
+<ol>
+- Parameter: keep this as "Average Temperature".
+- Time Scale: keep this as "1-Month".
+- Month: set this to your birth month.
+- Start Year: set this to your birth year.
+- End Year: set this to "2024".
+- State: set this to the state you were born in.  If you were not born in the United States, choose the first state in which you lived.
+- County: set this to the county you were born in (or the first county you lived in).
+</ol>
+
+`r q <- q+1; letters[q]`. Once these options are set, click the "Plot" button, scroll down below the generated plot, and right-click on the "CSV" download button. Copy the hyperlink address, and read it into R using `read.csv()`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Clean the data so it appears more like a "normal" `data.frame`. (**4 Points**) For example, using `head(temp)`, the output is:
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Recreate the plot on the website.  You may ignore the right-hand celsius axis, the "&deg; F" on the left-hand axis, the background grid, the "NOAA" logo, and the shaded area beneath the time series. (**4 Points**) However, **extra credit** (**5 *Bonus* Points**) will be given to the person who can get the closest to an exact replication.
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Make a new column that is the z-score for each observation. Use the 1901-2000 average as the mean in the calculation. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Print the row with the largest z-score. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Assuming temperatures come from a normal distribution, what is the probability of observing a temperature this high (or higher)? (**2 Points**)
+
+```{r}
+# Your code here...
+```

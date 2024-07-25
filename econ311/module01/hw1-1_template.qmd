@@ -1,0 +1,230 @@
+---
+title: "Homework 1.1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Copy and paste the following vector into R: `vec <- sample(1:100, 10, FALSE)`. Use this vector for the following.
+
+`r q <- q+1; letters[q]`. Print `vec` to the console. (**2 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the first 5 elements of `vec`. (**2 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the last 3 elements of `vec`. (**2 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the 3rd and 8th elements of `vec`. (**3 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the elements of `vec` that are larger than 50. (**3 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the elements of `vec` that are odd (not divisible by two). (**3 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use these data on drinking and wages from Elderton and Pearson (1910) ([data]((https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv)); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html)) for the following.
+
+`r q <- q+1; letters[q]`. Read in the data using `read.csv()` and store it as `DrinksWages`.^[**Hint**: you can use either the hyperlink's URL *or* you can click on the hyperlink, download the file, and read it in via file path. Also, you might find it helpful to read through the data's documentation so you know what the different columns/variables mean.] (**1 Point**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Print the column names of `DrinksWages`. (**1 Point**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. What type of measurement (Nominal, Ordinal, Interval, or Ratio) is `sober`?  Explain why. (**2 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. What fraction (or as a percentage) of observations of the wage variable are larger than 30? (**2 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Create a new variable inside `DrinksWages` called `total`. This variable should reflect the sum of the two variables `sober` and `drinks` for each observation. (**2 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Create a new variable inside `DrinksWages` called `x`. This variable should be `drinks` divided by `total`.  In words, how can we interpret what `x` represents? (**3 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Plot `x` on the $X$-axis and wages on the $Y$-axis. Each point should be colored based on their `class` value^[You are free to choose whatever colors you'd like, but please avoid using "yellow" for the sake of our eyes. It's blindly bright against the white background.]. Use `pch = 19`. Label your axes appropriately and include a legend. (**4 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+**This one is challenging.** [This `.pdf` file](https://www.erikthered.com/tutor/historical-average-SAT-scores.pdf) contains SAT scores over time for men and women.  Unfortunately, when I copied it into a `.csv`, the formatting got messed up.^[You'll run into this a lot when working with `.pdf` files, so avoid them!]
+
+`r q <- q+1; letters[q]`. Recreate the table format of the PDF with [`sat2.csv`](https://alexcardazzi.github.io/econ311/data/sat2.csv) as a `data.frame`.^[**Hint**: After you read in the data, try printing it to your console. You should see one long vector. Try reorganizing the vector into a matrix, and then the matrix into a `data.frame`.] Rename the year and total math columns (the first one) to `year` and `total_math`. (**6 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Convert the total math variable into a numeric variable. This step will likely create some `NA` values in the variable, so remove the rows where total math is missing. (**4 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+
+`r q <- q+1; letters[q]`. Finally, remove all of the columns *except* `year` and `total_math` from the dataset. (**4 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+`r q <- q+1; letters[q]`. Make a plot with two lines. On the $X$-axis should be year and on the $Y$-axis should be total math. The first line should be SAT scores from the beginning of the sample until 1999, and another from 2000 and onwards. The two lines should be different colors. Be sure to label the axes and include a legend. (**6 Points**)
+
+```{r}
+# Your code here...
+
+```
+
+
+
+
+
+
+
+
+
+

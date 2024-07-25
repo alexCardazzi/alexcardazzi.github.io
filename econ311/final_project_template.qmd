@@ -1,0 +1,112 @@
+---
+title: "Your Title Here"
+subtitle: "Maybe you have a subtitle"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+*For some guidance on what your project should look like, check out this [sample paper by Dr. Tomas Dvorak](https://bpb-us-w2.wpmucdn.com/muse.union.edu/dist/d/377/files/2016/05/sample_paper.pdf).*
+
+## Introduction
+
+*Motivate and introduce your topic. Convince the reader that this topic/question is important and that they should care. What data do you use? How do you model your outcome variable(s)? What do you find? What is learned from your analysis?*
+
+For a "how to" on writing introductions, see [Keith Head's Introduction Formula](https://blogs.ubc.ca/khead/research/research-advice/formula).
+
+## Literature Review
+
+*What work has already been done on this topic by others? What are their conclusions? How is your work different? If your topic is time-sensitive or in the news, you may discuss current events here as well.*
+
+## Data
+
+*Where does your data come from? Why is this data good for answering your question? Be sure to create, and discuss, a summary statistics table and some plots.*
+
+```{r}
+# Code here.
+```
+
+## Empirical Model
+
+*Write down the model(s) you estimate. Explain your modeling choices (e.g. log(), etc.). List out your hypotheses and the rationales behind them.*
+
+$$\text{Outcome}_{it} = \alpha + \delta D_{it} + \epsilon_{it}$$
+
+For inline equations, only use a single dollar sign like: $\overline{Y} = \widehat{m}\overline{X} + \widehat{b}$.
+
+## Results
+
+*Discuss the results of your analysis. Interpret the coefficients.*
+
+```{r}
+2 + 2
+```
+
+## Conclusion
+
+*Remind the reader of your topic, why it is important, and what you find. Be sure to include a discussion of the implications of your findings.*
+
+Marc Bellemare has a helpful [Conclusion Formula](https://marcfbellemare.com/wordpress/12060) in response to Dr. Head's.

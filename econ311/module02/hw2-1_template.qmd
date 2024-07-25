@@ -1,0 +1,160 @@
+---
+title: "Homework 2.1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. I send out a survey to individuals who graduated from ODU. I ask them to report their salary.  Most people fill out the salary question, but some people leave it blank. Can I fill in zero for these blanks? Explain why or why not. (**4 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Suppose I decided to pick students with ID numbers that end in an 8 to survey.  I calculate the mean salary of those who submitted salaries.  Will this average salary be representative of all ODU students?  Explain why or why not. (**4 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Continuing from above, if you think think the salary will be representative, explain a way one could survey students where the resulting average *would not* be representative.  If you think the above salary will not be representative, explain a way one could survey students where the resulting average *would* be representative. (**4 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Why do we use the sum of squared differences when calculating dispersion? (**4 Points**)
+
+*Your answer here...*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use the state-year cigarette panel data from the previous module ([data](https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/Cigar.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/Ecdat/Cigar.html)) for this question.
+
+`r q <- q+1; letters[q]`. Read in the data, and present summary statistics for price, population, cpi, disposable income, and cigarette sales. Include the number of observations, mean, standard deviation, minimum and maximum. Use the package(s) from the course notes.  (**8 Points**)
+
+```{r, message = F, warning = F}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Write your own function to calculate a weighted average. As a hint, your function should accept two arguments: one for values and one for weights. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Use your function to find the population-weighted average of income. Aside from the formulas being different, provide an intuitive explanation for the difference you observe between the weighted average and the simple average. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Produce a visualization of the distribution of cigarette pack prices. Include a vertical, dashed, and colored (you may choose the color) line representing the mean price. Be sure to label the axes, etc. Provide a short description of what you see. (**5 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Produce a scatterplot of price ($X$) vs minimum price of adjoining states ($Y$). Use filled in circles as the point type. Color the points based on whether price is greater than the minimum price of adjoining states. Be sure to label the axes, etc. (**5 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Below is a time series of the pack sales by state over time. Recreate this plot to the best of your ability. Regardless of whether you were able to perfectly recreate the picture, what was the hardest part? (**8 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+*Your answer here...*
+
+
+
+
+
+
+
+
+
+
+
+
+
+

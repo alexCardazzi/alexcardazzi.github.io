@@ -1,0 +1,200 @@
+---
+title: "Homework 4.1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For this question, you will have to put together two sets of data.  First, you will use college/university statistics from 1995's issue of US News and World Report ([data](https://vincentarelbundock.github.io/Rdatasets/csv/ISLR/College.csv), [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/ISLR/College.html)).  Second, you will use earnings data of students from a variety of colleges/universities from College Scorecard ([data](https://vincentarelbundock.github.io/Rdatasets/csv/causaldata/scorecard.csv), [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/causaldata/scorecard.html)).
+
+`r q <- q+1; letters[q]`. Read in the US News and World Report data.  Save it as a data frame called `usnwr`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Read in the College Scorecard data into a data frame called `scorecard`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Remove all observations from `scorecard` that do not come from 2007. Next, merge `earnings_med` from `scorecard` into `usnwr` by institution. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Generate a summary statistics table for median student earnings, whether the school is private, the acceptance rate, size of the student body, student/faculty ratio, and instructional expenditure per student. **Note**: you will need to modify/create some of these variables. (**4 Points**)
+
+```{r, warning=FALSE, message=FALSE}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Estimate a regression where median student earnings (log) are explained by whether the school is private, the acceptance rate, size of the student body (log), student/faculty ratio, and instructional expenditure per student (log). Display the coefficient estimates (using `summary()` is fine). (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Interpret the coefficients. (**5 Points**)
+
+*Your answer here...*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Suppose I record data on how many hours my students spend studying and sleeping the week before an exam.  I am curious about how sleep and study quantities impact grade outcomes, so I use the data to estimate the parameters in the following model:
+
+$$\text{Grade} = \beta_0 + \beta_1\text{Sleep} + \beta_2\text{Study}$$
+
+`r q <- q+1; letters[q]`. Interpret each coefficient in words. (**3 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Suppose I am interested in how time spent doing other things will impact exam grades.  How will the regression be effected if I add another variable named "Other" defined as $\text{Other} = 24 - \text{Sleep} - \text{Study}$? (**2 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. What would you expect to happen to $\beta_2$ if I added a new variable called $\text{IQ}$ to the model above? (**2 Points**)
+
+*Your answer here...*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+The quality of wine is highly subjective.  In any case, having a wine that is highly rated by experts will surely increase sales.  Examine these data on [red](https://alexcardazzi.github.io/econ311/data/winequality-red.csv) and [white](https://alexcardazzi.github.io/econ311/data/winequality-white.csv) wines for this question.
+
+`r q <- q+1; letters[q]`. Read both datasets into R. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Create summary statistics tables for `quality`, `pH`, and `residual.sugar` for red and white wine separately. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Create a new column in both datasets called `red`.  For red wines, this should be equal to one and for white wine this should be equal to zero. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Merge the two datasets and call the result `wine`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Plot the average quality by alcohol content^[For this question, round alcohol content to the nearest tenths place.] for both wine types on the same set of axes.  Include a legend, axis labels, etc.  What does this plot suggest to you? (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. The `pH` variable measures the acidity of the wine.  The pH scale runs from 0 to 14 with lower numbers being more acidic and 7 being neutral (e.g. [water](https://www.qmul.ac.uk/chesswatch/media/chesswatch/ph-range-chalk-rivers.jpg){preview-link=true}).  Convert `pH` into a variable called `acidity` where higher numbers mean higher acidity. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Estimate the following model for red and white wines separately, and present the parameters in a table. (**2 Points**)
+
+$$Q_i = \beta_0 + \beta_1 \text{Alcohol}_i + \beta_2\text{Acidity}_i + \beta_3 \text{Sugar}_i + \epsilon_i$$
+
+```{r, warning=FALSE, message=FALSE}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Discuss the similarities and differences in the model outputs. How would you interpret the coefficients? *Hint*: what type of variable is quality? (**6 Points**)
+
+*Your answer here...*
+
+
+
+
+
