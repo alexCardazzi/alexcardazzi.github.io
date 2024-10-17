@@ -83,7 +83,7 @@ Explore whether catholic school education improves outcomes.  The data for this 
 
 `r q <- q+1; letters[q]`. Change the column names to the following: (**0 Points**)
 
-- `c5r2mtsc` : `math`
+- `c5r2mtsc` : `math_score`
 - `c5r2mtsc_std` : `math_std`
 - `p5hmage` : `mom_age`
 - `w3momed_hsb` : `mom_noCollege`
@@ -95,19 +95,19 @@ Explore whether catholic school education improves outcomes.  The data for this 
 # Your code here...
 ```
 
-`r q <- q+1; letters[q]`. Delete the `income` variable and calculate the percent of students who attended catholic school. (**1 Point**)
-
-```{r}
-# Your code here...
-```
-
-`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who attended catholic school. (**1 Point**)
+`r q <- q+1; letters[q]`. Calculate the percent of students who attended catholic school. (**1 Point**)
 
 ```{r}
 # Your code here...
 ```
 
 `r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who did not attend catholic school. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who attended catholic school. (**1 Point**)
 
 ```{r}
 # Your code here...
@@ -132,9 +132,9 @@ Examine the family income for these groups of students.
 # Your code here...
 ```
 
-`r q <- q+1; letters[q]`. Do you think income in an important variable to control for? Why, or why not? Use "DAG" language in your answer. (**1 Point**)
+`r q <- q+1; letters[q]`. Do you think mother's age is an important variable to control for? Why, or why not? Use "DAG" language in your answer. (**1 Point**)
 
-`r q <- q+1; letters[q]`. Regardless of your thoughts about whether income is important, what are some other factors (that may or may not exist in the dataset) that might be important to control for?  Again, use "DAG" language in your answer. (**1 Point**)
+`r q <- q+1; letters[q]`. Regardless of your answer to the previous question, what are some other factors (that may or may not exist in the dataset) that might be important to control for?  Again, use "DAG" language in your answer. (**1 Point**)
 
 ## Question `r Q <- Q+1; Q`
 
@@ -194,7 +194,7 @@ $$\begin{aligned}\text{Math}_i = \alpha &+ \delta \text{Catholic}_i \\ &+ \beta_
 # Your code here...
 ```
 
-`r q <- q+1; letters[q]`. Use the `MatchIt` package in R to create a matched sample (match based on either Mahalanobis distance or propensity scores -- up to you).  Then, estimate the parameters with OLS using the matched sample. Store these as `r_match1` and `r_match2`. Again, hold off on displaying these coefficients. (**1 Point**)
+`r q <- q+1; letters[q]`. Use the `MatchIt` package in R to create a matched sample (match based on propensity scores).  Then, estimate the parameters with OLS using the matched sample. Store these as `r_match1` and `r_match2`. Again, hold off on displaying these coefficients. (**1 Point**)
 
 ```{r}
 # Your code here...
