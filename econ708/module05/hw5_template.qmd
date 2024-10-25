@@ -59,11 +59,9 @@ Synthetic Control represents a powerful tool for the evaluation of economic poli
 
 > The estimator has been so influential that Athey and Imbens (2017a) said it was "arguably the most important innovation in the policy evaluation literature in the last 15 years" (p.3).
 
-This homework is based on a paper "Marijuana Medicalization and Motor Vehicle Fatalities: A Synthetic Control Group Approach" by Bartos, Newark and McCleary (**BNM**) published in the *Journal of Experimental Criminology* ([link](https://doi.org/10.1007/s11292-018-9345-3)) that analyzes the impact of the legalization of marijuana for medicinal purposes in California in 1996 on fatal motor vehicle crashes.  The key issue in this analysis, like all causal inference examples covered in class, revolves around the comparison of the actual outcomes in California after the legalization of marijuana to the unobservable conterfactual potential outcome that would have occurred in California if medical marijuana had not been legalized. Outcomes in other states likely represent poor proxies for California counterfactual outcomes due to the state's size, geography, population, etc. For example, neither Montana nor Utah is very similar to California.  Last module, we accounted for this via PSM/IPW, but with only one treated unit, this becomes impossible.  Instead, you will construct a "synthetic" California based on a weighted average of outcomes in all other states that did not legalize marijuana (the donor pool).
+This homework is based on a paper "Voting after the Bombings: A Natural Experiment on the Effect of Terrorist Attacks on Democratic Elections" by José Montalvo published in *The Review of Economics and Statistics* ([link](https://www.jstor.org/stable/41349103)) that analyzes the impact of a terrorist attack in Madrid, Spain in 2004 on voting outcomes. The key issue in this analysis, like all causal inference examples covered in class, revolves around the comparison of the actual outcomes in Spain after the attack to the unobservable conterfactual potential outcome that would have occurred in Spain in the absence of the attack. In this homework, you will replicate the results of Montalvo (2011).
 
-Before beginning, be sure to read through BNM (posted on Canvas).
-
-
+Before beginning, be sure to carefully read through the paper.
 
 ## Question `r Q <- Q+1; Q`
 
@@ -71,122 +69,12 @@ Before beginning, be sure to read through BNM (posted on Canvas).
 q <- 0
 ```
 
-`r q <- q+1; letters[q]`. Summarize the main research question in BNM and why synthetic control is appropriate for this. In your answer, be sure to identify the outcome variable.  (**1 Point**)
-
-*Your answer here.*
-
-`r q <- q+1; letters[q]`. Discuss the assumptions underlying the analysis in BNM.  Include a discussion of possible threats to validity of the results in terms of a causal interpretation. (**1 Point**)
-
-*Your answer here.*
-
-`r q <- q+1; letters[q]`. Provide a discussion about how, if at all, backdoors, colliders, etc. fit into the framework of synthetic control. (**Bonus: 2 Points**)
-
-*Your answer here.*
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-For the following questions, use the following [data](https://alexcardazzi.github.io/econ708/data/fars_synth.csv).
-
-`r q <- q+1; letters[q]`. Read the data into an object called `fars`. (**1 Point**)
-
-```{r}
-# Your code here
-```
-
-`r q <- q+1; letters[q]`. Describe, with words, the data in `fars`. Include discussion about where the data come from and why you think they are (in)appropriate to answer the research question. *Hint*: you may consult the paper for some of this information. (**1 Point**)
-
-*Your answer here.*
-
-`r q <- q+1; letters[q]`. Generate summary statistics for California vs the rest of the states. *Hint*: check out [this resource](https://modelsummary.com/articles/datasummary.html#nesting-with). (**1 Point**)
-
-```{r}
-# Your code here
-```
-
-`r q <- q+1; letters[q]`. Plot a time series of annual traffic fatalities in California and the average annual traffic fatalities in the other non-MML states to replicate Figure 1 in DNW. (**1 Point**)
-
-```{r}
-# Your code here
-```
-
-
-
-
-
-
-
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-Recreate the synthetic control from BNM. There might be some issues that make this non-trivial.  First, in the paper, the authors plot raw fatality counts.  However, in their publically available code, they estimate a synthetic where the outcome is the fatality *rate*. This tweak will quantitatively change your results, but not qualitatively.  The authors also do not explain the covariates they used in creating their synthetic.  Again, from their code, I was able to find out that they chose to use the following:
-
-- Fatality Rate from 1975 to 1996
-- $\Delta$ Fatality Rate from 1976 to 1996
-
-`r q <- q+1; letters[q]`. Estimate the main synthetic California (the 2007 sample) and replicate Figure 2. *Hint*: be sure to exclude states from the estimation! (**2 Points**)
-
-```{r, cache=TRUE}
-# Your code here
-```
-
-*Your answer here.*
-
-`r q <- q+1; letters[q]`. Display a table of the states with the top 5 largest assigned weights. Compare these weights to the weights in Appendix 2, Table 3. (**1 Point**)
-
-```{r}
-# Your code here
-```
-
-*Your answer here.*
-
-`r q <- q+1; letters[q]`. Replicate Figure 3. (**2 Points**)
-
-```{r, cache = TRUE}
-# Your code here
-```
-
-`r q <- q+1; letters[q]`. Display and discuss the differences in the outcomes and make-ups of both synthetic controls.  Which synthetic do you prefer?  Use quantitative evidence to back up your claims. (**1 Point**)
-
-```{r}
-# Your code here
-```
+`r q <- q+1; letters[q]`. Summarize the main research question and how the author approached answering it. In your answer, be sure to identify the outcome variable(s).  (**1 Point**)
 
 *Your answer here.*
 
 
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-`r q <- q+1; letters[q]`. Run (and plot) placebo tests for both synthetics displayed above. (**2 Points**)
-
-```{r, cache=TRUE}
-# Estimate SCs here
-```
-
-
-
-```{r}
-# Plot here
-```
-
-
-`r q <- q+1; letters[q]`. Replicate Table 2.  What can you conclude from your output? (**2 Points**)
-
-```{r, fold.output = F}
-# Your code here
-```
+`r q <- q+1; letters[q]`. Provide a discussion about how, if at all, the author addresses backdoors, colliders, etc. (**Bonus: 1 Point**)
 
 *Your answer here.*
 
@@ -197,28 +85,143 @@ q <- 0
 q <- 0
 ```
 
-`r q <- q+1; letters[q]`. BNM only use levels and changes of their outcome as predictors in their analysis.  Using the 2007 sample, how do the results change if you add in the fraction of the population that is between 15 and 19 as a predictor and shrink the optimization window? Plot the outcomes for the real and the synthetic. (**2 Points**)
+For the following questions, use the following [data](https://alexcardazzi.github.io/econ708/data/dataVAB_1.csv).
+
+`r q <- q+1; letters[q]`. Read the data into an object called `vab`. Below you will find a list of the dataset's variables copy-and-pasted from the author's replication package. (**0 Points**)
+
+- id: number corresponding to each province (id=53 is the aggregate at the national level)
+- pp: proportion of vote for the conservative party
+- psoe: proportion of vote for the socialist party
+- year
+- dtreat=1 for treated group
+- voters: potential voters (electoral census)
+- part: participation rate
 
 ```{r}
-# Your code here
+# Your code here.
 ```
+
+`r q <- q+1; letters[q]`. Describe the structure of the data (e.g. the unit of observation, treatment and control groups, etc.). Is this what the "ideal" dataset would look like to answer the research question? (**2 Points**)
 
 *Your answer here.*
 
-`r q <- q+1; letters[q]`. Compare this new synthetic to the original 2007-sample and 2015-sample synthetics. (**1 Point**)
 
-```{r, fold.output = FALSE}
-# Your code here
+`r q <- q+1; letters[q]`. Construct the author's main outcome variable, and then use `modelsummary` to generate summary statistics for the provinces. (**1 Point**)
+
+```{r}
+# Your code here.
 ```
+
+`r q <- q+1; letters[q]`. Plot time series that shows the value of the outcome variable over time for the treated and control group. This should be a replication of Figure 2 from the paper. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For this question, turn to the difference-in-differences analysis in Part III of the paper.
+
+`r q <- q+1; letters[q]`. What are the assumptions the author is making (explicitly and implicitly) in estimating the DiD, and how are they addressing them? (**1 Point**)
 
 *Your answer here.*
 
+
+`r q <- q+1; letters[q]`. Estimate Equation 1 in the paper. The numbers you get should be very close, but perhaps not exact.^[Do not worry about tabulating the results -- just print the `summary()`.] (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Estimate and plot an event study version of the above estimates. Use heteroskedasticity robust standard errors. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret the results of the DiD and the event study, and provide a short discussion of the strengths and weaknesses of this section of the paper. (**1 Point**)
+
+*Your answer here.*
 
 
 ## Question `r Q <- Q+1; Q`
 
-Do you believe the result in BNM to be credibly causal?  Are the signs and magnitudes plausible? (**1 Point**)
+```{r include=FALSE}
+q <- 0
+```
+
+For this question, turn to the synthetic control analysis in Part IV of the paper.
+
+`r q <- q+1; letters[q]`. Prepare the data and estimate the synthetic control.^[For a hint, create/add a character version of the ID variable to the datatset, use the entire pre-period for both `time.predictors.prior` and `time.optimize.ssr`, and do not use `special.predictors`. Use the outcome, `pp`, and `psoe` as the predictors.] (**1 Point**)
+
+```{r sc, cache = TRUE}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Create a table that compares the "real" treated unit, to the synthetic and an equally weighted mean of the units in the donor pool. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Create a table showing the units in the donor pool that were given the most weight. Provide some thoughts on this table. (**1 Point**)
+
+```{r}
+# Your code here.
+```
 
 *Your answer here.*
+
+
+`r q <- q+1; letters[q]`. Plot the outcomes for the synthetic and the real unit. Be sure to include relevant information (e.g. a vertical line showing treatment, a legend, labels for axes, etc.). (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. What makes this application different from the one about West Germany in the notes, and what do you think of this pivot? (**2 Points**)
+
+*Your answer here.*
+
+
+`r q <- q+1; letters[q]`. Run (and plot) a placebo tests for the synthetic displayed above. (**1 Point**)
+
+```{r placeboz, cache = TRUE}
+# Your code here.
+```
+
+`r q <- q+1; letters[q]`. Estimate a p-value for each time period.^[Do not worry about trimming out poorly fitting placebos, though this is something you would want to address in theory.] Interpret the output. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Place both the event study and synthetic control on the same set of axes, and compare them in words. (**1 Point**)
+
+```{r}
+# Your code here.
+```
+
+*Your answer here.*
+
+
+`r q <- q+1; letters[q]`. Which analysis do you prefer, and why?^[If you do not care for either (or think they're both good), that is okay, just explain why.] Be sure to consider the assumptions required, the statistical precision, effect magnitude, etc. (**2 Points**)
+
+*Your answer here.*
+
+
 
 

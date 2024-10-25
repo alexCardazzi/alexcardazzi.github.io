@@ -90,7 +90,7 @@ Use the supplied data from [Giorcelli and Moser (2020)](https://doi.org/10.1086/
 # Write your code here.
 ```
 
-`r q <- q+1; letters[q]`. Report the yearly average of new operas premiered for each state. (**1 Point**)
+`r q <- q+1; letters[q]`. Report the average new operas premiered for each state. (**1 Point**)
 
 ```{r}
 # Write your code here.
