@@ -50,20 +50,14 @@ knitr::knit_hooks$set(
   plot = hook_foldable("plot")
 )
 
+knitr::opts_chunk$set(warning = F, message = F)
+
 Q <- 0
 ```
 
-One of the most famous economics papers in Gary Becker's [*Crime and Punishment*](https://www.nber.org/system/files/chapters/c3625/c3625.pdf).  In this paper, Becker theorizes that criminal behavior is "rational" when the benefits of crime outweigh the economic costs of crime.  In math:
+This homework is based on the paper titled "Slum Clearance and Urban Renewal in the United States" by Collins and Shester ([2013](https://www.jstor.org/stable/43189425)) published in the *American Economic Journal: Applied Economics*.
 
-$$E[\text{Crime}] = P(\text{Sanction})\times\text{Sanction} + [1-P(\text{Sanction})]\times\text{Rewards}$$
-
-where $\text{Sanction}$ represents the fines, jail time, or lost opportunities incurred by the criminal (a negative value) if caught, $P(\text{Sanction})$ is the probability of getting caught, and $\text{Rewards}$ are the benefits of getting away with the criminal act (a positive value).  In Becker's model, these three factors jointly determine the expected value of crime.  This can also be thought of as an opportunity cost story. All else equal, in this model, crime is more costly to those earning high wages compared to those earning low wages since there's more to lose.
-
-Flückiger \& Ludwig ([2015](https://doi.org/10.1016/j.jdeveco.2014.12.003)) investigate Becker's model of crime by thinking about piracy and fishing.
-
-Commercial fishing requires boats, and boats can be used to fish or for other purposes, such as piracy.  The only barrier to entry into both markets is owning one of these boats.  Flückiger \& Ludwig then ask the question: do worse fishing conditions lead boat owners to turn to piracy?^[As a note, fisheries represent a classic economic common pool resource that can be plagued by overuse (economists call this the "tragedy of the commons").  Because of this, various extra-governmental agencies monitor commercial fishing activity, generating good data on commercial fish production by country. International trade depends heavily on oceanic transport, and piracy represents an important threat to the free flow of goods across countries, leading to systematic data collection on acts of piracy.]
-
-The data used in this paper can be found [here](https://alexcardazzi.github.io/econ708/data/pirates.csv).  It is recommended that you read the paper, which can be found on Canvas, before completing this homework.
+The data used can be found [here](https://alexcardazzi.github.io/econ708/data/urban_renew.csv).  It is recommended that you read the paper, which can be found on Canvas, before completing this homework.
 
 ## Question `r Q <- Q+1; Q`
 
@@ -71,90 +65,15 @@ The data used in this paper can be found [here](https://alexcardazzi.github.io/e
 q <- 0
 ```
 
-The authors in this paper use an instrumental variable approach to estimate the causal effect of fishing conditions on piracy.
-
-`r q <- q+1; letters[q]`. Why can't the authors use a different causal inference technique we've learned? (**1 Point**)
+`r q <- q+1; letters[q]`. What is the research question this paper is answering? What is its significance? (**1 Point**)
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. Describe the identification strategy used in this paper. (**2 Points**)
+`r q <- q+1; letters[q]`. Explain the identification strategy used in this paper. (**1 Point**)
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. Draw a DAG for this setting or write down the first and second stage regressions used in the IV estimation. (**1 Point**)
-
-```{r}
-# Write your code here.
-```
-
-
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-The data for this homework can be found [here](https://alexcardazzi.github.io/econ708/data/pirates.csv).  Use this data to complete this homework.
-
-`r q <- q+1; letters[q]`. Read the data into R.  Save the data as an object called `pirates`. (**1 Point**)
-
-```{r}
-# Write your code here.
-```
-
-`r q <- q+1; letters[q]`. Generate a summary statistics table using `modelsummary()`. (**1 Point**)
-
-```{r}
-# Write your code here.
-```
-
-
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-Create some data visualizations:
-
-`r q <- q+1; letters[q]`. Use the following code to generate a map of the world.  After, add the latitude and longitude points in `pirates` onto the map.  The colors of the points should correspond to the continent they are assigned in `pirates`. (**1 Point**)
-
-```{r, warning=FALSE, message=FALSE}
-# Write your code here.
-```
-
-`r q <- q+1; letters[q]`. Recreate Figure 4 from the paper.  Maintain the same coloring scheme as the previous plot. (**1 Point**)
-
-```{r}
-# Write your code here.
-```
-
-
-
-## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
-
-Take a look at Table 2 from Flückiger \& Ludwig.  Use `pirates` to answer the following parts.
-
-`r q <- q+1; letters[q]`. Replicate the parameter estimates from Columns 2-3 and 6-7 from Table 2.^[You'll notice that some of the regressions require continent-specific-trends.  This is another word for varying slopes.  See [this information](https://lrberge.github.io/fixest/articles/fixest_walkthrough.html#varying-slopes-fex) for help.  In addition, be sure to cluster your standard errors.] (**1 Point**)
-
-```{r, warning=FALSE, message=FALSE}
-# Write your code here.
-```
-
-`r q <- q+1; letters[q]`. Display the coefficients in a table generated via `modelsummary`. (**1 Point**)
-
-```{r}
-# Write your code here.
-```
-
-
-`r q <- q+1; letters[q]`. What is the general interpretation of these results? (**1 Point**)
+`r q <- q+1; letters[q]`. Draw a (simplified) DAG for this setting, or write down the first and second stage regressions used in the IV estimation in the notation used in the notes. (**1 Point**)
 
 *Write your response here.*
 
@@ -165,22 +84,15 @@ Take a look at Table 2 from Flückiger \& Ludwig.  Use `pirates` to answer the f
 q <- 0
 ```
 
-Take a look at Table 3 from Flückiger \& Ludwig.  Use `pirates` to answer the following parts.
+Use [these data](https://alexcardazzi.github.io/econ708/data/urban_renew.csv) to complete this homework.
 
-`r q <- q+1; letters[q]`. Replicate Columns 1 and 2 from Table 3.^[Note: check out [this vignette](https://lrberge.github.io/fixest/articles/fixest_walkthrough.html#instrumental-variables) for information about how to estimate instrumental variables via 2SLS with `fixest`.] (**2 Points**)
-
-```{r}
-# Write your code here.
-```
-
-
-`r q <- q+1; letters[q]`. Display these coefficients in a table generated via `modelsummary`.  Order the regressions as Column 1's replication, the first of Column 2, and then Column 2's replication. (**1 Point**)
+`r q <- q+1; letters[q]`. Read the data into R as an object called `city`. (**1 Point**)
 
 ```{r}
 # Write your code here.
 ```
 
-`r q <- q+1; letters[q]`. Use `fitstat()` to display the F-statistic and the Wald-statistic.  What are the general takeaways from these tests? (**1 Point**)
+`r q <- q+1; letters[q]`. Plot the average per-capita funding by years of potential participation. Does this figure support the authors candidate for an instrument? (**1 Point**)
 
 ```{r}
 # Write your code here.
@@ -188,11 +100,33 @@ Take a look at Table 3 from Flückiger \& Ludwig.  Use `pirates` to answer the f
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. What is the general interpretation of the results? How are they different from the OLS results, if at all? (**1 Point**)
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate the effect of per-capita funds on the different outcomes in Table 3 using naive/endogenous OLS. To make it a bit easier, here are the control variables used in the paper: `owner_occ_pct50 + log(med_prop_val50) + dilap_pct50 + units_old_pct50 + no_plumbing_pct50 + crowded_units_pct50 + log(pop50) + nonwhite_pct50 + manuf_pct50 + emp_rate50 + median_school50 + log(med_fam_inc50) + income_2k_pct50`. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Tabulate the regression coefficients in a single table using functions from the `modelsummary` package. Do not display the coefficients for the control variables. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret the primary coefficients of interest as if they were causal. (**1 Point**)
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. Do you think it was important that the authors used an IV instead of OLS? Why or why not? (**1 Point**)
+`r q <- q+1; letters[q]`. What argument(s) do the authors make for why we cannot interpret these estimates as causal? (**1 Point**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Could the author(s) have estimated a difference-in-differences? Why or why not (aside from the data not being in a panel format)? (**1 Point**)
 
 *Write your response here.*
 
@@ -204,18 +138,49 @@ Take a look at Table 3 from Flückiger \& Ludwig.  Use `pirates` to answer the f
 q <- 0
 ```
 
+`r q <- q+1; letters[q]`. Estimate the reduced form relationship between the instrument and the previous outcomes (conditional on the control variables from the previous question). These estimates should match the estimates on the first row of Table 2. Present the estimates in a table.
 
-Discuss the IV assumptions.
+```{r}
+# Write your code here.
+```
 
-`r q <- q+1; letters[q]`. Does the IV satisfy the necessary assumptions? (**2 Points**)
+`r q <- q+1; letters[q]`. Interpret these coefficients of interest as if they were causal. (**1 Point**)
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. Do you think the estimates identify a plausibly causal relationship?  (**1 Point**)
+`r q <- q+1; letters[q]`. Can these estimates be interpreted as causal? If no, why not? If yes, then why can't we just stop here? (**1 Point**)
 
 *Write your response here.*
 
-`r q <- q+1; letters[q]`. What do you think about the external validity of these results? In other words, are the results of this paper extendable to more generalizable settings? (**1 Point**)
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate the effect of per-capita funds on the different outcomes in Table 3 using IV. Display the coefficients in a table using `modelsummary`. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret these coefficients. (**1 Point**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. How do these coefficients compare to those from the naive regression? (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Use `fitstat()` to display the F-statistic and the Wald-statistic. What are the general takeaways from these tests? (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Discuss the assumptions necessary for a causal interpretation of these results and whether you believe they have been satisfied. Use quantitative evidence where possible. (**2 Points**)
 
 *Write your response here.*
 
