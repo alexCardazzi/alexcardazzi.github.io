@@ -1,0 +1,268 @@
+---
+title: "Homework 1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+Q <- 0
+```
+
+Understanding labor market outcomes is crucial for gaining insights into economic dynamics and societal structures. The 1976 Panel Study of Income Dynamics (PSID) serves as a valuable dataset for such an analysis, capturing a comprehensive snapshot of American households at a particular time. These data document labor market outcomes for women with additional information about their partners' labor market outcomes. Investigating the factors influencing female wages provides a nuanced perspective on gender dynamics, labor market trends, and the distribution of economic opportunities within households.
+
+Analyzing wages between spouses allows us to explore questions related to gender equity, workforce participation, and the impact of educational attainment. Educational levels, for instance, may influence both the individual's and the spouse's earning potential, shedding light on the interplay between education and labor market outcomes within a family unit. Additionally, considering the presence of children in the household introduces a complex dynamic, as it may affect labor force participation, career choices, and subsequently, wages.
+
+Regression analysis emerges as a powerful tool for examining these relationships, enabling the quantification of the impact of various factors on wages. By controlling for relevant characteristics, such as education and the labor market status of partners, regression models can provide a clearer understanding of the specific influences shaping labor market outcomes for women. This exploration not only contributes to our comprehension of societal structures but also provides empirical insights essential for crafting informed policies aimed at fostering equality and economic well-being.
+
+In this homework, you will explore [PSID data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/PSID1976.csv) ([documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/PSID1976.html)) and generate empirical insights about the labor market for women in 1976.
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use the data linked above to answer the following.
+
+
+`r q <- q+1; letters[q]`. Read the data into an object called `psid`. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Subset the `data.frame` to include only the following columns: (**1 Point**)
+
+:::: {.columns}
+
+::: {.column width="49%"}
+- `wage`: wife's hourly wage in 1975 dollars.
+- `hours`: wife's hours worked in 1975.
+- `education`: wife's education measured in number of years.
+- `age`: wife's age.
+- `youngkids`: number of children under six years old.
+- `oldkids`: number of children between six and eighteen.
+:::
+
+::: {.column width="2%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="49%"}
+- `hwage`: husband's hourly wage in 1975 dollars.
+- `hhours`: husband's hours worked in 1975.
+- `heducation`: husband's education measured in number of years.
+- `hage`: husband's age.
+- `unemp`: unemployment rate in county of residence, in percentage points.
+- `city`: whether the couple lives in a large city.
+:::
+
+::::
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Convert `city` into a binary variable equal to one if the couple lived in a large city and zero otherwise. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Create an `employed` variable equal to 1 if the woman worked in 1975. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Using functions from the `modelsummary` package, create a summary statistics table.  Then, using this table, discuss some empirical facts.^[For example, what is the average age gap within couples? What is the average wage gap? What percent of sampled females were employed in 1975? What is the average number of children of the women sampled?] (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+In this question, you will explore some of the variables in the data.
+
+
+`r q <- q+1; letters[q]`. Tabulate the *total* number of children for the women sampled. In other words, create a visualization that shows how many women had 0 children, 1 child, 2 children, etc. (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Calculate the average number of children by age. Plot the relationship as a line graph. (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Generate a scatterplot between a woman's wages and her husband's wages. Be sure to include axis labels, etc. Add a diagonal line that denotes y = x. What are some things you notice in this plot? (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+For this question, you will estimate two regressions.  First, you will estimate a model to explain a woman's wages using characteristics pertaining to her and/or her husband. Second, estimate the same model using only the subset of women with non-zero wages. At the end, use functions from the `modelsummary` package to present the results.
+
+
+`r q <- q+1; letters[q]`. In the next question, you will be tasked with estimating a model to explain wages for women using information about the women and their husbands. You may use any variable, or combination of variables, included in the data except for the variable that indicates whether a woman is employed. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on wages. (**2 Points**)
+
+*Your answer here...*
+
+
+`r q <- q+1; letters[q]`. Estimate the model you discussed above. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+`r q <- q+1; letters[q]`. Re-estimate the model using only the subset of employed women. (**1 Point**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Display the coefficients from both estimations in a single table (using functions from `modelsummary`). (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Interpret the coefficients in the regressions. (**2 Points**)
+
+*Your answer here...*
+
+
+`r q <- q+1; letters[q]`. How does the interpretation of these regressions differ from one another? Which regression do you prefer, and why? (**3 Points**)
+
+*Your answer here...*
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+The exercise in this question will be very similar to the last one, except the dependent variable will be binary.
+
+
+`r q <- q+1; letters[q]`. Estimate a model that explains female employment status. Again, you may choose which variables you would like to use in the model, but this time you may not use the woman's wages as an explanatory variable. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on employment. (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+`r q <- q+1; letters[q]`. Display the coefficients in a table. (**3 Point**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Interpret each coefficient in the regression. (**2 Points**)
+
+*Your answer here...*
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Discuss yours findings from the regressions above.  What does this tell you about women from the mid 1970s?  Did anything surprise you?  How do you think these regressions would differ if the sample contained data collected from women of today? (**4 Points**)
+
+*Your answer here...*
+

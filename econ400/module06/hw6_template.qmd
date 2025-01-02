@@ -1,0 +1,186 @@
+---
+title: "Homework 6"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (isFALSE(options[[paste0("fold.", type)]])) return(res)
+    
+    paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+    )
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+
+knitr::opts_chunk$set(warning = F, message = F)
+
+Q <- 0
+```
+
+This homework is based on the paper titled "Slum Clearance and Urban Renewal in the United States" by Collins and Shester ([2013](https://www.jstor.org/stable/43189425)) published in the *American Economic Journal: Applied Economics*.
+
+The data used can be found [here](https://alexcardazzi.github.io/econ400/data/urban_renew.csv).  It is recommended that you read the paper, which can be found on Canvas, before completing this homework.
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. What is the research question this paper is answering? What is its significance? (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Explain the identification strategy used in this paper. (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Draw a (simplified) DAG for this setting, or write down the first and second stage regressions used in the IV estimation in the notation used in the notes. (**2 Points**)
+
+*Write your response here.*
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use [these data](https://alexcardazzi.github.io/econ400/data/urban_renew.csv) to complete this homework.
+
+`r q <- q+1; letters[q]`. Read the data into R as an object called `city`. (**1 Point**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Plot the average per-capita funding by years of potential participation. Does this figure support the authors candidate for an instrument? (**2 Points**)
+
+```{r}
+# Write your code here.
+```
+
+*Write your response here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate the effect of per-capita funds on the different outcomes in Table 3 using naive/endogenous OLS. To make it a bit easier, here are the control variables used in the paper: `owner_occ_pct50 + log(med_prop_val50) + dilap_pct50 + units_old_pct50 + no_plumbing_pct50 + crowded_units_pct50 + log(pop50) + nonwhite_pct50 + manuf_pct50 + emp_rate50 + median_school50 + log(med_fam_inc50) + income_2k_pct50`. Check out [this link](https://lrberge.github.io/fixest/articles/multiple_estimations.html#multiple-lhs) to learn how to estimate the same model with different outcome variables to reduce the amount of code you will need to write. (**2 Points**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Tabulate the regression coefficients in a single table using functions from the `modelsummary` package. Do not display the coefficients for the control variables. (**2 Points**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret the primary coefficients of interest as if they were causal. (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. What argument(s) do the authors make for why we cannot interpret these estimates as causal? (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Could the author(s) have estimated a difference-in-differences? Why or why not (aside from the data not being in a panel format)? (**2 Points**)
+
+*Write your response here.*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate the reduced form relationship between the instrument and the previous outcomes (conditional on the control variables from the previous question). These estimates should match the estimates on the first row of Table 2. Present the estimates in a table.
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret these coefficients of interest as if they were causal. (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Can these estimates be interpreted as causal? If no, why not? If yes, then why can't we just stop here? (**2 Points**)
+
+*Write your response here.*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+`r q <- q+1; letters[q]`. Estimate the effect of per-capita funds on the different outcomes in Table 3 using IV. Display the coefficients in a table using `modelsummary`. (**2 Points**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Interpret these coefficients. (**2 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. How do these coefficients compare to those from the naive regression? (**4 Points**)
+
+*Write your response here.*
+
+`r q <- q+1; letters[q]`. Use `fitstat()` to display the F-statistic and the Wald-statistic. What are the general takeaways from these tests? (**2 Points**)
+
+```{r}
+# Write your code here.
+```
+
+`r q <- q+1; letters[q]`. Discuss the assumptions necessary for a causal interpretation of these results and whether you believe they have been satisfied. Use quantitative evidence where possible. (**5 Points**)
+
+*Write your response here.*
+
