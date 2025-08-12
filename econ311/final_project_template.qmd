@@ -69,44 +69,66 @@ knitr::opts_chunk$set(fold.plot=TRUE)
 Q <- 0
 ```
 
-*For some guidance on what your project should look like, check out this [sample paper by Dr. Tomas Dvorak](https://bpb-us-w2.wpmucdn.com/muse.union.edu/dist/d/377/files/2016/05/sample_paper.pdf).*
-
 ## Introduction
 
-*Motivate and introduce your topic. Convince the reader that this topic/question is important and that they should care. What data do you use? How do you model your outcome variable(s)? What do you find? What is learned from your analysis?*
-
-For a "how to" on writing introductions, see [Keith Head's Introduction Formula](https://blogs.ubc.ca/khead/research/research-advice/formula).
-
-## Literature Review
-
-*What work has already been done on this topic by others? What are their conclusions? How is your work different? If your topic is time-sensitive or in the news, you may discuss current events here as well.*
+- In about two or three paragraphs, introduce and motivate your topic. Convince the reader that this topic/problem/question is important and that they should care.
+- In about one or two paragraphs, give a short summary of your analysis. What data do you use? How do you model your outcome variable(s)? What do you find? What is learned from your analysis?
+- By the end of this section, the reader should understand what you are trying to solve, how you solve it, and what the solution is. See [this link](http://keithjakee.com/wp-content/uploads/2015/06/The-Introduction-Formula.pdf) for a helpful "introduction formula."
 
 ## Data
 
-*Where does your data come from? Why is this data good for answering your question? Be sure to create, and discuss, a summary statistics table and some plots.*
-
 ```{r}
-# Code here.
+# Read your data into R and clean it here.
 ```
 
-## Empirical Model
+- Introduce and discuss your data. Where do the data come from? How are the data collected? How did you collect the data? Is the data unique in some way? Why are these data appropriate for answering your question?
+- Describe the qualitative and quantitative properties of your data. Create and discuss summary statistics and visualizations that help the reader understand the data.
 
-*Write down the model(s) you estimate. Explain your modeling choices (e.g. log(), etc.). List out your hypotheses and the rationales behind them.*
+```{r}
+# Summary Statistics
+```
+
+
+```{r}
+# Visualization #1
+```
+
+
+```{r}
+# Visualization #2
+```
+
+- By the end of this section, someone who has never seen your data should not have any questions about your data.
+
+## Empirical Analysis
+
+### Econometric Model
+
+- Write down the model(s) you estimate. Explain your modeling choices (e.g. log(), etc.). List out your hypotheses and the rationales behind them.
 
 $$\text{Outcome}_{it} = \alpha + \delta D_{it} + \epsilon_{it}$$
 
 For inline equations, only use a single dollar sign like: $\overline{Y} = \widehat{m}\overline{X} + \widehat{b}$.
 
-## Results
+### Results
 
-*Discuss the results of your analysis. Interpret the coefficients.*
+- Present the results of your analysis. Interpret the coefficients.
 
 ```{r}
 2 + 2
 ```
 
+- Now, put these results in the context of your topic. Are these results expected or unexpected? Large or small? Significant or insignificant? What does this mean for making policy makers, business leaders, etc.?
+
 ## Conclusion
 
-*Remind the reader of your topic, why it is important, and what you find. Be sure to include a discussion of the implications of your findings.*
+- Remind the reader of your topic, why it is important, and what you find.
+- Discuss the implications of your findings. What about the limitations? What could be done better? Are there any possible alternative explanations for your findings?
+- See [this link](https://marcfbellemare.com/wordpress/12060) for a helpful "conclusion formula."
 
-Marc Bellemare has a helpful [Conclusion Formula](https://marcfbellemare.com/wordpress/12060) in response to Dr. Head's.
+## Research Assistant Credit
+
+Replace the period below with your link, and then delete this line of text.
+
+[ChatGPT link](.)
+

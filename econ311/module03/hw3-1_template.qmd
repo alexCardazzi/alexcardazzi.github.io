@@ -68,6 +68,10 @@ knitr::opts_chunk$set(fold.plot=TRUE)
 Q <- 0
 ```
 
+Replace the period below with your link, and then delete this line of text.
+
+[ChatGPT link](.)
+
 ## Question `r Q <- Q+1; Q`
 
 ```{r include=FALSE}
