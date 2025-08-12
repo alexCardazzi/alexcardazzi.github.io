@@ -1,0 +1,221 @@
+---
+title: "Homework 5.1"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+hooks = knitr::knit_hooks$get()
+hook_foldable = function(type) {
+  force(type)
+  function(x, options) {
+    res = hooks[[type]](x, options)
+    
+    if (is.na(as.logical(options[[paste0("fold.", type)]]))) {
+      
+      res
+    } else if (isFALSE(as.logical(options[[paste0("fold.", type)]]))){
+      
+      # return(res)
+      
+      paste0(
+      "<details open><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    } else {
+      
+      paste0(
+      "<details><summary>", gsub("^p", "P", gsub("^o", "O", type)), "</summary>\n\n",
+      res,
+      "\n\n</details>"
+      )
+    }
+  }
+}
+
+knitr::knit_hooks$set(
+  output = hook_foldable("output"),
+  plot = hook_foldable("plot")
+)
+knitr::opts_chunk$set(fold.output=TRUE)
+knitr::opts_chunk$set(fold.plot=TRUE)
+
+Q <- 0
+```
+
+
+Replace the period below with your link, and then delete this line of text.
+
+[ChatGPT link](.)
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+In the early 2000s, two economists ran an experiment where they sent fictitious resumes in response to job ads in Chicago and Boston. The authors randomly varied the qualities of the fictitious resumes as well as the applicants' names.  Some resumes were randomly given stereotypically white-sounding names (Emily, Brendan) and others African-American-sounding names (Lakisha, Jamal).^[The process of determining which names are stereotypically black/white is described in detail in [the published draft](https://www.aeaweb.org/articles?id=10.1257/0002828042002561).] Intrigued students may read [a non-technical summary of the paper here.](https://www.ala.org/ala/hrdr/placementservice/hrpractice2.pdf)^[In addition, [similar research on ban-the-box](https://insights.grcglobalgroup.com/ban-the-box-an-effective-component-of-reintegration-efforts/) finds that these policies *increase* racial discrimination.]
+
+In this part of the homework, you are going to investigate whether employers engage in racial discrimination when sifting through resumes using data collected by these researchers ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/ResumeNames.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/ResumeNames.html)).
+
+`r q <- q+1; letters[q]`. Read the data into a data frame called `resume`. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Create the following binary variables (**4 Points**):
+    - A variable called `chicago` that is equal to one if `city` is equal to "chicago" and zero otherwise.
+    - A variable called `female` that is equal to one if `gender` is equal to "female" and zero otherwise.
+    - A variable called `black` that is equal to one if `ethnicity` is equal to "afam" and zero otherwise.
+    - A variable called `callback` equal to one if `call` is equal to "yes" and zero otherwise.
+
+```{r}
+# Your code here...
+```
+
+
+`r q <- q+1; letters[q]`. Estimate and display the coefficients (using `summary()` is fine) of the following regression (**2 Points**):
+
+$$\begin{aligned}\text{Callback}_i = \ &\beta_0 + \beta_1 \text{Jobs}_i + \beta_2 \text{Experience}_i + \beta_3 \text{Female}_i \\&+ \beta_4 \text{Chicago}_i + \beta_5 \text{Black}_i+ \epsilon_i\end{aligned}$$
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Interpret each coefficient in words. (**4 Points**)
+
+*Your answer here...*
+
+
+
+`r q <- q+1; letters[q]`. Estimate and display the coefficients (using `summary()` is fine) of the following regression (**2 Points**):
+
+$$\begin{aligned}\text{Callback}_i = \ &\beta_0 + \beta_1 \text{Jobs}_i + \beta_2 \text{Experience}_i + \beta_3 \text{Female}_i \\&+ \beta_4 \text{Chicago}_i + \beta_5 \text{Black}_i + \beta_6 (\text{Chicago}_i \times \text{Black}_i)+ \epsilon_i\end{aligned}$$
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Interpret the estimates for $\beta_4$, $\beta_5$, and $\beta_6$ from this regression. (**4 Points**)
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Re-estimate the regression once using data only from Chicago, and another using data only from Boston.  Report the coefficients using `modelsummary`.  Discuss any coefficients that result in different conclusions for the two cities. (**4 Points**)
+
+
+```{r, warning=F, message = F}
+# Your code here...
+```
+
+*Your answer here...*
+
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Gun violence has been a particularly hot topic in the United States over the past few decades. According to the 2017 iteration of the *Small Arms Survey*, the United States is estimated to have over twice as many firearms per 100,000 people than the second highest country in the world. The introduction of "shall issue" policies, which mandate that authorities must issue concealed carry permits to applicants who meet specific criteria, has sparked considerable debate regarding their potential impact on crime rates. These policies, in contrast to "may issue" policies, remove discretion from authorities when issuing concealed carry permits. Proponents argue that such policies deter criminal activity by increasing the likelihood that potential victims are armed, thereby enhancing public safety. Critics, however, contend that more widespread gun carrying could escalate violence and lead to higher crime rates.
+
+In this question, you will explore the effects these policies had on the violent crime rate, murder rate, and robbery rate. These data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/Guns.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/Guns.html)) contain data on 50 states, and DC, from 1977 to 1999.
+
+
+`r q <- q+1; letters[q]`. Read the data into a data frame called `guns`. Turn the `law` variable into a binary variable equal to one if the state has a "shall issue" policy for that year. (**2 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Create a plot of the number of states with "shall issue" policies by year. Be sure to label the axes, etc. Set your $Y$-axis to range from 0 to 51, so as to capture a sense of how prevalent these polices are across all 50 states (plus D.C.). Be sure to label your axes, etc. (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Next, create a plot of the average violent crime rate by year. Be sure to label your axes, etc. (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Calculate the violent crime rate by year **weighted** by population. Since the violent crime rate is just that, a rate, it could make sense to increase the weight placed on rates impacting more people. In other words, to get a true picture of the violent crime rate faced by the average American, it would not make sense to consider the violent crime rates in California and Delaware equally. Create a plot displaying both the equally weighted and population weighted violent crime rates over time. Include a legend to differentiate between the two time series. Be sure to label your axes, etc. (**6 Points**)
+
+```{r}
+# Your code here...
+```
+
+`r q <- q+1; letters[q]`. Estimate a simple model explaining `log(violent)` with only the indicator for whether the state has implemented a "shall issue" policy. Use heteroskedasticity robust standard errors. Display the coefficients (using `summary()` is fine) and interpret the coefficient. (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Add `male`, `log(income)`, and `log(density)` into the model. Include state and year fixed effects as well. Display the coefficients (using `summary()` is fine). How does the "shall issue" coefficient change? Discuss if the signs of the other coefficients surprise you or if they conform to your expectations. What are the fixed effects doing? (**6 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Just like how we can calculate weighted averages like in an earlier question, we can also estimate weighted regressions. Include `weights = ~population` into your `feols()` code and estimate the mode. Display the coefficients (using `summary()` is fine). How do the coefficients change, paying special attention to the "shall issue" coefficient? (**4 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. What is another variable not provided in the dataset that you wish you could incorporate into this model? How would you imagine the "shall issue" coefficient to change and why? Use an econometric argument to support your claim. (**2 Points**)
+
+*Your answer here...*
+
+
+
+## Question `r Q <- Q+1; Q`
+
+Write a little bit about how your project is going (yes, you may vent a little...). What are you finding most time consuming? What has been most challenging? Be honest with yourself: is there anything you can be doing better? This one might be dangerous to ask, but are you enjoying your project? (**5 *Bonus* Points**)
+
+*Your answer here...*
+
+## Question `r Q <- Q+1; Q`
+
+Fill out the course evaluation and include a screenshot as evidence. To include a screenshot, first place the image file in the same folder as your Homework 5.1 Template. Next, paste the file name, **including** the file's extension (.png, .jpg, etc.), inside the the parentheses below. (**5 *Bonus* Points**) *Note*: evaluations are anonymous (and ultimately optional), so I am not looking to see what you wrote, just some confirmation that you have completed the survey. Also, evaluations are necessarily optional, which is why this question is for extra credit. (Another) *Note*: you may also leave any non-anonymous thoughts, opinions, suggestions, etc. about the course here as well if you'd like.
+
+![Screenshot Evidence of the Completed Survey](insert_file_name_here.png)
+
+
