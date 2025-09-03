@@ -133,7 +133,7 @@ Copy and paste the following vector into R: `vec <- sample(1:100, 10, FALSE)`. U
 q <- 0
 ```
 
-Use these data on drinking and wages from Elderton and Pearson (1910) ([data]((https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv)); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html)) for the following.
+Use these data on drinking and wages from Elderton and Pearson (1910) ([data](https://vincentarelbundock.github.io/Rdatasets/csv/HistData/DrinksWages.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/HistData/DrinksWages.html)) for the following.
 
 `r q <- q+1; letters[q]`. Read in the data using `read.csv()` and store it as `DrinksWages`.^[**Hint**: you can use either the hyperlink's URL *or* you can click on the hyperlink, download the file, and read it in via file path. Also, you might find it helpful to read through the data's documentation so you know what the different columns/variables mean.] (**1 Point**)
 
