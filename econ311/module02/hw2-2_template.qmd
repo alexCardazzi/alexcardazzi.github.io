@@ -172,6 +172,7 @@ Navigate to the following website: [https://www.ncei.noaa.gov/access/monitoring/
 - End Year: set this to "2024".
 - State: set this to the state you were born in.  If you were not born in the United States, choose the first state in which you lived.
 - County: set this to the county you were born in (or the first county you lived in).
+- On the right hand side, there should be a checkbox that says "Display Base Period". Make sure this is checked!
 </ol>
 
 `r q <- q+1; letters[q]`. Once these options are set, click the "Plot" button, scroll down below the generated plot, and right-click on the "CSV" download button. Copy the hyperlink address, and read it into R using `read.csv()`. (**2 Points**)
@@ -192,7 +193,7 @@ Navigate to the following website: [https://www.ncei.noaa.gov/access/monitoring/
 # Your code here...
 ```
 
-`r q <- q+1; letters[q]`. Make a new column that is the z-score for each observation. Use the 1901-2000 average as the mean in the calculation. (**2 Points**)
+`r q <- q+1; letters[q]`. Make a new column that is the z-score for each observation. Use the 1901-2000 average as the mean in the calculation.^[The 1901-2000 average can be found on NOAA. Click on the checkbox that says "Display Base Period", then click "Plot". This should add a horizontal line with a long-run average. Use this number in your calculation.] (**2 Points**)
 
 ```{r}
 # Your code here...

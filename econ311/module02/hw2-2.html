@@ -3139,6 +3139,7 @@ vertical-align: -.125em;
 <li>End Year: set this to “2024”.</li>
 <li>State: set this to the state you were born in. If you were not born in the United States, choose the first state in which you lived.</li>
 <li>County: set this to the county you were born in (or the first county you lived in).</li>
+<li>On the right hand side, there should be a checkbox that says “Display Base Period”. Make sure this is checked!</li>
 </ul>
 </ol>
 <ol type="a">
@@ -3153,13 +3154,20 @@ vertical-align: -.125em;
 Output
 </summary>
 <div class="cell-output cell-output-stdout">
-<pre><code>                          Rockland.County New.York.August.Average.Temperature
-Units: Degrees Fahrenheit                                                    
-Base Period: 1901-2000                                                       
-Missing: -99                                                                 
-Date                                Value                             Anomaly
-199508                               73.0                                 2.6
-199608                               71.4                                 1.0</code></pre>
+<pre><code>                            X...Rockland.County
+# Units: Degrees Fahrenheit                    
+# Base Period: 1901-2000                       
+Date                                      Value
+199508                                       73
+199608                                     71.4
+199708                                     70.4
+                            New.York.August.Average.Temperature
+# Units: Degrees Fahrenheit                                    
+# Base Period: 1901-2000                                       
+Date                                                    Anomaly
+199508                                                      2.6
+199608                                                        1
+199708                                                        0</code></pre>
 </div>
 </details>
 </div>
@@ -3182,7 +3190,7 @@ Output
 </div>
 <ol start="3" type="a">
 <li><p>Recreate the plot on the website. You may ignore the right-hand celsius axis, the “° F” on the left-hand axis, the background grid, the “NOAA” logo, and the shaded area beneath the time series. (<strong>4 Points</strong>) However, <strong>extra credit</strong> (<strong>5 <em>Bonus</em> Points</strong>) will be given to the person who can get the closest to an exact replication.</p></li>
-<li><p>Make a new column that is the z-score for each observation. Use the 1901-2000 average as the mean in the calculation. (<strong>2 Points</strong>)</p></li>
+<li><p>Make a new column that is the z-score for each observation. Use the 1901-2000 average as the mean in the calculation.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<strong>2 Points</strong>)</p></li>
 <li><p>Print the row with the largest z-score. (<strong>2 Points</strong>)</p></li>
 <li><p>Assuming temperatures come from a normal distribution, what is the probability of observing a temperature this high (or higher)? (<strong>2 Points</strong>)</p></li>
 </ol>
@@ -3193,6 +3201,7 @@ Output
 
 <ol>
 <li id="fn1"><p>Define “young” as 25 or younger.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The 1901-2000 average can be found on NOAA. Click on the checkbox that says “Display Base Period”, then click “Plot”. This should add a horizontal line with a long-run average. Use this number in your calculation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
