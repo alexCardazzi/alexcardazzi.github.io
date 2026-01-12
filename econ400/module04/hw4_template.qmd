@@ -55,6 +55,9 @@ Q <- 0
 
 
 
+
+
+
 Primary, secondary, and post-secondary education all lead to increased human capital, an important factor in driving long run economic growth, worker productivity, employment, innovation, and other important economic outcomes.  The production of education takes many forms.  For example, primary and secondary education markets contain public schools, schools operated by various religious faiths (the Catholic church, various fundamentalist religions, etc.), as well as private non-denominational organizations like charter schools.  Because of the economic importance of education and human capital formation, research on the effectiveness of different forms of education is interesting and important.  
 
 Private Catholic schools represent a common alternative to public schools in many communities.  A large body of economic research focuses on how different types of education, in particular Catholic versus public school education, affects educational outcomes.  This research primarily focuses on grades, but some papers examine high school graduation rates and rates of college attendance.
@@ -62,8 +65,6 @@ Private Catholic schools represent a common alternative to public schools in man
 This research faces a number of important econometric challenges.  One key challenge stems from the fact that the decision to enroll a child in Catholic or public schools reflects parental choice and **not** random assignment.  School enrollment decisions reflect many factors at the family and individual level.  While public school attendance is free of charge, and financed by taxes, private education like attendance at a Catholic school requires paying tuition, making family income an important factor.  Income may also affect educational outcomes independent of school choice, for example through tutoring, educational software, and other unobservable factors, making income a likely back door.
 
 In a "dream" world, a team of economists could obtain a sample of 10,000 students and randomly assign them to either a Catholic school or a public school.  In this situation, we could have more confidence in estimates of a casual treatment effect of school type on educational outcomes.  However, for obvious reasons, this is not possible.  Instead, education economists frequently use matching methods like Propensity Score Matching to come up with as-if random assignment of catholic school education to generate more plausible causal estimates.  This homework applies matching methods to a data set containing information on school enrollment, grades, and family characteristics.
-
-
 
 ## Question `r Q <- Q+1; Q`
 
@@ -73,13 +74,11 @@ q <- 0
 
 Explore whether catholic school education improves outcomes.  The data for this homework can be found [here](https://alexcardazzi.github.io/econ400/data/catholic2.csv) ([codebook](https://alexcardazzi.github.io/econ400/data/ecls-codebook.txt)).
 
-
-`r q <- q+1; letters[q]`. Read in the data and store it as an object called `school`. (**1 Point**)
+`r q <- q+1; letters[q]`. Read in the data and store it as an object called `school`. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
-
 
 `r q <- q+1; letters[q]`. Change the column names to the following: (**2 Points**)
 
@@ -95,34 +94,27 @@ Explore whether catholic school education improves outcomes.  The data for this 
 # Your code here...
 ```
 
-
-`r q <- q+1; letters[q]`. Calculate the percent of students who attended catholic school. (**1 Point**)
-
-```{r}
-# Your code here...
-```
-
-
-`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who did not attend catholic school. (**1 Point**)
+`r q <- q+1; letters[q]`. Calculate the percent of students who attended catholic school. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
-
-`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who attended catholic school. (**1 Point**)
+`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who did not attend catholic school. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
+`r q <- q+1; letters[q]`. Use `modelsummary` to create a summary statistics table for students who attended catholic school. (**2 Points**)
+
+```{r}
+# Your code here...
+```
 
 `r q <- q+1; letters[q]`. Discuss the similarities and differences between the students in these groups. (**2 Points**)
 
 *Your answer here...*
-
-
-
 
 
 ## Question `r Q <- Q+1; Q`
@@ -133,22 +125,15 @@ q <- 0
 
 Examine the family income for these groups of students.
 
-
-`r q <- q+1; letters[q]`. Use `density()` to estimate the distributions of the log of `income2` for students who attend catholic school and students who do not.  Then, plot these two densities on the same set of labeled axes.  Remember to ensure both distributions are fully visible (not cutoff), different colors, and identified in a legend.^[[Hint](https://alexcardazzi.github.io/econ400/module04/module04-01_notes.html#:~:text=Let%E2%80%99s%20plot%20both%20distributions.)] (**3 Points**)
+`r q <- q+1; letters[q]`. Use `density()` to estimate the distributions of the log of `income2` for students who attend catholic school and students who do not.  Then, plot these two densities on the same set of labeled axes.  Remember to ensure both distributions are fully visible (not cutoff), different colors, and identified in a legend. (**4 Points**)
 
 ```{r}
 # Your code here...
 ```
 
-
-`r q <- q+1; letters[q]`. Do you think mother's age is an important variable to control for? Why, or why not? Use "DAG" language in your answer. (**1 Point**)
-
+`r q <- q+1; letters[q]`. Do you think mother's age is an important variable to control for? Why, or why not? Use "DAG" language in your answer. (**2 Points**)
 
 `r q <- q+1; letters[q]`. Regardless of your answer to the previous question, what are some other factors (that may or may not exist in the dataset) that might be important to control for?  Again, use "DAG" language in your answer. (**2 Points**)
-
-
-
-
 
 ## Question `r Q <- Q+1; Q`
 
@@ -158,37 +143,35 @@ q <- 0
 
 Begin working through the matching procedure.
 
-
 `r q <- q+1; letters[q]`. Estimate a propensity score model using mother's age, mother's education, and family income as predictors.^[Remember: propensity score models are often estimated using logistic regression.] (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
-
 `r q <- q+1; letters[q]`. Interpret the signs of the model's estimated coefficients. (**2 Points**)
 
 *Your answer here...*
 
-
-`r q <- q+1; letters[q]`. Using this model, , create inverse probability weights as a new variable called `w` in `school`. (**2 Point**)
+`r q <- q+1; letters[q]`. Using this model, generate propensity scores as a new variable called `ps` in `school`. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
+`r q <- q+1; letters[q]`. Using these propensity scores, create inverse probability weights as a new variable called `w` in `school`. (**2 Points**)
 
-`r q <- q+1; letters[q]`. Using these weights, re-create the income distributions from before.  Comment on any similarities/differences.^[Hint: `density()` contains an option for weights.] (**2 Points**)
+```{r}
+# Your code here...
+```
 
-```{r, warning=FALSE}
+`r q <- q+1; letters[q]`. Using these weights, re-create the income distributions from before.  Comment on any similarities/differences.^[Hint: `density()` contains an option for weights.] (**4 Points**)
+
+```{r}
 # Your code here...
 ```
 
 *Your answer here...*
-
-
-
-
 
 ## Question `r Q <- Q+1; Q`
 
@@ -202,20 +185,17 @@ $$\text{Math}_i = \alpha + \delta \text{Catholic}_i + \epsilon_i$$
 
 $$\begin{aligned}\text{Math}_i = \alpha &+ \delta \text{Catholic}_i \\ &+ \beta_0\text{Mother's Age}_i \\&+ \beta_1 \text{Mother's Education}_i \\&+ \beta_2log(\text{Family Income}_i) + \epsilon_i\end{aligned}$$
 
-
 `r q <- q+1; letters[q]`. First estimate the models' parameters using OLS and store them as `r_ols1` and `r_ols2`. You do not need to display the results quite yet. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
+`r q <- q+1; letters[q]`. Use the `MatchIt` package in R to create a matched sample (match based on propensity scores).  Then, estimate the parameters with OLS using the matched sample. Store these as `r_match1` and `r_match2`. Again, hold off on displaying these coefficients. (**3 Points**)
 
-`r q <- q+1; letters[q]`. Use the `MatchIt` package in R to create a matched sample (match based on mahalanobis distance). Then, estimate the parameters with OLS using the matched sample. Store these as `r_match1` and `r_match2`. Again, hold off on displaying these coefficients. (**3 Points**)
-
-```{r, warning=FALSE, message=FALSE, results='hold'}
+```{r}
 # Your code here...
 ```
-
 
 `r q <- q+1; letters[q]`. Estimate the parameters with OLS using the inverse probability weights you generated before. Store these estimations as `r_ipw1` and `r_ipw2`. (**3 Points**)
 
@@ -223,38 +203,22 @@ $$\begin{aligned}\text{Math}_i = \alpha &+ \delta \text{Catholic}_i \\ &+ \beta_
 # Your code here...
 ```
 
-
 `r q <- q+1; letters[q]`. Display the coefficients of the above six models in a table generated by `modelsummary`. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
-
-
-
-
 ## Question `r Q <- Q+1; Q`
-
-```{r include=FALSE}
-q <- 0
-```
 
 Discuss the results of the estimations.  Make sure to discuss difference between methods (OLS, PSM, and IPW) as well as models (controls, no controls). (**4 Points**)
 
 *Your answer here...*
-
-
-
-
 
 ## Question `r Q <- Q+1; Q`
 
 Write up your takeaways from this analysis.  Do you believe catholic school is better than public school in terms of math education? Which model do you believe the most? Is matching appropriate in this setting?  In other words, are the assumptions required to interpret these results as causal satisfied or have they been violated? (**4 Points**)
 
 *Your answer here...*
-
-
-
 
 

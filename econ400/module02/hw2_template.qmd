@@ -84,7 +84,7 @@ Now, consider the following relationships between the variables:
 q <- 0
 ```
 
-Using `dagitty`, Construct and plot a DAG to depict the relationships between these variables.  Be sure to indicate which variable is the outcome and which is the treatment. (**6 Points**)
+Using `dagitty`, Construct and plot a DAG to depict the relationships between these variables.  Be sure to indicate which variable is the outcome and which is the treatment. (**8 Points**)
 
 ```{r, warning=FALSE, message=FALSE, fig.height=2, fig.width=4, fig.show='hold'}
 # Write your code here
@@ -110,7 +110,7 @@ Simulated data for this setting can be found [here](https://alexcardazzi.github.
 ```
 
 
-`r q <- q+1; letters[q]`. Create summary statistics using functions from the `modelsummary` package. (**3 Points**)
+`r q <- q+1; letters[q]`. Create summary statistics using functions from the `modelsummary` package. (**4 Points**)
 
 ```{r}
 # Write your code here
@@ -146,7 +146,7 @@ Use functions from `dagitty` to evaluate and explore your DAG.  This will help i
 *Write your response here.*
 
 
-`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *total* causal effect of auto insurance on crash risk? (**2 Points**)
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *total* causal effect of auto insurance on crash risk? (**3 Points**)
 
 ```{r}
 # Write your code here
@@ -155,7 +155,7 @@ Use functions from `dagitty` to evaluate and explore your DAG.  This will help i
 *Write your response here.*
 
 
-`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *direct* causal effect of auto insurance on crash risk?  You may use `dagitty` to help you, **but you must provide explanations for `dagitty`'s output**. (**2 Points**)
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *direct* causal effect of auto insurance on crash risk?  You may use `dagitty` to help you, **but you must provide explanations for `dagitty`'s output**. (**3 Points**)
 
 ```{r}
 # Write your code here
@@ -176,14 +176,14 @@ q <- 0
 Using `safety`, estimate the (direct and total) causal effects of auto insurance on crash risk.
 
 
-`r q <- q+1; letters[q]`. Estimate the models below. (**2 Points**)
+`r q <- q+1; letters[q]`. Estimate these models below. (**4 Points**)
 
 ```{r}
 # Write your code here
 ```
 
 
-`r q <- q+1; letters[q]`. Display the coefficient estimates in a table generated via functions in `modelsummary`. (**3 Points**)
+`r q <- q+1; letters[q]`. Display the coefficient estimates in a table generated via functions in `modelsummary`. (**4 Points**)
 
 ```{r}
 # Write your code here
@@ -200,7 +200,7 @@ Using `safety`, estimate the (direct and total) causal effects of auto insurance
 
 ## Question `r Q <- Q+1; Q`
 
-Consider this question using data in real life.  What difficulties might you have in estimating these models in reality? (**4 Points**)
+Consider this question using data in real life.  What difficulties might you have in estimating these models in reality? (**5 Points**)
 
 *Write your response here.*
 
@@ -214,7 +214,7 @@ Consider this question using data in real life.  What difficulties might you hav
 q <- 0
 ```
 
-Think of two additional variables and/or edges that may belong in this DAG. Make an argument for why they belong in the DAG. (**4 Points**)
+Think of two additional variables and/or edges that may belong in this DAG. Make an argument for why they belong in the DAG. (**5 Points**)
 
 *Write your response here.*
 

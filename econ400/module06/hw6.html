@@ -3331,13 +3331,13 @@ border: 0;
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <ol type="a">
 <li><p>What is the research question this paper is answering? What is its significance? (<strong>2 Points</strong>)</p></li>
-<li><p>Explain the identification strategy used in this paper. (<strong>2 Points</strong>)</p></li>
+<li><p>Explain the identification strategy used in this paper. (<strong>3 Points</strong>)</p></li>
 </ol>
 <!-- ::: {.content-hidden} -->
 <!-- *The identification strategy used ... * -->
 <!-- ::: -->
 <ol start="3" type="a">
-<li>Draw a (simplified) DAG for this setting, or write down the first and second stage regressions used in the IV estimation in the notation used in the notes. (<strong>2 Points</strong>)</li>
+<li>Draw a (simplified) DAG for this setting, or write down the first and second stage regressions used in the IV estimation in the notation used in the notes. (<strong>3 Points</strong>)</li>
 </ol>
 </section>
 <section id="question-2" class="level2">
@@ -3345,23 +3345,23 @@ border: 0;
 <p>Use <a href="https://alexcardazzi.github.io/econ400/data/urban_renew.csv">these data</a> to complete this homework.</p>
 <ol type="a">
 <li><p>Read the data into R as an object called <code>city</code>. (<strong>1 Point</strong>)</p></li>
-<li><p>Plot the average per-capita funding by years of potential participation. Does this figure support the authors candidate for an instrument? (<strong>2 Points</strong>)</p></li>
+<li><p>Plot the average per-capita funding by years of potential participation. Does this figure support the authors candidate for an instrument? (<strong>3 Points</strong>)</p></li>
 </ol>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <ol type="a">
-<li><p>Estimate the effect of per-capita funds on the different outcomes in Table 3 using naive/endogenous OLS. To make it a bit easier, here are the control variables used in the paper: <code>owner_occ_pct50 + log(med_prop_val50) + dilap_pct50 + units_old_pct50 + no_plumbing_pct50 + crowded_units_pct50 + log(pop50) + nonwhite_pct50 + manuf_pct50 + emp_rate50 + median_school50 + log(med_fam_inc50) + income_2k_pct50</code>. Check out <a href="https://lrberge.github.io/fixest/articles/multiple_estimations.html#multiple-lhs">this link</a> to learn how to estimate the same model with different outcome variables to reduce the amount of code you will need to write. (<strong>2 Points</strong>)</p></li>
+<li><p>Estimate the effect of per-capita funds on the different outcomes in Table 3 using naive/endogenous OLS. To make it a bit easier, here are the control variables used in the paper: <code>owner_occ_pct50 + log(med_prop_val50) + dilap_pct50 + units_old_pct50 + no_plumbing_pct50 + crowded_units_pct50 + log(pop50) + nonwhite_pct50 + manuf_pct50 + emp_rate50 + median_school50 + log(med_fam_inc50) + income_2k_pct50</code>. Check out <a href="https://lrberge.github.io/fixest/articles/multiple_estimations.html#multiple-lhs">this link</a> to learn how to estimate the same model with different outcome variables to reduce the amount of code you will need to write. (<strong>4 Points</strong>)</p></li>
 <li><p>Tabulate the regression coefficients in a single table using functions from the <code>modelsummary</code> package. Do not display the coefficients for the control variables. (<strong>2 Points</strong>)</p></li>
-<li><p>Interpret the primary coefficients of interest as if they were causal. (<strong>2 Points</strong>)</p></li>
-<li><p>What argument(s) do the authors make for why we cannot interpret these estimates as causal? (<strong>2 Points</strong>)</p></li>
-<li><p>Could the author(s) have estimated a difference-in-differences? Why or why not (aside from the data not being in a panel format)? (<strong>2 Points</strong>)</p></li>
+<li><p>Interpret the primary coefficients of interest as if they were causal. (<strong>3 Points</strong>)</p></li>
+<li><p>What argument(s) do the authors make for why we cannot interpret these estimates as causal? (<strong>3 Points</strong>)</p></li>
+<li><p>Could the author(s) have estimated a difference-in-differences? Why or why not (aside from the data not being in a panel format)? (<strong>3 Points</strong>)</p></li>
 </ol>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <ol type="a">
-<li><p>Estimate the reduced form relationship between the instrument and the previous outcomes (conditional on the control variables from the previous question). These estimates should match the estimates on the first row of Table 2. Present the estimates in a table.</p></li>
+<li><p>Estimate the reduced form relationship between the instrument and the previous outcomes (conditional on the control variables from the previous question). These estimates should match the estimates on the first row of Table 2. Present the estimates in a table. (<strong>3 Points</strong>)</p></li>
 <li><p>Interpret these coefficients of interest as if they were causal. (<strong>2 Points</strong>)</p></li>
 <li><p>Can these estimates be interpreted as causal? If no, why not? If yes, then why can’t we just stop here? (<strong>2 Points</strong>)</p></li>
 </ol>
@@ -3369,7 +3369,7 @@ border: 0;
 <section id="question-5" class="level2">
 <h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <ol type="a">
-<li><p>Estimate the effect of per-capita funds on the different outcomes in Table 3 using IV. Display the coefficients in a table using <code>modelsummary</code>. (<strong>2 Points</strong>)</p></li>
+<li><p>Estimate the effect of per-capita funds on the different outcomes in Table 3 using IV. Display the coefficients in a table using <code>modelsummary</code>. (<strong>3 Points</strong>)</p></li>
 <li><p>Interpret these coefficients. (<strong>2 Points</strong>)</p></li>
 <li><p>How do these coefficients compare to those from the naive regression? (<strong>4 Points</strong>)</p></li>
 <li><p>Use <code>fitstat()</code> to display the F-statistic and the Wald-statistic. What are the general takeaways from these tests? (<strong>2 Points</strong>)</p></li>

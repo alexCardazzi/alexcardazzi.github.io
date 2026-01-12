@@ -3473,7 +3473,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Explore whether catholic school education improves outcomes. The data for this homework can be found <a href="https://alexcardazzi.github.io/econ400/data/catholic2.csv">here</a> (<a href="https://alexcardazzi.github.io/econ400/data/ecls-codebook.txt">codebook</a>).</p>
 <ol type="a">
-<li><p>Read in the data and store it as an object called <code>school</code>. (<strong>1 Point</strong>)</p></li>
+<li><p>Read in the data and store it as an object called <code>school</code>. (<strong>2 Points</strong>)</p></li>
 <li><p>Change the column names to the following: (<strong>2 Points</strong>)</p></li>
 </ol>
 <ul>
@@ -3486,9 +3486,9 @@ window.Quarto = {
 <li><code>income2</code> : <code>income2</code> (no change, this is just for completeness)</li>
 </ul>
 <ol start="3" type="a">
-<li><p>Calculate the percent of students who attended catholic school. (<strong>1 Point</strong>)</p></li>
-<li><p>Use <code>modelsummary</code> to create a summary statistics table for students who did not attend catholic school. (<strong>1 Point</strong>)</p></li>
-<li><p>Use <code>modelsummary</code> to create a summary statistics table for students who attended catholic school. (<strong>1 Point</strong>)</p></li>
+<li><p>Calculate the percent of students who attended catholic school. (<strong>2 Points</strong>)</p></li>
+<li><p>Use <code>modelsummary</code> to create a summary statistics table for students who did not attend catholic school. (<strong>2 Points</strong>)</p></li>
+<li><p>Use <code>modelsummary</code> to create a summary statistics table for students who attended catholic school. (<strong>2 Points</strong>)</p></li>
 <li><p>Discuss the similarities and differences between the students in these groups. (<strong>2 Points</strong>)</p></li>
 </ol>
 <!-- ^[Keep in mind this variable has been "standardized" and has a mean of 0 and standard deviation of 1.  Transforming a variable to a standardized value requires subtracting the sample mean from each observation and dividing this difference by the sample standard deviation.  Researchers standardize grades to make them more comparable across schools.] -->
@@ -3497,8 +3497,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Examine the family income for these groups of students.</p>
 <ol type="a">
-<li><p>Use <code>density()</code> to estimate the distributions of the log of <code>income2</code> for students who attend catholic school and students who do not. Then, plot these two densities on the same set of labeled axes. Remember to ensure both distributions are fully visible (not cutoff), different colors, and identified in a legend.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (<strong>3 Points</strong>)</p></li>
-<li><p>Do you think mother’s age is an important variable to control for? Why, or why not? Use “DAG” language in your answer. (<strong>1 Point</strong>)</p></li>
+<li><p>Use <code>density()</code> to estimate the distributions of the log of <code>income2</code> for students who attend catholic school and students who do not. Then, plot these two densities on the same set of labeled axes. Remember to ensure both distributions are fully visible (not cutoff), different colors, and identified in a legend. (<strong>4 Points</strong>)</p></li>
+<li><p>Do you think mother’s age is an important variable to control for? Why, or why not? Use “DAG” language in your answer. (<strong>2 Points</strong>)</p></li>
 <li><p>Regardless of your answer to the previous question, what are some other factors (that may or may not exist in the dataset) that might be important to control for? Again, use “DAG” language in your answer. (<strong>2 Points</strong>)</p></li>
 </ol>
 </section>
@@ -3506,12 +3506,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>Begin working through the matching procedure.</p>
 <ol type="a">
-<li><p>Estimate a propensity score model using mother’s age, mother’s education, and family income as predictors.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<strong>2 Points</strong>)</p></li>
+<li><p>Estimate a propensity score model using mother’s age, mother’s education, and family income as predictors.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (<strong>2 Points</strong>)</p></li>
 <li><p>Interpret the signs of the model’s estimated coefficients. (<strong>2 Points</strong>)</p></li>
 </ol>
 <ol start="3" type="a">
-<li><p>Using this model, , create inverse probability weights as a new variable called <code>w</code> in <code>school</code>. (<strong>2 Point</strong>)</p></li>
-<li><p>Using these weights, re-create the income distributions from before. Comment on any similarities/differences.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (<strong>2 Points</strong>)</p></li>
+<li><p>Using this model, generate propensity scores as a new variable called <code>ps</code> in <code>school</code>. (<strong>2 Points</strong>)</p></li>
+<li><p>Using these propensity scores, create inverse probability weights as a new variable called <code>w</code> in <code>school</code>. (<strong>2 Points</strong>)</p></li>
+<li><p>Using these weights, re-create the income distributions from before. Comment on any similarities/differences.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<strong>4 Points</strong>)</p></li>
 </ol>
 </section>
 <section id="question-4" class="level2">
@@ -3521,7 +3522,7 @@ window.Quarto = {
 <p><span class="math display">\[\begin{aligned}\text{Math}_i = \alpha &amp;+ \delta \text{Catholic}_i \\ &amp;+ \beta_0\text{Mother&#39;s Age}_i \\&amp;+ \beta_1 \text{Mother&#39;s Education}_i \\&amp;+ \beta_2log(\text{Family Income}_i) + \epsilon_i\end{aligned}\]</span></p>
 <ol type="a">
 <li><p>First estimate the models’ parameters using OLS and store them as <code>r_ols1</code> and <code>r_ols2</code>. You do not need to display the results quite yet. (<strong>2 Points</strong>)</p></li>
-<li><p>Use the <code>MatchIt</code> package in R to create a matched sample (match based on mahalanobis distance). Then, estimate the parameters with OLS using the matched sample. Store these as <code>r_match1</code> and <code>r_match2</code>. Again, hold off on displaying these coefficients. (<strong>3 Points</strong>)</p></li>
+<li><p>Use the <code>MatchIt</code> package in R to create a matched sample (match based on propensity scores). Then, estimate the parameters with OLS using the matched sample. Store these as <code>r_match1</code> and <code>r_match2</code>. Again, hold off on displaying these coefficients. (<strong>3 Points</strong>)</p></li>
 <li><p>Estimate the parameters with OLS using the inverse probability weights you generated before. Store these estimations as <code>r_ipw1</code> and <code>r_ipw2</code>. (<strong>3 Points</strong>)</p></li>
 <li><p>Display the coefficients of the above six models in a table generated by <code>modelsummary</code>. (<strong>2 Points</strong>)</p></li>
 </ol>
@@ -3539,9 +3540,8 @@ window.Quarto = {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p><a href="https://alexcardazzi.github.io/econ400/module04/module04-01_notes.html#:~:text=Let%E2%80%99s%20plot%20both%20distributions.">Hint</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Remember: propensity score models are often estimated using logistic regression.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Hint: <code>density()</code> contains an option for weights.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Remember: propensity score models are often estimated using logistic regression.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Hint: <code>density()</code> contains an option for weights.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->

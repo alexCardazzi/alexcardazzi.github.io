@@ -63,6 +63,10 @@ In this homework, you will explore [PSID data](https://vincentarelbundock.github
 
 
 
+
+
+
+
 ## Question `r Q <- Q+1; Q`
 
 ```{r include=FALSE}
@@ -71,13 +75,11 @@ q <- 0
 
 Use the data linked above to answer the following.
 
-
 `r q <- q+1; letters[q]`. Read the data into an object called `psid`. (**1 Point**)
 
 ```{r}
 # Your code here...
 ```
-
 
 `r q <- q+1; letters[q]`. Subset the `data.frame` to include only the following columns: (**1 Point**)
 
@@ -138,6 +140,8 @@ Use the data linked above to answer the following.
 
 
 
+
+
 ## Question `r Q <- Q+1; Q`
 
 ```{r include=FALSE}
@@ -146,28 +150,39 @@ q <- 0
 
 In this question, you will explore some of the variables in the data.
 
-
-`r q <- q+1; letters[q]`. Tabulate the *total* number of children for the women sampled. In other words, create a visualization that shows how many women had 0 children, 1 child, 2 children, etc. (**3 Points**)
-
-```{r}
-# Your code here...
-```
-
-
-`r q <- q+1; letters[q]`. Calculate the average number of children by age. Plot the relationship as a line graph. (**3 Points**)
+`r q <- q+1; letters[q]`. Use the `density()` function to plot the wage distribution for husbands of employed and unemployed women in 1975. What do you learn from this figure? (**3 Points**)
 
 ```{r}
-# Your code here...
+
 ```
 
+*Your answer here...*
 
-`r q <- q+1; letters[q]`. Generate a scatterplot between a woman's wages and her husband's wages. Be sure to include axis labels, etc. Add a diagonal line that denotes y = x. What are some things you notice in this plot? (**3 Points**)
+`r q <- q+1; letters[q]`. Tabulate and then visualize the *total* number of children for the women sampled. The x-axis should contain # of children and the y-axis should measure the number of women with that number of children. What do you learn from this figure? (**3 Points**)
 
 ```{r}
 # Your code here...
 ```
 
 *Your answer here...*
+
+`r q <- q+1; letters[q]`. Calculate the average number of young and old children (separately) by age.  Plot the relationship between children and age. What do you learn from this figure? (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+`r q <- q+1; letters[q]`. Generate a scatterplot between a woman's wages and her husband's wages. Be sure to include axis labels, etc. Add a diagonal line that denotes y = x. What are some things you can learn from this plot? (**3 Points**)
+
+```{r}
+# Your code here...
+```
+
+*Your answer here...*
+
+
 
 
 
@@ -179,15 +194,9 @@ In this question, you will explore some of the variables in the data.
 q <- 0
 ```
 
-For this question, you will estimate two regressions.  First, you will estimate a model to explain a woman's wages using characteristics pertaining to her and/or her husband. Second, estimate the same model using only the subset of women with non-zero wages. At the end, use functions from the `modelsummary` package to present the results.
+For this question, you will estimate two regressions.  First, you will estimate a model to explain a woman's wages using characteristics pertaining to her and/or her husband.  Second, estimate the same model using only the subset of women with non-zero wages. At the end, use functions from the `modelsummary` package to present the results.
 
-
-`r q <- q+1; letters[q]`. In the next question, you will be tasked with estimating a model to explain wages for women using information about the women and their husbands. You may use any variable, or combination of variables, included in the data except for the variable that indicates whether a woman is employed. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on wages. (**2 Points**)
-
-*Your answer here...*
-
-
-`r q <- q+1; letters[q]`. Estimate the model you discussed above. (**1 Point**)
+`r q <- q+1; letters[q]`. Estimate a model where a woman's wages is a function of factors pertaining to her and/or her husband. You may use any variable, or combination of variables, except for the variable that indicates whether a woman is employed. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on wages. (**4 Points**)
 
 ```{r}
 # Your code here...
@@ -196,28 +205,28 @@ For this question, you will estimate two regressions.  First, you will estimate 
 *Your answer here...*
 
 
-`r q <- q+1; letters[q]`. Re-estimate the model using only the subset of employed women. (**1 Point**)
+`r q <- q+1; letters[q]`. Re-estimate the model using only the subset of employed women. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
-
-`r q <- q+1; letters[q]`. Display the coefficients from both estimations in a single table (using functions from `modelsummary`). (**3 Points**)
+`r q <- q+1; letters[q]`. Display the coefficients from both estimations in a single table. (**3 Points**)
 
 ```{r}
 # Your code here...
 ```
 
+`r q <- q+1; letters[q]`. Interpret the coefficients in the regressions. (**4 Points**)
 
-`r q <- q+1; letters[q]`. Interpret the coefficients in the regressions. (**2 Points**)
+*Your answer here...*
+
+
+`r q <- q+1; letters[q]`. Do any of the coefficients change between regressions? Why or why not? Which regression do you prefer, and why? (**3 Points**)
 
 *Your answer here...*
 
 
-`r q <- q+1; letters[q]`. How does the interpretation of these regressions differ from one another? Which regression do you prefer, and why? (**3 Points**)
-
-*Your answer here...*
 
 
 
@@ -232,7 +241,7 @@ q <- 0
 The exercise in this question will be very similar to the last one, except the dependent variable will be binary.
 
 
-`r q <- q+1; letters[q]`. Estimate a model that explains female employment status. Again, you may choose which variables you would like to use in the model, but this time you may not use the woman's wages as an explanatory variable. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on employment. (**3 Points**)
+`r q <- q+1; letters[q]`. Estimate a model that explains female employment status. Again, you may choose which variables you would like to use in the model, but you may not use the woman's wages as an explanatory variable.  For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on employment. (**4 Points**)
 
 ```{r}
 # Your code here...
@@ -248,9 +257,11 @@ The exercise in this question will be very similar to the last one, except the d
 ```
 
 
-`r q <- q+1; letters[q]`. Interpret each coefficient in the regression. (**2 Points**)
+`r q <- q+1; letters[q]`. Interpret each coefficient in the regression. (**4 Points**)
 
 *Your answer here...*
+
+
 
 
 
@@ -265,4 +276,10 @@ q <- 0
 Discuss yours findings from the regressions above.  What does this tell you about women from the mid 1970s?  Did anything surprise you?  How do you think these regressions would differ if the sample contained data collected from women of today? (**4 Points**)
 
 *Your answer here...*
+
+
+
+
+
+
 

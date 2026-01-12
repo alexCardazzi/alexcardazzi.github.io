@@ -58,13 +58,13 @@ For a "how to" on writing introductions, see [Keith Head's Introduction Formula]
 
 ## Literature Review
 
-
+Find 3 - 5 papers in the academic literature that touch on your topic. From these, you can learn how others have studied your question (identification, data, etc.) and perhaps think of ways to either replicate or improve on their work. Doing a literature review early will be helpful.
 
 ## Data
 
-- Sources
-- Description
-- Summary
+- Sources: tell where the data come from and how you collected it.
+- Description: describe the raw data and how you combined everything into a single, usable format. Also, describe what the final dataset looks like. Remember, the reader will never actually *see* your data, so they must be able to understand it.
+- Summary: following up on the last point about describing the final dataset, it is often helpful to provide some visualizations and tables to give readers an idea of what your data looks like.
 
 ```{r}
 # Code here.
@@ -78,8 +78,10 @@ For inline equations, only use a single dollar sign like: $\overline{Y} = \wideh
 
 ## Results
 
+Present and discuss your main results here.
+
 ```{r}
-2 + 2
+# Code here.
 ```
 
 ## Conclusion

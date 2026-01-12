@@ -93,14 +93,14 @@ Use the supplied data from [Giorcelli and Moser (2020)](https://doi.org/10.1086/
 ```
 
 
-`r q <- q+1; letters[q]`. Using `table()`, find the number of observations in each of the following groups: treatment group pre-treatment, treatment group post-treatment, control group pre-treatment, control group post-treatment. (**1 Point**)
+`r q <- q+1; letters[q]`. Using `table()`, find the number of observations in each of the following groups: treatment group pre-treatment, treatment group post-treatment, control group pre-treatment, control group post-treatment. (**2 Points**)
 
 ```{r}
 # Your code here...
 ```
 
 
-`r q <- q+1; letters[q]`. Using `aggregate()`, find the average number of new operas for each of the states. (**1 Point**)
+`r q <- q+1; letters[q]`. Using `aggregate()`, find the average number of new operas for each of the states. (**2 Points**)
 
 ```{r}
 # Your code here...
@@ -124,7 +124,7 @@ q <- 0
 *Your answer here...*
 
 
-`r q <- q+1; letters[q]`. How do the authors address these assumptions in the paper (if at all)? Discuss the potential threats to a causal interpretation of the results in the paper. (**4 Points**)
+`r q <- q+1; letters[q]`. How do the authors address these assumptions in the paper (if at all)? Discuss the potential threats to a causal interpretation of the results in the paper. (**6 Points**)
 
 *Your answer here...*
 
@@ -134,7 +134,7 @@ q <- 0
 
 ### Question `r Q <- Q+1; Q`
 
-Do your best to replicate the content in Figure 2 using `italy`. *Note*: the lines in this graph might not replicate perfectly, but do what you can. (**4 Points**)
+Do your best to replicate the content in Figure 2 using `italy`. *Note*: the lines in this graph might not replicate perfectly, but do what you can. (**6 Points**)
 
 ```{r, fig.show='hold'}
 # Your code here...
@@ -153,7 +153,7 @@ q <- 0
 ```
 
 
-`r q <- q+1; letters[q]`. Estimate a 2x2 DiD model of the form (**2 point**):
+`r q <- q+1; letters[q]`. Estimate a 2x2 DiD model of the form (**2 Points**):
 
 $$Y_{st} = \beta_0 + \beta_1 \text{Treat}_s + \beta_2 \text{Post}_t + \delta (\text{Treat}_s \times \text{Post}_t) + \epsilon_{st}$$
 
@@ -162,14 +162,14 @@ $$Y_{st} = \beta_0 + \beta_1 \text{Treat}_s + \beta_2 \text{Post}_t + \delta (\t
 ```
 
 
-`r q <- q+1; letters[q]`. Replicate the results in Columns (1) and (2) on Table 3 in the paper.  Do not worry about replicating the standard errors.^[You only need to replicate the first two columns.] (**2 point**)
+`r q <- q+1; letters[q]`. Replicate the results in Columns (1) and (2) on Table 3 in the paper.  Do not worry about replicating the standard errors.^[You only need to replicate the first two columns.] (**3 Points**)
 
 ```{r}
 # Your code here...
 ```
 
 
-`r q <- q+1; letters[q]`. Create a table using `modelsummary` containing coefficients from the three models. (**2 point**)
+`r q <- q+1; letters[q]`. Create a table using `modelsummary` containing coefficients from the three models. (**3 Points**)
 
 ```{r, results='hold'}
 # Your code here...
@@ -204,7 +204,7 @@ Discuss your results:
 
 ### Question `r Q <- Q+1; Q`
 
-Replicate the Event Study in Figure 3 of the paper. (**4 points**)
+Replicate the Event Study in Figure 3 of the paper. (**5 points**)
 
 ```{r, warning=FALSE}
 # Your code here...
@@ -216,7 +216,7 @@ Replicate the Event Study in Figure 3 of the paper. (**4 points**)
 
 ### Question `r Q <- Q+1; Q`
 
-Do you believe the result to be credible in terms of causality and magnitude? Why or why not? (**4 Points**)
+Do you believe the result to be credible in terms of causality and magnitude? Why or why not? (**5 Points**)
 
 *Your answer here...*
 

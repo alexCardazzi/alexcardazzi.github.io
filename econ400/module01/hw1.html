@@ -3368,54 +3368,43 @@ border: 0;
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>In this question, you will explore some of the variables in the data.</p>
-<!-- a. Use the `density()` function to plot the wage distribution for husbands of employed and unemployed women in 1975. What do you learn from this figure? (**2 Points**) -->
-<!-- ```{r} -->
-<!-- dens_y <- density(psid$hwage[psid$employed == 1]) -->
-<!-- dens_n <- density(psid$hwage[psid$employed == 0]) -->
-<!-- plot(0, 0, type = "n", xlab = "Husband's Wage", ylab = "Density", -->
-<!--      xlim = range(dens_y$x, dens_n$x), -->
-<!--      ylim = range(dens_y$y, dens_n$y)) -->
-<!-- lines(dens_y$x, dens_y$y, col = "tomato", lwd = 3) -->
-<!-- lines(dens_n$x, dens_n$y, col = "dodgerblue", lwd = 3) -->
-<!-- legend("topright", legend = c("Employed", "Unemployed"), lty = 1, -->
-<!--        bty = "n", col = c("tomato", "dodgerblue"), lwd = 2) -->
-<!-- ``` -->
-<!-- ::: {.content-hidden} -->
-<!-- *Your answer here...* -->
-<!-- ::: -->
+<ol type="a">
+<li>Use the <code>density()</code> function to plot the wage distribution for husbands of employed and unemployed women in 1975. What do you learn from this figure? (<strong>3 Points</strong>)</li>
+</ol>
 <ol start="2" type="a">
-<li><p>Tabulate the <em>total</em> number of children for the women sampled. In other words, create a visualization that shows how many women had 0 children, 1 child, 2 children, etc. (<strong>3 Points</strong>)</p></li>
-<li><p>Calculate the average number of children by age. Plot the relationship as a line graph. (<strong>3 Points</strong>)</p></li>
-<li><p>Generate a scatterplot between a woman’s wages and her husband’s wages. Be sure to include axis labels, etc. Add a diagonal line that denotes y = x. What are some things you notice in this plot? (<strong>3 Points</strong>)</p></li>
+<li>Tabulate and then visualize the <em>total</em> number of children for the women sampled. The x-axis should contain # of children and the y-axis should measure the number of women with that number of children. What do you learn from this figure? (<strong>3 Point</strong>)</li>
+</ol>
+<ol start="3" type="a">
+<li>Calculate the average number of young and old children (separately) by age. Plot the relationship between children and age. What do you learn from this figure? (<strong>3 Points</strong>)</li>
+</ol>
+<ol start="4" type="a">
+<li>Generate a scatterplot between a woman’s wages and her husband’s wages. Be sure to include axis labels, etc. Add a diagonal line that denotes y = x. What are some things you can learn from this plot? (<strong>3 Points</strong>)</li>
 </ol>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>For this question, you will estimate two regressions. First, you will estimate a model to explain a woman’s wages using characteristics pertaining to her and/or her husband. Second, estimate the same model using only the subset of women with non-zero wages. At the end, use functions from the <code>modelsummary</code> package to present the results.</p>
 <ol type="a">
-<li>In the next question, you will be tasked with estimating a model to explain wages for women using information about the women and their husbands. You may use any variable, or combination of variables, included in the data except for the variable that indicates whether a woman is employed. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on wages. (<strong>2 Points</strong>)</li>
+<li>Estimate a model where a woman’s wages is a function of factors pertaining to her and/or her husband. You may use any variable, or combination of variables, except for the variable that indicates whether a woman is employed. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on wages. (<strong>4 Points</strong>)</li>
 </ol>
 <ol start="2" type="a">
-<li>Estimate the model you discussed above. (<strong>1 Point</strong>)</li>
+<li><p>Re-estimate the model using only the subset of employed women. (<strong>2 Points</strong>)</p></li>
+<li><p>Display the coefficients from both estimations in a single table. (<strong>3 Points</strong>)</p></li>
+<li><p>Interpret the coefficients in the regressions. (<strong>4 Points</strong>)</p></li>
 </ol>
-<ol start="3" type="a">
-<li><p>Re-estimate the model using only the subset of employed women. (<strong>1 Point</strong>)</p></li>
-<li><p>Display the coefficients from both estimations in a single table (using functions from <code>modelsummary</code>). (<strong>3 Points</strong>)</p></li>
-<li><p>Interpret the coefficients in the regressions. (<strong>2 Points</strong>)</p></li>
-</ol>
-<ol start="6" type="a">
-<li>How does the interpretation of these regressions differ from one another? Which regression do you prefer, and why? (<strong>3 Points</strong>)</li>
+<ol start="5" type="a">
+<li>Do any of the coefficients change between regressions? Why or why not? Which regression do you prefer, and why? (<strong>3 Points</strong>)</li>
 </ol>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>The exercise in this question will be very similar to the last one, except the dependent variable will be binary.</p>
 <ol type="a">
-<li>Estimate a model that explains female employment status. Again, you may choose which variables you would like to use in the model, but this time you may not use the woman’s wages as an explanatory variable. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on employment. (<strong>3 Points</strong>)</li>
+<li>Estimate a model that explains female employment status. Again, you may choose which variables you would like to use in the model, but you may not use the woman’s wages as an explanatory variable. For each variable you choose to include in the model, provide a short rationale for why you believe it belongs, and the effect you anticipate it having on employment. (<strong>4 Points</strong>)</li>
 </ol>
 <ol start="2" type="a">
 <li><p>Display the coefficients in a table. (<strong>3 Point</strong>)</p></li>
-<li><p>Interpret each coefficient in the regression. (<strong>2 Points</strong>)</p></li>
+<li><p>Interpret each coefficient in the regression. (<strong>4 Points</strong>)</p></li>
 </ol>
 </section>
 <section id="question-5" class="level2">
