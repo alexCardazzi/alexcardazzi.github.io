@@ -55,9 +55,13 @@ knitr::opts_chunk$set(warning = F, message = F)
 Q <- 0
 ```
 
+Include your AI link [here](.)
+
 This homework is based on the paper titled "Slum Clearance and Urban Renewal in the United States" by Collins and Shester ([2013](https://www.jstor.org/stable/43189425)) published in the *American Economic Journal: Applied Economics*.
 
 The data used can be found [here](https://alexcardazzi.github.io/econ400/data/urban_renew.csv).  It is recommended that you read the paper, which can be found on Canvas, before completing this homework.
+
+
 
 ## Question `r Q <- Q+1; Q`
 

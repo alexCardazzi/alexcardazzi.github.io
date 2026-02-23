@@ -53,6 +53,8 @@ knitr::knit_hooks$set(
 Q <- 0
 ```
 
+Include your AI link [here](.)
+
 Understanding labor market outcomes is crucial for gaining insights into economic dynamics and societal structures. The 1976 Panel Study of Income Dynamics (PSID) serves as a valuable dataset for such an analysis, capturing a comprehensive snapshot of American households at a particular time. These data document labor market outcomes for women with additional information about their partners' labor market outcomes. Investigating the factors influencing female wages provides a nuanced perspective on gender dynamics, labor market trends, and the distribution of economic opportunities within households.
 
 Analyzing wages between spouses allows us to explore questions related to gender equity, workforce participation, and the impact of educational attainment. Educational levels, for instance, may influence both the individual's and the spouse's earning potential, shedding light on the interplay between education and labor market outcomes within a family unit. Additionally, considering the presence of children in the household introduces a complex dynamic, as it may affect labor force participation, career choices, and subsequently, wages.

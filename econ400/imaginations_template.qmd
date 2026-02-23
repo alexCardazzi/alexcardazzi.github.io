@@ -71,8 +71,3 @@ knitr::knit_hooks$set(
 ### (Expected) Findings
 
 *Write your answer here.*
-
-### Video Abstract
-
-*Be sure to submit your video abstract online!*
-

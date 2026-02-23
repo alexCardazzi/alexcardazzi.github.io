@@ -55,7 +55,7 @@ Q <- 0
 
 
 
-
+Include your AI link [here](.)
 
 
 Primary, secondary, and post-secondary education all lead to increased human capital, an important factor in driving long run economic growth, worker productivity, employment, innovation, and other important economic outcomes.  The production of education takes many forms.  For example, primary and secondary education markets contain public schools, schools operated by various religious faiths (the Catholic church, various fundamentalist religions, etc.), as well as private non-denominational organizations like charter schools.  Because of the economic importance of education and human capital formation, research on the effectiveness of different forms of education is interesting and important.  

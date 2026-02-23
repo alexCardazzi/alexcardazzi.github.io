@@ -53,7 +53,11 @@ knitr::knit_hooks$set(
 Q <- 0
 ```
 
+Include your AI link [here](.)
+
 Besides New Hampshire and Virginia^[Virginia allows individuals to opt out of insurance, but they then must pay a \$500 uninsured fee.], car insurance is mandated in every state.  The point of this policy is to protect citizens from the often large financial burden resulting from a car crash.  However, forcing individuals to purchase insurance may generate negative outcomes through unintended consequences.  The often cited reason for this is **moral hazard**.  In other words, if individuals are shielded from the negative consequences of dangerous behavior, they may be more likely to engage in such behavior.  Think of this from the opposite point of view: if you knew your vehicle would blow up if you got into a fender bender, you'd probably drive much more safely (or not at all) than you do now.
+
+
 
 In this homework, we are going to explore the question: **how does auto insurance affect traffic safety?**
 

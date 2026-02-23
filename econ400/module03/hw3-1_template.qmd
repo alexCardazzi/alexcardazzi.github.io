@@ -53,12 +53,12 @@ knitr::knit_hooks$set(
 Q <- 0
 ```
 
+Include your AI link [here](.)
+
 This homework focuses on a recent paper exploiting a long ago change ([Copyrights and Creativity: Evidence from
 Italian Opera in the Napoleonic Age](https://doi.org/10.1086/710534) by Giorcelli and Moser, *Journal of Political Economy*, 2020).  During the Napoleonic Wars in Italy, copyright laws applying to musical compositions changed in parts of Italy conquered by Napoleon.  Copyright laws allow popular artists like song writers to monetize their work.  Without them, other artists can perform their songs without compensating them. You should read through the paper before completing this Homework.^[The PDF will be made available on Canvas.]
 
 **Important Note**: The data analyzed can be downloaded from the journal web site and come directly from this paper.  However, the results you generate may not exactly match those reported in the paper.
-
-
 
 ### Question `r Q <- Q+1; Q`
 
