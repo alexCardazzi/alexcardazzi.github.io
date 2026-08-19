@@ -3198,7 +3198,6 @@ window.Quarto = {
   <li><a href="#application-description" id="toc-application-description" class="nav-link" data-scroll-target="#application-description">Application Description</a></li>
   <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
   <li><a href="#empirical-model" id="toc-empirical-model" class="nav-link" data-scroll-target="#empirical-model">Empirical Model</a></li>
-  <li><a href="#expected-findings" id="toc-expected-findings" class="nav-link" data-scroll-target="#expected-findings">(Expected) Findings</a></li>
   <li><a href="#in-class-presentation" id="toc-in-class-presentation" class="nav-link" data-scroll-target="#in-class-presentation">In Class Presentation</a></li>
   </ul></li>
   </ul>
@@ -3249,10 +3248,9 @@ window.Quarto = {
 </blockquote>
 <p>These scientists come up with a bunch of different studies and research designs that would allow them to differentiate between correlation and causality. In this assignment, students will have to imagine up their own magic wand experiments with one condition: each experiment or study must use the particular causal inference strategy being studied. Students will have to write up their research designs and pitch them to the class.</p>
 <p>Your imagination exercise should address the following questions. Write your answers in a Quarto document and submit a properly rendered HTML file on Canvas. Your submission should contain the exact same headings shown below along with your text addressing all questions.</p>
-<p><strong>Note</strong>: your <em>first</em> imagination exercise will be a bit different than what is described in the previous paragraph. Students will be asked to present their research topic ideas from <a href="https://alexcardazzi.github.io/econ708/final_project.html#checkpoint-2">Project Checkpoint 2</a>. Each student will get feedback and constructive criticism from the class on their ideas. This presentation can be thought of as a research project version of “Shark Tank”. Students need only to submit their presentation to Canvas for this first imagination exercise.</p>
 <section id="research-setting" class="level3">
 <h3 class="anchored" data-anchor-id="research-setting">Research Setting</h3>
-<p>Introduce and describe the necessary background information on your research setting. What happened? Who or what was effected, and by what? What is the time frame? What is the research question you think this setting might help you answer? The setting studied should be either historic (e.g. actually happened) or at least a realistic hypothetical. (<strong>4 Points</strong>)</p>
+<p>Introduce and describe the necessary background information on your research setting. What happened? Who or what was effected, and by what? What is the time frame? What is the research question you think this setting might help you answer? The setting studied should be either historic (e.g. actually happened) or at least a realistic hypothetical. (<strong>3 Points</strong>)</p>
 <details>
 <summary>
 Setting Example
@@ -3263,7 +3261,7 @@ The research question I am interested in exploring is how did the timing of the 
 </section>
 <section id="application-description" class="level3">
 <h3 class="anchored" data-anchor-id="application-description">Application Description</h3>
-<p>Discuss how the particular method we are studying will help you answer the research question. How would the method work in the context of this setting? Discuss the assumptions needed for this method to deliver credibly causal estimates, and critically evaluate how likely the assumptions are to hold in this setting. Are there any potential backdoors or colliders you need to be wary of? (<strong>8 Points</strong>)</p>
+<p>Discuss how the particular method we are studying will help you answer the research question. How would the method work in the context of this setting? Discuss the assumptions needed for this method to deliver credibly causal estimates, and critically evaluate how likely the assumptions are to hold in this setting. Are there any potential backdoors or colliders you need to be wary of? (<strong>6 Points</strong>)</p>
 </section>
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
@@ -3277,7 +3275,7 @@ The ideal dataset would contain city-by-month level data with measures of segreg
 </section>
 <section id="empirical-model" class="level3">
 <h3 class="anchored" data-anchor-id="empirical-model">Empirical Model</h3>
-<p>Write down a regression model (or series of models) that corresponds to your setting and question, and identify the causal parameter of interest.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If the equation is too complex, you may articulate it in words, although be warned that this can sometimes be trickier. (<strong>3 Points</strong>)</p>
+<p>Write down a regression model (or series of models) that corresponds to your setting and question, and identify the causal parameter of interest.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Be sure to write down the interpretation of the parameter of interest. If the equation is too complex, you may articulate it in words, although be warned that this can sometimes be trickier. (<strong>3 Points</strong>)</p>
 <details>
 <summary>
 Empirical Model Example
@@ -3288,25 +3286,20 @@ Empirical Model Example
 <p><span class="math display">\[\text{Alternate Specification Here}\]</span> where the indicator is interacted with the percent of the population that identify as baseball fans. I anticipate the effects of integration to be stronger in places where more people are baseball fans since they would be paying more attention to when their team integrates. Also, I omit the control variable that tells the percent of the population that identifies as anti-segregationists. Controlling for this variable might in turn shut down a path by which MLB integration effects segregation throughout the rest of the city.</p>
 More here…
 </details>
-</section>
-<section id="expected-findings" class="level3">
-<h3 class="anchored" data-anchor-id="expected-findings">(Expected) Findings</h3>
-<p>What do you expect to find? Who does the answer to this question help, and how/why? (<strong>2 Points</strong>)</p>
-<details>
-<summary>
-(Expected) Findings Example
-</summary>
-<p>I expect MLB team integration will alleviate segregation as people become more accustomed to the idea by watching their team integrate. More here…</p>
-<p><em>or</em></p>
-<p>I do not expect MLB team integration to effect segregation in the rest of the city. This is because team owners are they themselves citizens of their MLB team’s city, and thus reflect (albeit potentially biased) city-wide opinions on segregation. Therefore, teams that integrate first are likely already in more liberal cities with individuals more likely to embrace ending segregation. From this point of view, we would need to be very careful about omitted variable bias! More here…</p>
-<p><em>or</em></p>
-I believe MLB team integration will intensify segregation, as conservative fans feel their power slipping in sports so they tighten their grasp elsewhere in society. More here…
-</details>
+<!-- ### (Expected) Findings -->
+<!-- What do you expect to find? Who does the answer to this question help, and how/why? (**1 Point**) -->
+<!-- <details> -->
+<!-- <summary>(Expected) Findings Example</summary> -->
+<!-- I expect MLB team integration will alleviate segregation as people become more accustomed to the idea by watching their team integrate. More here... -->
+<!-- *or* -->
+<!-- I do not expect MLB team integration to effect segregation in the rest of the city. This is because team owners are they themselves citizens of their MLB team's city, and thus reflect (albeit potentially biased) city-wide opinions on segregation. Therefore, teams that integrate first are likely already in more liberal cities with individuals more likely to embrace ending segregation. From this point of view, we would need to be very careful about omitted variable bias! More here... -->
+<!-- *or* -->
+<!-- I believe MLB team integration will intensify segregation, as conservative fans feel their power slipping in sports so they tighten their grasp elsewhere in society. More here... -->
+<!-- </details> -->
 </section>
 <section id="in-class-presentation" class="level3">
 <h3 class="anchored" data-anchor-id="in-class-presentation">In Class Presentation</h3>
-<p>Give a short presentation of your imagination exercise to the class. Be sure to be engaged in the exercises presented by your classmates. (<strong>5 Points</strong>)</p>
-<p>Next, prepare a presentation of a published (or working) paper using the causal inference method we are studying. A presentation template can be found <a href="https://alexcardazzi.github.io/econ708/presentation_template.qmd">here</a>. To assist in finding papers, navigate <a href="https://ejd.econ.mathematik.uni-ulm.de/">here</a> (<a href="https://www.r-bloggers.com/2021/01/finding-economic-articles-with-data-and-specific-empirical-methods/">summary</a>) and/or <a href="https://scholar.google.com/">here</a>. Students might find it advantageous to present papers similar to their research topics. Finally, all papers need to be approved via email. Papers published in the following journals are generally unlikely to be approved for presentation (though there are exceptions on a case-by-case basis): <em>American Economic Review</em>, <em>Quarterly Journal of Economics</em>, <em>Review of Economics and Statistics</em>, <em>Econometrica</em>, <em>Review of Economic Studies</em>, <em>Journal of Economic Perspectives</em>, <em>Journal of Economic Literature</em>. (<strong>15 Points</strong>)</p>
+<p>Prepare a presentation of a published (or working) paper using the causal inference method we are studying. A presentation template can be found <a href="https://alexcardazzi.github.io/econ708/presentation_template.qmd">here</a>. To assist in finding papers, navigate <a href="https://ejd.econ.mathematik.uni-ulm.de/">here</a> (<a href="https://www.r-bloggers.com/2021/01/finding-economic-articles-with-data-and-specific-empirical-methods/">summary</a>) and/or <a href="https://scholar.google.com/">here</a>. Students might find it advantageous to present papers similar to their research topics. Finally, all papers need to be approved via email. Papers published in the following journals are unlikely to be approved for presentation (though there are exceptions on a case-by-case basis): <em>American Economic Review</em>, <em>Quarterly Journal of Economics</em>, <em>Review of Economics and Statistics</em>, <em>Econometrica</em>, <em>Review of Economic Studies</em>, <em>Journal of Economic Perspectives</em>, <em>Journal of Economic Literature</em>. (<strong>15 Points</strong>)</p>
 <!-- ### Video Abstract (online students only) -->
 <!-- Submit a short (e.g. 3-5 minutes) video pitch of your imagination exercise.  Be sure to cover all of the above topics including (but not limited to) institutional knowledge/background, specific research question, general and specific threats to your identification strategy, necessary assumptions, data, etc. (**6 Points**) In addition, provide comments to two other students via the discussion board. (**4 Points**) -->
 </section>

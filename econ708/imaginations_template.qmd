@@ -68,10 +68,6 @@ knitr::knit_hooks$set(
 
 *Write your answer here.*
 
-### (Expected) Findings
-
-*Write your answer here.*
-
 ### In Class Presentation
 
 *Summarize the paper you presented in class in a few sentences. Be sure to include why you picked this paper to present, some details about the setting, what the research question was, how the authors answered the question causally, etc.*
