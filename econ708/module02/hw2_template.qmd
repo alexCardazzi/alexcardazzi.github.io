@@ -1,0 +1,179 @@
+---
+title: "Homework 2"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format: 
+  html:
+    theme: lux # Check here for more themes: https://quarto.org/docs/output-formats/html-themes.html
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+Q <- 0
+```
+
+In 1975, Sam Peltzman published a famous study of automobile safety regulation.  His argument, now known as the **Peltzman effect** or **risk compensation**, was that safety mandates can partially (or fully) offset themselves: when people are shielded from the consequences of dangerous behavior, they behave more dangerously. Drivers with seatbelts drive faster.  Skydivers with better ripcords pull them later. Football players with facemasks lead with their heads.
+
+Professional hockey is a perfect laboratory for this idea. While helmets clearly protect players from injury *mechanically*, a protected player may also check harder, block more shots, and skate through the middle of the ice with their head down. So the question is not whether helmets protect players holding behavior fixed (they do), but whether helmets make players safer *once we account for how helmets change behavior*.
+
+In this homework, we are going to explore the question: **how does protective equipment affect player injuries?**
+
+There are many ways to think through this problem, but let's start with the following factors that might be related to helmets and injuries:
+
+- **Helmet Technology (HT)**: whether a player wears a modern, high-tech helmet (*treatment*).
+- **Aggressive Play (AGG)**: an index of the player's style: checking, shot-blocking, playing through traffic, etc.
+- **Team Culture (TC)**: the degree to which the player's coaching staff rewards physical play.
+- **Experience (EXP)**: the player's years of professional experience.
+- **Referee Strictness (REF)**: how strictly officials call penalties in the player's games.
+- **Injury Risk (INJ)**: the probability of suffering an injury during the season (*outcome*).
+
+Now, consider the following relationships between the variables:
+
+- We will test both the direct and total effect of helmet technology on injury risk.
+- Helmet technology, through risk compensation, effects how aggressively a player plays.
+- Aggressive play will effect the probability of injury.
+- Better helmets mechanically protect players.  That is, helmet technology effects injury risk directly, holding playing style fixed.
+- Experience will effect injury risk due to experience alone (*i.e.* positioning, knowing when to bail out of a hit) and due to different levels of aggressive play.
+- Referee strictness will influence aggressive play.
+- Referee strictness will influence injury risk by itself by penalizing *other* players' dangerous hits.
+- Team culture will influence aggressive play.
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Using `dagitty`, Construct and plot a DAG to depict the relationships between these variables.  Be sure to indicate which variable is the outcome and which is the treatment. (**4 Points**)
+
+```{r}
+# Your code here
+```
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Simulated data for this setting can be found [here](https://alexcardazzi.github.io/econ708/data/helmets_sim.csv).
+
+`r q <- q+1; letters[q]`. Read the data into an object called `helmets` in R. (**0 Points**)
+
+```{r}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. Create summary statistics using functions from the `modelsummary` package. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Use functions from `dagitty` to evaluate and explore your DAG.  This will help inform your empirical specification and identification strategy.  You may use code, words, or both to answer these questions.
+
+`r q <- q+1; letters[q]`. List each of the paths in the DAG and tell which are "open". (**2 Points**)
+
+```{r}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. For each path, discuss why it is open or closed.  Be sure to use terms like "confounder", "collider", "mediator", etc. (**2 Points**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. What does it mean, and why is it significant, for a path to be open/closed? (**1 Point**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *total* causal effect of helmet technology on injury risk? (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. Which factors do you need to control for to estimate the *direct* causal effect of helmet technology on injury risk?  You may use `dagitty` to help you, **but you must provide explanations for `dagitty`'s output**. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+Using `helmets`, estimate the (direct and total) causal effects of helmet technology on injury risk.
+
+`r q <- q+1; letters[q]`. Estimate the models below. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+`r q <- q+1; letters[q]`. Display the coefficient estimates in a table generated via functions in `modelsummary`. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+
+`r q <- q+1; letters[q]`. Interpret each coefficient, besides the intercept/constant, in each model.  Pay careful attention to the coefficient on helmet technology in each column.  How can *both* estimates be correct at the same time? (**2 Points**)
+
+*Your answer here.*
+
+`r q <- q+1; letters[q]`. A classmate estimates `lm(INJ ~ HT + AGG, helmets)`, reasoning that since AGG is the mediator, controlling for it alone should recover the direct effect.  Estimate this model. Compare the coefficient on HT to your answer from the previous part, and explain what went wrong using your DAG. (**1 Point**)
+
+```{r}
+# Your code here
+```
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+Suppose there is an unmeasured variable, **pain tolerance (PT)**, that affects both how aggressively a player plays and how likely they are to be injured (perhaps because high pain tolerance players ignore small injuries until they become big ones). So PT effects AGG and PT effects INJ, but PT appears in no dataset. Does the existence of PT bias your estimate of the *total* effect? What about the *direct* effect? Explain using the logic of open and closed paths. (You may modify your DAG in `dagitty` to check your reasoning.) (**2 Points**)
+
+*Your answer here.*
+
+## Question `r Q <- Q+1; Q`
+
+Think of two additional variables and/or edges that may belong in this DAG. Make an argument for why they belong in the DAG. (**1 Point**)
+
+*Your answer here.*
+
+
+
+
