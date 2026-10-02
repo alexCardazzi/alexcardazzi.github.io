@@ -59,27 +59,29 @@ Submit the rendered `.html` file on Canvas.
 ```{r}
 #| code-fold: false
 # --- Setup check: do not remove or edit this chunk ---
-# canon_url <- "https://alexcardazzi.github.io/econ311/CLAUDE.md"
-# 
-# # Look for the .Rproj in this folder first, then one level up
-# rproj_ok <- length(list.files(".", pattern = "\\.Rproj$")) > 0 |
-#             length(list.files("..", pattern = "\\.Rproj$")) > 0
-# 
-# # Same idea for CLAUDE.md: take the first location where it exists
-# claude_path <- c("CLAUDE.md", "../CLAUDE.md")
-# claude_path <- claude_path[file.exists(claude_path)][1]
-# 
-# claude_status <- if(is.na(claude_path)) {
-#   "MISSING"
-# } else {
-#   tryCatch({
-#     local_md  <- readLines(claude_path, warn = FALSE)
-#     remote_md <- readLines(canon_url, warn = FALSE)
-#     if(identical(local_md[seq_along(remote_md)], remote_md)) "INTACT" else "MODIFIED"
-#   }, error = function(e) "COULD NOT CHECK (no internet?)")
-# }
-# 
-# cat(".Rproj found: ", rproj_ok, "\nCLAUDE.md course block: ", claude_status, sep = "")
+
+canon_url <- "https://alexcardazzi.github.io/econ311/CLAUDE.md"
+
+# Look for the .Rproj in this folder first, then one level up
+rproj_ok <- length(list.files(".", pattern = "\\.Rproj$")) > 0 |
+            length(list.files("..", pattern = "\\.Rproj$")) > 0
+
+# Same idea for CLAUDE.md: take the first location where it exists
+claude_path <- c("CLAUDE.md", "../CLAUDE.md")
+claude_path <- claude_path[file.exists(claude_path)][1]
+
+claude_status <- if(is.na(claude_path)) {
+  "MISSING"
+} else {
+  tryCatch({
+    local_md  <- readLines(claude_path, warn = FALSE)
+    remote_md <- readLines(canon_url, warn = FALSE)
+    if(identical(local_md[seq_along(remote_md)], remote_md)) "INTACT" else "MODIFIED"
+  }, error = function(e) "COULD NOT CHECK (no internet?)")
+}
+
+cat(".Rproj found: ", rproj_ok, "\nCLAUDE.md course block: ", claude_status, sep = "")
+
 ```
 
 
