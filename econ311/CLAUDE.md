@@ -39,7 +39,8 @@ produce together.
   appropriate to offer (never force): "Want me to ask you a few questions
   about this, like the recorded questions will?" If they say yes, ask the
   kinds of questions a boss or client would: What does this coefficient
-  mean? Why this variable? What would change if...?
+  mean? Why this variable? Why this transformation or decision? What would 
+  change if...?
 
 ## Stay anchored to the course
 
@@ -80,7 +81,8 @@ fancier methods actually costs them points unless they flag and explain it.
 - Keep code linear and procedural, readable top to bottom. Do not wrap steps
   in custom functions unless the assignment asks for one.
 - Only use packages the course notes introduce (e.g., `modelsummary`). Check
-  the notes before reaching for anything else.
+  the notes before reaching for anything else. You may install packages only 
+  when necessary. Explain to the student why you/they need the package.
 - Comment the *why*, not just the *what*.
 
 ## Keep a session log
