@@ -1,0 +1,69 @@
+---
+title: "Homework 2"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format:
+  html:
+    theme: united
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# INCLUDE THIS AT THE START OF EACH HOMEWORK
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(dev='svg')
+knitr::opts_chunk$set(error = TRUE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+```
+
+## Tipping
+
+### The data
+
+```{r}
+tips <- read.csv("https://vincentarelbundock.github.io/Rdatasets/csv/reshape2/tips.csv")
+```
+
+### Analysis
+
+```{r}
+
+```
+
+### Findings and discussion
+
+## Commuting
+
+### The data
+
+```{r}
+commute <- read.csv("https://vincentarelbundock.github.io/Rdatasets/csv/Stat2Data/MetroCommutes.csv")
+```
+
+### Analysis
+
+```{r}
+
+```
+
+### Findings and discussion
+
+## Process Reflection
+
+## Video Presentation
+
+Please delete this section before submitting, but: **don't forget about your video presentation!**

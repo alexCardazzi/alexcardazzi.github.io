@@ -1,0 +1,224 @@
+---
+title: "Onboarding Homework"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format:
+  html:
+    theme: united
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# INCLUDE THIS AT THE START OF EACH HOMEWORK
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(dev='svg')
+knitr::opts_chunk$set(error = TRUE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+
+Q <- 0
+```
+
+## Before You Start
+
+This assignment has one job: confirm that your entire toolkit works — R, RStudio, your course R Project, your `CLAUDE.md`, Claude Code, and Quarto rendering — and that you can do the basics: move around RStudio, run code, read in data, and make a plot. Everything here comes from Module 1.
+
+Setup, in order (Modules 1.3, 1.4, and 1.6 walk through all of this):
+
+1. Create your course folder and put the course `.Rproj` and `CLAUDE.md` files in it.
+2. Put **this file** in your course folder (or one subfolder deep — e.g., a `homework` folder inside your course folder — but no deeper).
+3. Open the project in RStudio by double-clicking the `.Rproj` file, then open this file.
+4. Change the `author` line at the top of this file to your name.
+5. Click **Render** *right now*, before doing anything else. If a document appears, you're in business. Render early and often — do not wait until you're finished to find out something is broken.
+
+**A note on Claude Code:** you are encouraged to use it throughout this assignment — learning to work with it is part of the point, and Question 6 requires it. But this assignment covers the handful of things you'll need at your fingertips *all semester*. If Claude does all of it and you retain none of it, you're only cheating yourself.
+
+Submit the rendered `.html` file on Canvas.
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+**(4 Points)** The chunk below checks your setup. Do not edit it — just make sure it runs when you render. Full credit requires the rendered output to show `.Rproj found: TRUE` and `CLAUDE.md course block: INTACT`.
+
+```{r}
+#| code-fold: false
+# --- Setup check: do not remove or edit this chunk ---
+# canon_url <- "https://alexcardazzi.github.io/econ311/CLAUDE.md"
+# 
+# # Look for the .Rproj in this folder first, then one level up
+# rproj_ok <- length(list.files(".", pattern = "\\.Rproj$")) > 0 |
+#             length(list.files("..", pattern = "\\.Rproj$")) > 0
+# 
+# # Same idea for CLAUDE.md: take the first location where it exists
+# claude_path <- c("CLAUDE.md", "../CLAUDE.md")
+# claude_path <- claude_path[file.exists(claude_path)][1]
+# 
+# claude_status <- if(is.na(claude_path)) {
+#   "MISSING"
+# } else {
+#   tryCatch({
+#     local_md  <- readLines(claude_path, warn = FALSE)
+#     remote_md <- readLines(canon_url, warn = FALSE)
+#     if(identical(local_md[seq_along(remote_md)], remote_md)) "INTACT" else "MODIFIED"
+#   }, error = function(e) "COULD NOT CHECK (no internet?)")
+# }
+# 
+# cat(".Rproj found: ", rproj_ok, "\nCLAUDE.md course block: ", claude_status, sep = "")
+```
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+**(4 Points)** Take a screenshot of your RStudio window that shows all three of the following:^[On Windows: `Win + Shift + S`. On Mac: `Cmd + Shift + 4`. Save the image file in the same folder as this document.]
+
+- Your project name in the **top-right corner** of RStudio (this proves the `.Rproj` is actually open).
+- The **Terminal tab** (bottom-left) with Claude Code running in it.
+- In that terminal, Claude Code's answer to this exact prompt: *"In one sentence: what folder are you working in, and what files do you see?"*
+
+Embed the screenshot below by replacing the file name with your own:
+
+![My RStudio setup](your_screenshot_file_name.png)
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+**(4 Points)** Warm-up, straight from Modules 1.5 and 1.6. Do each part in the chunk below it.
+
+`r q <- q+1; letters[q]`. Create a character variable called `my_name` containing your name, and a numeric variable called `birth_year` containing the year you were born. Use `cat()` to print a sentence introducing yourself that uses both variables.
+
+```{r}
+
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. Calculate your age **in months** as of January 2027, the way Module 1.5 does it, and print it. Use your real birth year and month.
+
+```{r}
+
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. Create a vector called `commutes` containing these five values: `18, 25, 12, 40, 31` (minutes spent commuting on each weekday). Print the average commute time and the longest commute time.
+
+```{r}
+
+# Write your code here
+```
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+```{r include=FALSE}
+q <- 0
+```
+
+**(8 Points)** Go to the [Rdatasets index](https://vincentarelbundock.github.io/Rdatasets/articles/data.html) — a catalog of over 3,000 datasets — and pick one that interests you, with two rules: it must have **at least 100 rows and at least 4 columns**, and it must contain **at least one numeric variable**. One suggestion, too: try to keep it under roughly 50,000 rows and 20 columns — bigger data isn't better here, and giant datasets can get unruly fast. Everyone will likely be working with a different dataset. Skim its documentation page (linked in the index) so you know what the variables mean.
+
+Some examples of possible datasets include:
+
+- Commute times by city ([data](https://vincentarelbundock.github.io/Rdatasets/csv/Stat2Data/MetroCommutes.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/Stat2Data/MetroCommutes.html))
+- US traffic fatalities ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/Fatalities.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/Fatalities.html))
+- House prices in Windsor, Canada ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/HousePrices.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/HousePrices.html))
+- California test score data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/CASchools.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/CASchools.html)), 
+- Credit card expenditure data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/AER/CreditCard.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/AER/CreditCard.html))
+- Chicago AirBnB data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/bayesrules/airbnb.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/bayesrules/airbnb.html))
+- WNBA player data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/bayesrules/basketball.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/bayesrules/basketball.html))
+- Bikeshare ridership and weather in DC ([data](https://vincentarelbundock.github.io/Rdatasets/csv/bayesrules/bikes.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/bayesrules/bikes.html))
+- Spotify song data ([data](https://vincentarelbundock.github.io/Rdatasets/csv/bayesrules/spotify.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/bayesrules/spotify.html))
+- Penguin measurements in Antarctica ([data](https://vincentarelbundock.github.io/Rdatasets/csv/heplots/peng.csv); [documentation](https://vincentarelbundock.github.io/Rdatasets/doc/heplots/peng.html))
+
+`r q <- q+1; letters[q]`. Read your dataset into R using `read.csv()` and store it as a `data.frame`.^[**Hint**: the index has a CSV link for every dataset. You can read directly from the URL or download the file into your folder first — your choice. Both are covered in Module 1.6.]
+
+```{r}
+
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. Print the number of rows, the number of columns, and the column names.
+
+```{r}
+
+# Write your code here
+```
+
+`r q <- q+1; letters[q]`. In 2-3 sentences (not code): what does one row of this dataset represent, and why did you pick it?
+
+*Write your answer here.*
+
+`r q <- q+1; letters[q]`. Pick one variable and state whether it is nominal, ordinal, interval, or ratio (Module 1.2). Explain your reasoning in a sentence.
+
+*Write your answer here.*
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+**(8 Points)** Using your dataset from the previous question, choose two variables and make a scatterplot. Requirements: label both axes with real descriptions (not variable names like `hp`), use a color that is not the default black, and use `pch = 19`. Below the plot, describe in 2-3 sentences what the plot shows — write it for someone who has never seen this dataset.
+
+```{r}
+
+# Write your code here
+```
+
+
+
+
+
+## Question `r Q <- Q+1; Q`
+
+**(4 Points)** The chunk below contains buggy code. Copy it into your document, then work with Claude Code to find and fix the bugs.^[This is the main workflow you'll use all semester when *your own* code breaks: show Claude the code and the error message, and work through it. Let it explain, not just fix.] Show the working version, and then — in your own words, 1-2 sentences per bug — explain what each bug was.
+
+```{r}
+#| eval: false
+#| code-fold: false
+scores <- c(88, 92, 75 81, 96)
+avg_score <- mean(Scores)
+cat("The average score is", avg_scores)
+```
+
+```{r}
+
+# Write the correct code here
+```
+
+
+## Question `r Q <- Q+1; Q`
+
+**(8 Points)** The process reflection. In a short paragraph (4-6 sentences), in your own words — Claude Code is not allowed to write this, and it knows that:
+
+- How did you use Claude Code on this assignment? What did it help with most?
+- What is one thing you made sure you understood yourself rather than taking Claude's word for it?
+- Your `CLAUDE.md` tells Claude to keep session logs in an `ai_logs/` folder. Did it? (Go look.) If yes, did reading the log help you write this reflection?
+
+*Write your answer here.*
