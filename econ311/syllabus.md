@@ -163,6 +163,14 @@ time the grade is awarded. No grade may be changed as the result of a
 re-evaluation of a student’s work or the submission of supplemental work
 following the close of a semester.
 
+### Syllabus Quiz
+
+To unlock the rest of the course in Canvas, you must pass the Syllabus
+Quiz in the Start Here module. It checks that you have read this
+syllabus. The quiz has 14 questions and you must score 14 out of 14; you
+may retake it as many times as you like. It does not count toward your
+grade.
+
 ### Onboarding Homework
 
 The Onboarding HW verifies that you have your technical environment
