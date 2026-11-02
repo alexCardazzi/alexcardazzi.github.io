@@ -1,0 +1,55 @@
+---
+title: "Imagination Exercise"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format:
+  html:
+    theme: united
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# INCLUDE THIS AT THE START OF EACH ASSIGNMENT
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(dev='svg')
+knitr::opts_chunk$set(error = TRUE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+```
+
+## 1. Background and Setting
+
+
+## 2. Question
+
+
+## 3. Why This Method
+
+
+## 4. Equation
+
+
+## 5. Assumptions and Threats
+
+
+## 6. Data
+
+
+## 7. Feasibility
+
+
+## 8. Process Reflection
+

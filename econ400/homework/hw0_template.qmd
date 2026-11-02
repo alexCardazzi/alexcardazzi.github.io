@@ -1,0 +1,91 @@
+---
+title: "Onboarding Homework"
+author: "Your Name Here"
+institute: "Old Dominion University"
+format:
+  html:
+    theme: united
+    code-tools: true
+    code-fold: true
+    code-summary: "Code"
+    code-copy: hover
+    link-external-newwindow: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+
+self-contained: true
+editor: source
+---
+
+```{r setup, include=FALSE}
+# INCLUDE THIS AT THE START OF EACH ASSIGNMENT
+# DO NOT EDIT THIS
+
+knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(out.width = '90%')
+knitr::opts_chunk$set(results = 'hold')
+knitr::opts_chunk$set(fig.show = 'hold')
+knitr::opts_chunk$set(dev='svg')
+knitr::opts_chunk$set(error = TRUE)
+par(mar = c(4.1, 4.1, 1.1, 4.1))
+```
+
+## Question 1: Setup Check
+
+**(5 Points)** The chunk below checks your setup. Do not edit it; just make sure it runs when you render. Full credit requires the output to show `.Rproj found: TRUE`, `CLAUDE.md course block: INTACT`, and `dagitty installed: TRUE`.
+
+```{r}
+#| code-fold: false
+# --- Setup check: do not remove or edit this chunk ---
+canon_url <- "https://alexcardazzi.github.io/econ400/CLAUDE.md"
+
+# Look for the .Rproj in this folder first, then one level up
+rproj_ok <- length(list.files(".", pattern = "\\.Rproj$")) > 0 |
+            length(list.files("..", pattern = "\\.Rproj$")) > 0
+
+# Same idea for CLAUDE.md: take the first location where it exists
+claude_path <- c("CLAUDE.md", "../CLAUDE.md")
+claude_path <- claude_path[file.exists(claude_path)][1]
+
+claude_status <- if(is.na(claude_path)) {
+  "MISSING"
+} else {
+  tryCatch({
+    local_md  <- readLines(claude_path, warn = FALSE)
+    remote_md <- readLines(canon_url, warn = FALSE)
+    if(identical(local_md[seq_along(remote_md)], remote_md)) "INTACT" else "MODIFIED"
+  }, error = function(e) "COULD NOT CHECK (no internet?)")
+}
+
+dagitty_ok <- requireNamespace("dagitty", quietly = TRUE)
+
+cat(".Rproj found: ", rproj_ok,
+    "\nCLAUDE.md course block: ", claude_status,
+    "\ndagitty installed: ", dagitty_ok, sep = "")
+```
+
+## Question 2: Screenshot
+
+**(5 Points)** Take a screenshot of your RStudio window that shows all three of the following:^[On Windows: `Win + Shift + S`. On Mac: `Cmd + Shift + 4`. Save the image file in the same folder as this document.]
+
+- Your project name in the **top-right corner** of RStudio (this proves the `.Rproj` is actually open).
+- The **Terminal tab** (bottom-left) with Claude Code running in it.
+- In that terminal, Claude Code's answer to this exact prompt: *"In one sentence: what folder are you working in, and what files do you see?"*
+
+Embed the screenshot below by replacing the file name with your own:
+
+![My RStudio setup](your_screenshot_file_name.png)
+
+## Question 3: Report
+
+### a. The Data
+
+
+### b. The Effect of Race
+
+
+### c. Causal or Not?
+
+
+### d. Process Reflection
+
